@@ -11,6 +11,8 @@ public class Main {
 //        barkingDog.shouldWakeUp(true,1);
 //        barkingDog.shouldWakeUp(false,6);
 
-        System.out.println(leapYearCalculator.isLeapYear(1600));
+//        System.out.println(leapYearCalculator.isLeapYear(1600));
+
+        DecimalComparator.areEqualByThreeDecimalPlaces(3.1756,3.175);
     }
 }
