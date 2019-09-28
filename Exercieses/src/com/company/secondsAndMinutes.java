@@ -2,10 +2,11 @@ package com.company;
 
 public class secondsAndMinutes {
 
+    private static final String INVALID_VALUE_MESSAGE = "Invalid Value";
 
     public static String getDurationString (int minutes, int seconds){
         if(minutes<0 || seconds<0 || seconds>59){
-            return "Invalid Value";
+            return INVALID_VALUE_MESSAGE;
         } else {
             int hour = (int) Math.floor(minutes/60);
             int min = minutes%60;
@@ -20,7 +21,7 @@ public class secondsAndMinutes {
 
     public static String getDurationString(int seconds){
         if(seconds<0){
-            return  "InvalidValue";
+            return  INVALID_VALUE_MESSAGE;
         }
 
         int minutes = (int) Math.floor(seconds/60);

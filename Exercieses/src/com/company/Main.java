@@ -1,5 +1,7 @@
 package com.company;
 
+import java.awt.geom.Area;
+
 public class Main {
 
     public static void main(String[] args) {
@@ -14,11 +16,15 @@ public class Main {
 //        System.out.println(leapYearCalculator.isLeapYear(1600));
 
 //        DecimalComparator.areEqualByThreeDecimalPlaces(3.1756,3.175);
+//
+//        System.out.println( secondsAndMinutes.getDurationString(99) );
+//
+//        System.out.println( secondsAndMinutes.getDurationString(12,99) );
+//        System.out.println( secondsAndMinutes.getDurationString(12,9) );
 
-        System.out.println( secondsAndMinutes.getDurationString(99) );
+        System.out.println(AreaCalculator.area(1));
+        System.out.println(AreaCalculator.area(1,2));
 
-        System.out.println( secondsAndMinutes.getDurationString(12,99) );
-        System.out.println( secondsAndMinutes.getDurationString(12,9) );
 
     }
 }
