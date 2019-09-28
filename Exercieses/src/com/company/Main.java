@@ -13,6 +13,12 @@ public class Main {
 
 //        System.out.println(leapYearCalculator.isLeapYear(1600));
 
-        DecimalComparator.areEqualByThreeDecimalPlaces(3.1756,3.175);
+//        DecimalComparator.areEqualByThreeDecimalPlaces(3.1756,3.175);
+
+        System.out.println( secondsAndMinutes.getDurationString(99) );
+
+        System.out.println( secondsAndMinutes.getDurationString(12,99) );
+        System.out.println( secondsAndMinutes.getDurationString(12,9) );
+
     }
 }
