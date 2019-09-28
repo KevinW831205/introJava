@@ -8,7 +8,9 @@ public class Main {
 //        MegaBytesConverter.printMegaBytesAndKiloBytes(5000);
 //        MegaBytesConverter.printMegaBytesAndKiloBytes(-34);
 
-        barkingDog.shouldWakeUp(true,1);
-        barkingDog.shouldWakeUp(false,6);
+//        barkingDog.shouldWakeUp(true,1);
+//        barkingDog.shouldWakeUp(false,6);
+
+        System.out.println(leapYearCalculator.isLeapYear(1600));
     }
 }
