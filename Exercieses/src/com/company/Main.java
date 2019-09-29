@@ -25,8 +25,13 @@ public class Main {
 //        System.out.println(AreaCalculator.area(1));
 //        System.out.println(AreaCalculator.area(1,2));
 
-        MinutesToYearsAndDaysCalculator.printYearsAndDays(525600);
-        MinutesToYearsAndDaysCalculator.printYearsAndDays(561600);
+//        MinutesToYearsAndDaysCalculator.printYearsAndDays(525600);
+//        MinutesToYearsAndDaysCalculator.printYearsAndDays(561600);
+
+        IntEqualityPrinter.printEqual(1,1,1);
+        IntEqualityPrinter.printEqual(1,1,2);
+        IntEqualityPrinter.printEqual(1,2,3);
+
 
     }
 }
