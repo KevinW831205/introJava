@@ -28,10 +28,13 @@ public class Main {
 //        MinutesToYearsAndDaysCalculator.printYearsAndDays(525600);
 //        MinutesToYearsAndDaysCalculator.printYearsAndDays(561600);
 
-        IntEqualityPrinter.printEqual(1,1,1);
-        IntEqualityPrinter.printEqual(1,1,2);
-        IntEqualityPrinter.printEqual(1,2,3);
+//        IntEqualityPrinter.printEqual(1,1,1);
+//        IntEqualityPrinter.printEqual(1,1,2);
+//        IntEqualityPrinter.printEqual(1,2,3);
 
+        System.out.println( PlayingCat.isCatPlaying(true,45) );
+        System.out.println( PlayingCat.isCatPlaying(false,45) );
+        System.out.println( PlayingCat.isCatPlaying(false,35) );
 
     }
 }
