@@ -22,9 +22,11 @@ public class Main {
 //        System.out.println( secondsAndMinutes.getDurationString(12,99) );
 //        System.out.println( secondsAndMinutes.getDurationString(12,9) );
 
-        System.out.println(AreaCalculator.area(1));
-        System.out.println(AreaCalculator.area(1,2));
+//        System.out.println(AreaCalculator.area(1));
+//        System.out.println(AreaCalculator.area(1,2));
 
+        MinutesToYearsAndDaysCalculator.printYearsAndDays(525600);
+        MinutesToYearsAndDaysCalculator.printYearsAndDays(561600);
 
     }
 }
