@@ -21,10 +21,19 @@ public class Main {
 //                System.out.println("defalut");
 //                break;
 //        }
+//
+//        charCheck('F');
+//
+//        strCheck("Mon");
 
-        charCheck('F');
+        Week.printDayOfTheWeek(1);
+        Week.printDayOfTheWeekSL(1);
+        Week.printDayOfTheWeek(-5);
+        Week.printDayOfTheWeekSL(-5);
+        Week.printDayOfTheWeek(0);
+        Week.printDayOfTheWeekSL(0);
 
-        strCheck("Mon");
+
     }
 
     public static void charCheck(char value){
