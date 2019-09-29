@@ -32,9 +32,13 @@ public class Main {
 //        IntEqualityPrinter.printEqual(1,1,2);
 //        IntEqualityPrinter.printEqual(1,2,3);
 
-        System.out.println( PlayingCat.isCatPlaying(true,45) );
-        System.out.println( PlayingCat.isCatPlaying(false,45) );
-        System.out.println( PlayingCat.isCatPlaying(false,35) );
+//        System.out.println( PlayingCat.isCatPlaying(true,45) );
+//        System.out.println( PlayingCat.isCatPlaying(false,45) );
+//        System.out.println( PlayingCat.isCatPlaying(false,35) );
+
+        NumberInWord.printNumberInWord(9);
+        NumberInWord.printNumberInWord(-9);
+
 
     }
 }
