@@ -39,12 +39,14 @@ public class Main {
 //        NumberInWord.printNumberInWord(9);
 //        NumberInWord.printNumberInWord(-9);
 
-        System.out.println(DaysInMonth.getDaysInMonth(2,2000));
-        System.out.println(DaysInMonth.getDaysInMonth(3,2000));
-        System.out.println(DaysInMonth.getDaysInMonth(4,2000));
-        System.out.println(DaysInMonth.getDaysInMonth(2,2001));
-        System.out.println(DaysInMonth.getDaysInMonth(2,2002));
-        System.out.println( DaysInMonth.getDaysInMonth(2,2003));
+//        System.out.println(DaysInMonth.getDaysInMonth(2,2000));
+//        System.out.println(DaysInMonth.getDaysInMonth(3,2000));
+//        System.out.println(DaysInMonth.getDaysInMonth(4,2000));
+//        System.out.println(DaysInMonth.getDaysInMonth(2,2001));
+//        System.out.println(DaysInMonth.getDaysInMonth(2,2002));
+//        System.out.println( DaysInMonth.getDaysInMonth(2,2003));
+
+        System.out.println(DigitSum.sumDigits(235));
 
 
     }
