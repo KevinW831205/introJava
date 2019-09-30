@@ -33,13 +33,89 @@ public class Main {
 //            }
 //        }
 //
-        System.out.println(SumOddRange.sumOdd(-1,3));
-        System.out.println(SumOddRange.sumOdd(10,10));
+//        System.out.println(SumOddRange.sumOdd(-1,3));
+//        System.out.println(SumOddRange.sumOdd(10,10));
 
+//            int count = 0;
+//            while(count != 5){
+//                System.out.println(count);
+//                count++;
+//            }
+//
+//            count = 0;
+//            while(true){
+//                System.out.println(count);
+//                count++;
+//                if(count==5){
+//                    break;
+//                }
+//            }
+//
+//        int count = 6;
+//        // executes once
+//            do {
+//                System.out.println(count);
+//                count ++;
+//            }while (count < 5);
+
+
+//        int number = 4;
+//        int end = 28;
+//
+//        while(number <= end){
+//            number++;
+//            if(!isEvenNumber(number)){
+//                continue;
+//            }
+//
+//            System.out.println("Even number " + number);
+//
+//        }
+
+        sum5even(4,28);
 
     }
 
     public static double calculateInterest(double amount, double interestRate){
         return (amount * (interestRate/100));
     }
+
+    public static boolean isEvenNumber(int a){
+
+        if(a%2 == 0){
+            return true;
+        } else {
+            return false;
+        }
+
+    }
+
+    public static void sum5even (int start, int end){
+        int number = start;
+        int evens = 0;
+        String total =  "";
+        while(number <= end){
+            number++;
+            if(!isEvenNumber(number)){
+                continue;
+            }
+
+            evens ++;
+            System.out.println(number);
+
+            if(evens == 5){
+                total += number;
+                System.out.println("5 evens: "+total);
+                break;
+            }
+            total += number + ", ";
+
+
+        }
+
+
+
+    }
+
+
 }
