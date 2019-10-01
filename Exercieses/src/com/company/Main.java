@@ -1,5 +1,6 @@
 package com.company;
 
+import jdk.jshell.Diag;
 import org.w3c.dom.UserDataHandler;
 
 import java.awt.geom.Area;
@@ -77,8 +78,10 @@ public class Main {
 //        System.out.println(FlourPacker.canPack(1,11,9));
 //
 //        System.out.println(FlourPacker.canPack(2,11,35));
+//
+//        System.out.println(LargestPrime.getLargestPrime(217));
 
-        System.out.println(LargestPrime.getLargestPrime(217));
+        DiagonalStar.printSquareStar(8);
 
 
     }
