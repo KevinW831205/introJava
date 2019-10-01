@@ -66,7 +66,11 @@ public class Main {
 //        System.out.println(GreatestCommonDivisor.getGreatestCommonDivisor(12,36));
 
 //        AllFactors.printFactors(6);
-        System.out.println(PerfectNumber.isPerfectNumber(6));
-
+//        System.out.println(PerfectNumber.isPerfectNumber(6));
+        System.out.println(NumberToWords.getDigitCount(100));
+        System.out.println(NumberToWords.reverse(100));
+        NumberToWords.numberToWords(100);
+        NumberToWords.numberToWords(4320);
+        NumberToWords.numberToWords(0);
     }
 }
