@@ -46,7 +46,12 @@ public class Main {
 //        System.out.println(DaysInMonth.getDaysInMonth(2,2002));
 //        System.out.println( DaysInMonth.getDaysInMonth(2,2003));
 
-        System.out.println(DigitSum.sumDigits(235));
+//        System.out.println(DigitSum.sumDigits(235));
+        System.out.println(NumberPalindrome.isPalindrome(121));
+        System.out.println(NumberPalindrome.isPalindrome(-121));
+        System.out.println(NumberPalindrome.isPalindrome(1));
+        System.out.println(NumberPalindrome.isPalindrome(1321));
+
 
 
     }
