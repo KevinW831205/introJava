@@ -67,10 +67,17 @@ public class Main {
 
 //        AllFactors.printFactors(6);
 //        System.out.println(PerfectNumber.isPerfectNumber(6));
-        System.out.println(NumberToWords.getDigitCount(100));
-        System.out.println(NumberToWords.reverse(100));
-        NumberToWords.numberToWords(100);
-        NumberToWords.numberToWords(4320);
-        NumberToWords.numberToWords(0);
+//        System.out.println(NumberToWords.getDigitCount(100));
+//        System.out.println(NumberToWords.reverse(100));
+//        NumberToWords.numberToWords(100);
+//        NumberToWords.numberToWords(4320);
+//        NumberToWords.numberToWords(0);
+
+        System.out.println(FlourPacker.canPack(1,0,4));
+        System.out.println(FlourPacker.canPack(1,11,9));
+
+        System.out.println(FlourPacker.canPack(2,11,35));
+
+
     }
 }
