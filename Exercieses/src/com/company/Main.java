@@ -1,5 +1,7 @@
 package com.company;
 
+import org.w3c.dom.UserDataHandler;
+
 import java.awt.geom.Area;
 
 public class Main {
@@ -55,8 +57,8 @@ public class Main {
 //        System.out.println(FirstAndLastDigitSum.sumFirstAndLastDigit(5));
 //        System.out.println(FirstAndLastDigitSum.sumFirstAndLastDigit(257));
 
-        System.out.println(EvenDigitSum.getEvenDigitSum(245));
-
+//        System.out.println(EvenDigitSum.getEvenDigitSum(245));
+        System.out.println(SharedDigit.hasSharedDigit(12,43));
 
     }
 }
