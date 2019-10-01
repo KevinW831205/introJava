@@ -47,11 +47,13 @@ public class Main {
 //        System.out.println( DaysInMonth.getDaysInMonth(2,2003));
 
 //        System.out.println(DigitSum.sumDigits(235));
-        System.out.println(NumberPalindrome.isPalindrome(121));
-        System.out.println(NumberPalindrome.isPalindrome(-121));
-        System.out.println(NumberPalindrome.isPalindrome(1));
-        System.out.println(NumberPalindrome.isPalindrome(1321));
-
+//        System.out.println(NumberPalindrome.isPalindrome(121));
+//        System.out.println(NumberPalindrome.isPalindrome(-121));
+//        System.out.println(NumberPalindrome.isPalindrome(1));
+//        System.out.println(NumberPalindrome.isPalindrome(1321));
+//
+        System.out.println(FirstAndLastDigitSum.sumFirstAndLastDigit(5));
+        System.out.println(FirstAndLastDigitSum.sumFirstAndLastDigit(257));
 
 
     }
