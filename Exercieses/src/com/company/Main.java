@@ -61,8 +61,9 @@ public class Main {
 //        System.out.println(SharedDigit.hasSharedDigit(12,43));
 
 
-        System.out.println(LastDigitChecker.hasSameLastDigit(9,99,999));
-        System.out.println(LastDigitChecker.hasSameLastDigit(42,32,23));
+//        System.out.println(LastDigitChecker.hasSameLastDigit(9,99,999));
+//        System.out.println(LastDigitChecker.hasSameLastDigit(42,32,23));
+        System.out.println(GreatestCommonDivisor.getGreatestCommonDivisor(12,36));
 
 
     }
