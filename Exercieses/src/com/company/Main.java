@@ -52,8 +52,10 @@ public class Main {
 //        System.out.println(NumberPalindrome.isPalindrome(1));
 //        System.out.println(NumberPalindrome.isPalindrome(1321));
 //
-        System.out.println(FirstAndLastDigitSum.sumFirstAndLastDigit(5));
-        System.out.println(FirstAndLastDigitSum.sumFirstAndLastDigit(257));
+//        System.out.println(FirstAndLastDigitSum.sumFirstAndLastDigit(5));
+//        System.out.println(FirstAndLastDigitSum.sumFirstAndLastDigit(257));
+
+        System.out.println(EvenDigitSum.getEvenDigitSum(245));
 
 
     }
