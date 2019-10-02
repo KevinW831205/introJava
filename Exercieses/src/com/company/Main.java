@@ -81,7 +81,9 @@ public class Main {
 //
 //        System.out.println(LargestPrime.getLargestPrime(217));
 
-        DiagonalStar.printSquareStar(8);
+//        DiagonalStar.printSquareStar(8);
+
+        InputCalculator.inputThenPrintSumAndAverage();
 
 
     }
