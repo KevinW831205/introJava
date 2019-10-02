@@ -83,7 +83,13 @@ public class Main {
 
 //        DiagonalStar.printSquareStar(8);
 
-        InputCalculator.inputThenPrintSumAndAverage();
+//        InputCalculator.inputThenPrintSumAndAverage();
+
+        System.out.println(PaintJob.getBucketCount(3,3,1.1,1));
+        System.out.println(PaintJob.getBucketCount(3,3,1.1));
+
+        System.out.println(PaintJob.getBucketCount(3, 0.5));
+
 
 
     }
