@@ -85,12 +85,12 @@ public class Main {
 
 //        InputCalculator.inputThenPrintSumAndAverage();
 
-        System.out.println(PaintJob.getBucketCount(3,3,1.1,1));
-        System.out.println(PaintJob.getBucketCount(3,3,1.1));
+//        System.out.println(PaintJob.getBucketCount(3,3,1.1,1));
+//        System.out.println(PaintJob.getBucketCount(3,3,1.1));
+//
+//        System.out.println(PaintJob.getBucketCount(3, 0.5));
 
-        System.out.println(PaintJob.getBucketCount(3, 0.5));
-
-
+        PaintJob.printBucketCount();
 
     }
 }
