@@ -91,13 +91,23 @@ public class Main {
 //        System.out.println(PaintJob.getBucketCount(3, 0.5));
 
 //        PaintJob.printBucketCount();
+//
+//            SimpleCalculator calculator = new SimpleCalculator();
+//            calculator.setFirstNumber(5);
+//            calculator.setSecondNumber(2);
+//            System.out.println(calculator.getSecondNumber());
+//
+//            System.out.println(calculator.getAdditionResult());
 
-            SimpleCalculator calculator = new SimpleCalculator();
-            calculator.setFirstNumber(5);
-            calculator.setSecondNumber(2);
-            System.out.println(calculator.getSecondNumber());
+        Person john = new Person();
+        john.setFirstName("John");
+        john.setLastName("Smith");
+        john.setAge(19);
+        System.out.println(john.isTeen());
+        System.out.println(john.getFullName());
 
-            System.out.println(calculator.getAdditionResult());
+
+
 
     }
 }
