@@ -90,7 +90,14 @@ public class Main {
 //
 //        System.out.println(PaintJob.getBucketCount(3, 0.5));
 
-        PaintJob.printBucketCount();
+//        PaintJob.printBucketCount();
+
+            SimpleCalculator calculator = new SimpleCalculator();
+            calculator.setFirstNumber(5);
+            calculator.setSecondNumber(2);
+            System.out.println(calculator.getSecondNumber());
+
+            System.out.println(calculator.getAdditionResult());
 
     }
 }
