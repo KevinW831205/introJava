@@ -113,13 +113,20 @@ public class Main {
 //        System.out.println(wall1.getArea());
 //        System.out.println(wall2.getArea());
 
-        Point p1 = new Point();
-        Point p2 = new Point(1,1);
-        Point p3 = new Point(2,2);
+//        Point p1 = new Point();
+//        Point p2 = new Point(1,1);
+//        Point p3 = new Point(2,2);
+//
+//        System.out.println(p1.distance());
+//        System.out.println(p2.distance());
+//        System.out.println(p2.distance(p3));
 
-        System.out.println(p1.distance());
-        System.out.println(p2.distance());
-        System.out.println(p2.distance(p3));
+        Carpet carpet1 = new Carpet(3.5);
+        Floor floor1 = new Floor(2.75,4);
+
+        Calculator b1cost = new Calculator(floor1,carpet1);
+
+        System.out.println(b1cost.getTotalCost());
 
 
 
