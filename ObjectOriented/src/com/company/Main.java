@@ -3,7 +3,7 @@ package com.company;
 public class Main {
 
     public static void main(String[] args) {
-	// write your code here
+        // write your code here
 //        Car jeep = new Car();
 //        Car toyota = new Car();
 //        System.out.println();
@@ -54,21 +54,39 @@ public class Main {
 //        System.out.println("email: "+defaultAccount2.getEmail());
 //        System.out.println("phone: "+defaultAccount2.getPhoneNumber());
 //
-        VIPCustomer c1 = new VIPCustomer();
-        VIPCustomer c2 = new VIPCustomer("Kevin",3000, "123@123.com");
-        VIPCustomer c3 = new VIPCustomer("kevin","0@0.com");
+//        VIPCustomer c1 = new VIPCustomer();
+//        VIPCustomer c2 = new VIPCustomer("Kevin",3000, "123@123.com");
+//        VIPCustomer c3 = new VIPCustomer("kevin","0@0.com");
+//
+//        System.out.println(c1.getName());
+//        System.out.println(c1.getCreditLimit());
+//        System.out.println(c1.getEmail());
+//        System.out.println(c2.getName());
+//        System.out.println(c2.getCreditLimit());
+//        System.out.println(c2.getEmail());
+//        System.out.println(c3.getName());
+//        System.out.println(c3.getCreditLimit());
+//        System.out.println(c3.getEmail());
 
-        System.out.println(c1.getName());
-        System.out.println(c1.getCreditLimit());
-        System.out.println(c1.getEmail());
-        System.out.println(c2.getName());
-        System.out.println(c2.getCreditLimit());
-        System.out.println(c2.getEmail());
-        System.out.println(c3.getName());
-        System.out.println(c3.getCreditLimit());
-        System.out.println(c3.getEmail());
 
+        // Inheritance
 
+//        Animal animal = new Animal("animal",1,1,5,5);
+//
+//        Fish fish1 = new Fish("Dory",2,2,2,2,3);
+//
+//        fish1.swim(3);
+//        fish1.rest();
+//
+//        Dog dog1 = new Dog("Retriever", 5,5,2,4,1,12,"golden");
+//        dog1.eat();
+//        dog1.bark();
+//        animal.eat();
+//
+//        dog1.walk();
+//        dog1.move(2);
+//        dog1.run();
+//        animal.move(3);
 
     }
 }
