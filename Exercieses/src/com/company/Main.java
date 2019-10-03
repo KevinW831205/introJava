@@ -107,11 +107,20 @@ public class Main {
 //        System.out.println(john.getFullName());
 
 
-        Wall wall1 = new Wall();
-        Wall wall2 = new Wall(20.3,30.2);
+//        Wall wall1 = new Wall();
+//        Wall wall2 = new Wall(20.3,30.2);
+//
+//        System.out.println(wall1.getArea());
+//        System.out.println(wall2.getArea());
 
-        System.out.println(wall1.getArea());
-        System.out.println(wall2.getArea());
+        Point p1 = new Point();
+        Point p2 = new Point(1,1);
+        Point p3 = new Point(2,2);
+
+        System.out.println(p1.distance());
+        System.out.println(p2.distance());
+        System.out.println(p2.distance(p3));
+
 
 
     }
