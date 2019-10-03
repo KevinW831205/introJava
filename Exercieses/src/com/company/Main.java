@@ -99,14 +99,19 @@ public class Main {
 //
 //            System.out.println(calculator.getAdditionResult());
 
-        Person john = new Person();
-        john.setFirstName("John");
-        john.setLastName("Smith");
-        john.setAge(19);
-        System.out.println(john.isTeen());
-        System.out.println(john.getFullName());
+//        Person john = new Person();
+//        john.setFirstName("John");
+//        john.setLastName("Smith");
+//        john.setAge(19);
+//        System.out.println(john.isTeen());
+//        System.out.println(john.getFullName());
 
 
+        Wall wall1 = new Wall();
+        Wall wall2 = new Wall(20.3,30.2);
+
+        System.out.println(wall1.getArea());
+        System.out.println(wall2.getArea());
 
 
     }
