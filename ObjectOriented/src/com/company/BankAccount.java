@@ -1,7 +1,5 @@
 package com.company;
 
-import org.w3c.dom.ls.LSOutput;
-
 public class BankAccount {
     String accountNumber;
     int balance;
@@ -10,18 +8,25 @@ public class BankAccount {
     String phoneNumber;
 
     // constructor
-    public BankAccount(){
-        this("00000",0,"default","default","default");
+    public BankAccount(String accountNumber, int balance, String customerName, String email, String phoneNumber) {
+        // major constructor
+        // try not to call other method in constructor code.
+        this.accountNumber = accountNumber;
+        this.balance = balance;
+        this.customerName = customerName;
+        this.email = email;
+        this.phoneNumber = phoneNumber;
+    }
+
+    public BankAccount() {
+        this("00000", 0, "default", "default", "default");
         System.out.println("constructor ran with default values");
     }
 
-    public BankAccount(String accountNumber,int balance, String customerName, String email, String phoneNumber){
-        this.accountNumber=accountNumber;
-        this.balance = balance;
-        this.customerName = customerName;
-        this.email =  email;
-        this.phoneNumber = phoneNumber;
+    public BankAccount(String accountNumber, int balance) {
+        this(accountNumber, balance, "none", "none", "none");
     }
+
 
     public int getBalance() {
         return this.balance;
@@ -44,7 +49,7 @@ public class BankAccount {
     }
 
     public void setAccountNumber(String accountNumber) {
-        if(accountNumber.isEmpty()){
+        if (accountNumber.isEmpty()) {
             System.out.println("Cannot enter blank");
         } else {
             this.accountNumber = accountNumber;
@@ -52,15 +57,15 @@ public class BankAccount {
     }
 
     public void setBalance(int balance) {
-        if(balance<0){
+        if (balance < 0) {
             System.out.println("Cannot have negative balance");
-        } else{
+        } else {
             this.balance = balance;
         }
     }
 
     public void setCustomerName(String customerName) {
-        if(customerName.isEmpty()){
+        if (customerName.isEmpty()) {
             System.out.println("Cannot enter blank");
         } else {
             this.customerName = customerName;
@@ -68,7 +73,7 @@ public class BankAccount {
     }
 
     public void setEmail(String email) {
-        if(email.isEmpty()){
+        if (email.isEmpty()) {
             System.out.println("Cannot enter blank");
         } else {
             this.email = email;
@@ -76,34 +81,34 @@ public class BankAccount {
     }
 
     public void setPhoneNumber(String phoneNumber) {
-        if(phoneNumber.isEmpty()){
+        if (phoneNumber.isEmpty()) {
             System.out.println("Cannot enter blank");
         } else {
             this.phoneNumber = phoneNumber;
         }
     }
 
-    public void depost(int deposit){
-        if(deposit<=0){
+    public void depost(int deposit) {
+        if (deposit <= 0) {
             System.out.println("must deposit a positive number");
         } else {
             this.balance += deposit;
-            System.out.println("deposited "+deposit+ ", remaining "+ this.balance);
+            System.out.println("deposited " + deposit + ", remaining " + this.balance);
 
         }
     }
 
-    public void withdraw(int withdraw){
-        if(withdraw <=0){
+    public void withdraw(int withdraw) {
+        if (withdraw <= 0) {
             System.out.println("must withdraw a positive number");
             return;
         }
 
-        if(this.balance-withdraw <0){
+        if (this.balance - withdraw < 0) {
             System.out.println("Insufficient funds");
-        } else{
-            this.balance-=withdraw;
-            System.out.println("withdrew "+withdraw+", remaining "+this.balance);
+        } else {
+            this.balance -= withdraw;
+            System.out.println("withdrew " + withdraw + ", remaining " + this.balance);
         }
 
 
