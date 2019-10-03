@@ -8,7 +8,7 @@ import java.awt.geom.Area;
 public class Main {
 
     public static void main(String[] args) {
-	// write your code here
+        // write your code here
 //        SpeedConverter.printConversion(10);
 //        MegaBytesConverter.printMegaBytesAndKiloBytes(5000);
 //        MegaBytesConverter.printMegaBytesAndKiloBytes(-34);
@@ -121,14 +121,26 @@ public class Main {
 //        System.out.println(p2.distance());
 //        System.out.println(p2.distance(p3));
 
-        Carpet carpet1 = new Carpet(3.5);
-        Floor floor1 = new Floor(2.75,4);
+//        Carpet carpet1 = new Carpet(3.5);
+//        Floor floor1 = new Floor(2.75,4);
+//
+//        Calculator b1cost = new Calculator(floor1,carpet1);
+//
+//        System.out.println(b1cost.getTotalCost());
 
-        Calculator b1cost = new Calculator(floor1,carpet1);
+        ComplexNumber c1 = new ComplexNumber(1, 1);
+        ComplexNumber c2 = new ComplexNumber(2, 2);
 
-        System.out.println(b1cost.getTotalCost());
+        c1.add(c2);
+        System.out.println(c1.getReal());
+        System.out.println(c1.getImaginary());
 
+        c1.subtract(c2);
+        System.out.println(c1.getImaginary());
+        System.out.println(c1.getReal());
 
-
+        c1.add(5,2);
+        System.out.println(c1.getReal());
+        System.out.println(c1.getImaginary());
     }
 }
