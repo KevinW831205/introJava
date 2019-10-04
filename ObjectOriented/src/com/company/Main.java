@@ -102,11 +102,11 @@ public class Main {
 //        dog1.run();
 //        animal.move(3);
 
-        SUV compass = new SUV("Jeep","jeep1",5,false,"compass");
-
-        compass.changeGear(3);
-        compass.steer(30);
-        compass.accelerate(20);
+//        SUV compass = new SUV("Jeep","jeep1",5,false,"compass");
+//
+//        compass.changeGear(3);
+//        compass.steer(30);
+//        compass.accelerate(20);
 
 
     }
