@@ -28,7 +28,7 @@ public class Window {
             System.out.println("Window is already closed");
         } else {
             this.isOpen = false;
-            System.out.printf("Closed window");
+            System.out.println("Closed window");
         }
     }
 

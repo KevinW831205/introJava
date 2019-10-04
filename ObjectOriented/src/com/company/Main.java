@@ -119,12 +119,21 @@ public class Main {
 //
         Bed standardBed1 = new Bed("someBrand",new Dimensions(100, 30, 180), "Queen");
         Window standardWindow1 = new Window(new Dimensions(50,50,5),"Clear","Patterned");
+        Wall wall1 = new Wall("North","plain");
+        Wall wall2 = new Wall("South","plain");
+        Wall wall3 = new Wall("East","plain");
+        Wall wall4 = new Wall("West","plain");
+        Ceiling ceiling = new Ceiling(200,"white");
+        Lamp lamp = new Lamp("old",35);
 
-        Room room1 = new Room(standardBed1,standardWindow1);
+
+        Room room1 = new Room("room1",standardBed1,standardWindow1,wall1,wall2,wall3,wall4,ceiling,lamp);
 
 
         room1.occupying();
         room1.vaccant();
         room1.getRoom1Window().closeWindow();
+        room1.getLamp().turnOff();
+        room1.getLamp().turnOn();
     }
 }

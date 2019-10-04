@@ -42,6 +42,10 @@ public class Room {
         return room1Window;
     }
 
+    public Lamp getLamp() {
+        return lamp;
+    }
+
     public void makeBed(){
         System.out.println("making bed in " + name);
         room1Bed.make();
