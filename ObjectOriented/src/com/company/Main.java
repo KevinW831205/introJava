@@ -108,6 +108,12 @@ public class Main {
 //        compass.steer(30);
 //        compass.accelerate(20);
 
-
+        Dimensions dimensions = new Dimensions(30,50,50);
+        Case theCase = new Case("tower","Cooler Master","Cosair 240",dimensions);
+        Monitor theMonitor = new Monitor("SS27B","Samsung",27, new Resolution(2540,1440));
+        Motherboard theMotherboard = new Motherboard("GB-200","gigabyte",4,4,"v2.22");
+        PC thePC = new PC(theCase,theMonitor,theMotherboard);
+        thePC.getMonitor().drawPixelAt(100,100,"red");
+        System.out.println(thePC.getMonitor().getNativeResolution().getHeight());
     }
 }
