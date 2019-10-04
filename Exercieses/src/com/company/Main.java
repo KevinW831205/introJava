@@ -128,19 +128,26 @@ public class Main {
 //
 //        System.out.println(b1cost.getTotalCost());
 
-        ComplexNumber c1 = new ComplexNumber(1, 1);
-        ComplexNumber c2 = new ComplexNumber(2, 2);
+//        ComplexNumber c1 = new ComplexNumber(1, 1);
+//        ComplexNumber c2 = new ComplexNumber(2, 2);
+//
+//        c1.add(c2);
+//        System.out.println(c1.getReal());
+//        System.out.println(c1.getImaginary());
+//
+//        c1.subtract(c2);
+//        System.out.println(c1.getImaginary());
+//        System.out.println(c1.getReal());
+//
+//        c1.add(5,2);
+//        System.out.println(c1.getReal());
+//        System.out.println(c1.getImaginary());
 
-        c1.add(c2);
-        System.out.println(c1.getReal());
-        System.out.println(c1.getImaginary());
+        Circle c1 = new Circle(2);
+        c1.getArea();
 
-        c1.subtract(c2);
-        System.out.println(c1.getImaginary());
-        System.out.println(c1.getReal());
-
-        c1.add(5,2);
-        System.out.println(c1.getReal());
-        System.out.println(c1.getImaginary());
-    }
+        Cylinder cl1 = new Cylinder(3,10);
+        System.out.println(cl1.getArea());
+        cl1.getVolume();
+    }   // closing for main
 }

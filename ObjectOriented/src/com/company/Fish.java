@@ -26,4 +26,11 @@ public class Fish extends Animal {
         rest();
     }
 
+    public void setFins(int fins) {
+        this.fins = fins;
+    }
+
+    public void getFins(){
+        System.out.println(this.fins);
+    }
 }

@@ -2,7 +2,7 @@ package com.company;
 
 public class Main {
 
-    public static void main(String[] args) {
+    public static void main(String[] args)  {
         // write your code here
 //        Car jeep = new Car();
 //        Car toyota = new Car();
@@ -75,6 +75,20 @@ public class Main {
 //
 //        Fish fish1 = new Fish("Dory",2,2,2,2,3);
 //
+//        Fish dory = fish1; // dory is a reference same location in memory
+//
+//        dory.setFins(1);
+//        dory.getFins();
+//        fish1.getFins();
+//        fish1.setFins(3);
+//        dory.getFins();
+//        fish1.getFins();
+//
+//        System.out.println(fish1 instanceof Fish);
+//        System.out.println(animal instanceof Fish);
+//        System.out.println(fish1 instanceof Animal);
+
+
 //        fish1.swim(3);
 //        fish1.rest();
 //
@@ -87,6 +101,13 @@ public class Main {
 //        dog1.move(2);
 //        dog1.run();
 //        animal.move(3);
+
+        SUV compass = new SUV("Jeep","jeep1",5,false,"compass");
+
+        compass.changeGear(3);
+        compass.steer(30);
+        compass.accelerate(20);
+
 
     }
 }
