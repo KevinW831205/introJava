@@ -156,5 +156,6 @@ public class Main {
         printer1.getTonerLevel();
         printer1.fillToner(5);
         printer1.fillToner(3);
+        printer1.printPage(30);
     }
 }
