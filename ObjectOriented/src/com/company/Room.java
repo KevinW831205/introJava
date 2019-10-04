@@ -32,7 +32,7 @@ public class Room {
         room1Bed.changeSheets();
     }
 
-    public void vaccant(){
+    public void vacant(){
         isOccupied = false;
         System.out.println("visitors of the room has left");
         room1Window.openWindow();

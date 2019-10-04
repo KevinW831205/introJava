@@ -117,23 +117,44 @@ public class Main {
 ////        System.out.println(thePC.getMonitor().getNativeResolution().getHeight());
 //        thePC.powerUp();
 //
-        Bed standardBed1 = new Bed("someBrand",new Dimensions(100, 30, 180), "Queen");
-        Window standardWindow1 = new Window(new Dimensions(50,50,5),"Clear","Patterned");
-        Wall wall1 = new Wall("North","plain");
-        Wall wall2 = new Wall("South","plain");
-        Wall wall3 = new Wall("East","plain");
-        Wall wall4 = new Wall("West","plain");
-        Ceiling ceiling = new Ceiling(200,"white");
-        Lamp lamp = new Lamp("old",35);
+//        Bed standardBed1 = new Bed("someBrand",new Dimensions(100, 30, 180), "Queen");
+//        Window standardWindow1 = new Window(new Dimensions(50,50,5),"Clear","Patterned");
+//        Wall wall1 = new Wall("North","plain");
+//        Wall wall2 = new Wall("South","plain");
+//        Wall wall3 = new Wall("East","plain");
+//        Wall wall4 = new Wall("West","plain");
+//        Ceiling ceiling = new Ceiling(200,"white");
+//        Lamp lamp = new Lamp("old",35);
+//
+//
+//        Room room1 = new Room("room1",standardBed1,standardWindow1,wall1,wall2,wall3,wall4,ceiling,lamp);
+//
+//
+//        room1.occupying();
+//        room1.vacant();
+//        room1.getRoom1Window().closeWindow();
+//        room1.getLamp().turnOff();
+//        room1.getLamp().turnOn();
+//        room1.makeBed();
 
+//        Player player = new Player("p1",150,"Axe");
+//        // without encapsulation
+//        // scope is public so can access,
+////        player.name = "p1";
+////        player.health = 20;
+////        player.weapon = "Axe";
+////
+////        player.loseHealth(10);
+////        player.health = 500; // because public scope can be accessed and modified in unintended ways.
+//
+//        //with encapsulation
+//        player.getHealth();
+//        player.loseHealth(50);
 
-        Room room1 = new Room("room1",standardBed1,standardWindow1,wall1,wall2,wall3,wall4,ceiling,lamp);
-
-
-        room1.occupying();
-        room1.vaccant();
-        room1.getRoom1Window().closeWindow();
-        room1.getLamp().turnOff();
-        room1.getLamp().turnOn();
+        Printer printer1 = new Printer("hp123",100, true);
+        printer1.printPage(3);
+        printer1.getTonerLevel();
+        printer1.fillToner(5);
+        printer1.fillToner(3);
     }
 }
