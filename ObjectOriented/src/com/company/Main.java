@@ -108,12 +108,23 @@ public class Main {
 //        compass.steer(30);
 //        compass.accelerate(20);
 
-        Dimensions dimensions = new Dimensions(30,50,50);
-        Case theCase = new Case("tower","Cooler Master","Cosair 240",dimensions);
-        Monitor theMonitor = new Monitor("SS27B","Samsung",27, new Resolution(2540,1440));
-        Motherboard theMotherboard = new Motherboard("GB-200","gigabyte",4,4,"v2.22");
-        PC thePC = new PC(theCase,theMonitor,theMotherboard);
-        thePC.getMonitor().drawPixelAt(100,100,"red");
-        System.out.println(thePC.getMonitor().getNativeResolution().getHeight());
+//        Dimensions dimensions = new Dimensions(30,50,50);
+//        Case theCase = new Case("tower","Cooler Master","Cosair 240",dimensions);
+//        Monitor theMonitor = new Monitor("SS27B","Samsung",27, new Resolution(2540,1440));
+//        Motherboard theMotherboard = new Motherboard("GB-200","gigabyte",4,4,"v2.22");
+//        PC thePC = new PC(theCase,theMonitor,theMotherboard);
+////        thePC.getMonitor().drawPixelAt(100,100,"red");
+////        System.out.println(thePC.getMonitor().getNativeResolution().getHeight());
+//        thePC.powerUp();
+//
+        Bed standardBed1 = new Bed("someBrand",new Dimensions(100, 30, 180), "Queen");
+        Window standardWindow1 = new Window(new Dimensions(50,50,5),"Clear","Patterned");
+
+        Room room1 = new Room(standardBed1,standardWindow1);
+
+
+        room1.occupying();
+        room1.vaccant();
+        room1.getRoom1Window().closeWindow();
     }
 }
