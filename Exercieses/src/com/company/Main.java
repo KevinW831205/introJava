@@ -143,11 +143,18 @@ public class Main {
 //        System.out.println(c1.getReal());
 //        System.out.println(c1.getImaginary());
 
-        Circle c1 = new Circle(2);
-        c1.getArea();
+//        Circle c1 = new Circle(2);
+//        c1.getArea();
+//
+//        Cylinder cl1 = new Cylinder(3,10);
+//        System.out.println(cl1.getArea());
+//        System.out.println(cl1.getVolume());;
 
-        Cylinder cl1 = new Cylinder(3,10);
-        System.out.println(cl1.getArea());
-        cl1.getVolume();
+        Rectangle r1 = new Rectangle(2,3);
+        Cuboid c1 = new Cuboid(2,1,1);
+
+        System.out.println(c1.getVolume());
+        System.out.println(c1.getArea());
+
     }   // closing for main
 }

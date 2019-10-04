@@ -1,11 +1,10 @@
 package com.company;
 
-public class Cylinder extends Circle {
-
+public class Cuboid extends Rectangle{
     private double height;
 
-    public Cylinder(double radius, double height) {
-        super(radius);
+    public Cuboid(double width, double length, double height) {
+        super(width, length);
         if(height<0){
             height=0;
         }
@@ -22,6 +21,6 @@ public class Cylinder extends Circle {
 
     @Override
     public double getArea() {
-        return super.getArea()*2 + height*getRadius()*2*Math.PI;
+        return super.getArea()*2 + getWidth()*getHeight()*2+ getLength()*getHeight()*2;
     }
 }
