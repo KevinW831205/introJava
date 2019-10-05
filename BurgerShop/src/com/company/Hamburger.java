@@ -74,7 +74,6 @@ public class Hamburger {
         if(addition4 != null){
             addition4.printTotal();
         }
-        System.out.println("Total..."+getTotal());
     }
 
     public double getTotal() {
@@ -105,20 +104,13 @@ class HealthyBurger extends Hamburger{
 
     @Override
     public void printFinal() {
-        System.out.println("Hamburger "+getBreadRoll()+" "+getMeat()+"...4.00");
-        if(addition1 != null){
-            addition1.printTotal();
+        super.printFinal();
+        if(addition5 != null){
+            addition5.printTotal();
         }
-        if(addition2 != null){
-            addition2.printTotal();
+        if(addition6 != null){
+            addition6.printTotal();
         }
-        if(addition3 != null){
-            addition3.printTotal();
-        }
-        if(addition4 != null){
-            addition4.printTotal();
-        }
-        System.out.println("Total..."+getTotal());
     }
 
     @Override
@@ -154,13 +146,34 @@ class HealthyBurger extends Hamburger{
 class DeluxeBurger extends Hamburger{
     public DeluxeBurger(String breadRoll, String meat) {
         super(breadRoll, meat);
+        this.setAddition1(new Drink());
+        this.setAddition2(new Chips());
     }
 
+    @Override
     public void printFinal() {
         System.out.println("Deluxe Hamburger "+getBreadRoll()+" "+getMeat()+"...4.00");
         getAddition1().printTotal();
         getAddition2().printTotal();
-        System.out.println("Total..."+getTotal());
     }
 
+    @Override
+    public void setAddition1(Addition addition1) {
+        System.out.println("error can't change deluxe burger addition");
+    }
+
+    @Override
+    public void setAddition2(Addition addition2) {
+        System.out.println("error can't change deluxe burger addition");
+    }
+
+    @Override
+    public void setAddition3(Addition addition3) {
+        System.out.println("error can't change deluxe burger addition");
+    }
+
+    @Override
+    public void setAddition4(Addition addition4) {
+        System.out.println("error can't change deluxe burger addition");
+    }
 }

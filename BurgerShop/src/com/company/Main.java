@@ -17,5 +17,20 @@ public class Main {
         Hamburger burger1 = new Hamburger("normal","Beef");
         burger1.setAddition1(new Lettuce());
         burger1.printFinal();
+        System.out.println("burger1 final price is "+burger1.getTotal()+"\n");
+
+        DeluxeBurger burger2 = new DeluxeBurger("white","Sausage");
+        burger2.setAddition2(new Drink());
+        burger2.printFinal();
+        System.out.println("burger2 final price is "+burger2.getTotal()+"\n");
+
+        HealthyBurger burger3 = new HealthyBurger("chicken");
+        burger3.setAddition1(new Lettuce());
+        burger3.setAddition6(new Drink());
+        burger3.printFinal();
+        System.out.println("burger2 final price is "+burger2.getTotal()+"\n");
+
+
+
     }
 }
