@@ -10,13 +10,9 @@ public class Hamburger {
     private double basePrice;
 
 
-    public Hamburger(String breadRoll, String meat, Addition addition1, Addition addition2, Addition addition3, Addition addition4) {
+    public Hamburger(String breadRoll, String meat) {
         this.breadRoll = breadRoll;
         this.meat = meat;
-        this.addition1 = addition1;
-        this.addition2 = addition2;
-        this.addition3 = addition3;
-        this.addition4 = addition4;
         this.basePrice = 4.00;
     }
 
@@ -30,6 +26,22 @@ public class Hamburger {
 
     public double getBasePrice() {
         return basePrice;
+    }
+
+    public void setAddition1(Addition addition1) {
+        this.addition1 = addition1;
+    }
+
+    public void setAddition2(Addition addition2) {
+        this.addition2 = addition2;
+    }
+
+    public void setAddition3(Addition addition3) {
+        this.addition3 = addition3;
+    }
+
+    public void setAddition4(Addition addition4) {
+        this.addition4 = addition4;
     }
 
     public Addition getAddition1() {
@@ -50,15 +62,35 @@ public class Hamburger {
 
     public void printFinal(){
         System.out.println("Hamburger "+getBreadRoll()+" "+getMeat()+"...4.00");
-        addition1.printTotal();
-        addition2.printTotal();
-        addition3.printTotal();
-        addition4.printTotal();
+        if(addition1 != null){
+            addition1.printTotal();
+        }
+        if(addition2 != null){
+            addition2.printTotal();
+        }
+        if(addition3 != null){
+            addition3.printTotal();
+        }
+        if(addition4 != null){
+            addition4.printTotal();
+        }
         System.out.println("Total..."+getTotal());
     }
 
     public double getTotal() {
-        double total = getBasePrice()+addition1.getPrice()+addition2.getPrice()+addition3.getPrice()+addition4.getPrice();
+        double total = getBasePrice();
+        if(addition1 != null){
+            total += addition1.getPrice();
+        }
+        if(addition2 != null){
+            total += addition2.getPrice();
+        }
+        if(addition3 != null){
+            total += addition3.getPrice();
+        }
+        if(addition4 != null){
+            total += addition4.getPrice();
+        }
         return total;
     }
 }
@@ -67,28 +99,46 @@ class HealthyBurger extends Hamburger{
     Addition addition5;
     Addition addition6;
 
-    public HealthyBurger(String meat, Addition addition1, Addition addition2, Addition addition3, Addition addition4, Addition addition5, Addition addition6) {
-        super("Brown Rye", meat, addition1, addition2, addition3, addition4);
-        this.addition5 = addition5;
-        this.addition6 = addition6;
-
+    public HealthyBurger(String meat) {
+        super("Brown Rye", meat);
     }
 
     @Override
     public void printFinal() {
-        System.out.println("Healthy Hamburger "+getBreadRoll()+" "+getMeat()+"...4.00");
-        getAddition1().printTotal();
-        getAddition2().printTotal();
-        getAddition3().printTotal();
-        getAddition4().printTotal();
-        getAddition5().printTotal();
-        getAddition6().printTotal();
+        System.out.println("Hamburger "+getBreadRoll()+" "+getMeat()+"...4.00");
+        if(addition1 != null){
+            addition1.printTotal();
+        }
+        if(addition2 != null){
+            addition2.printTotal();
+        }
+        if(addition3 != null){
+            addition3.printTotal();
+        }
+        if(addition4 != null){
+            addition4.printTotal();
+        }
         System.out.println("Total..."+getTotal());
     }
 
     @Override
     public double getTotal() {
-        return super.getTotal() + addition5.getPrice() +addition6.getPrice();
+        double total = super.getTotal() ;
+        if(addition5 != null){
+            total += addition5.getPrice();
+        }
+        if(addition6 != null){
+            total += addition6.getPrice();
+        }
+        return total;
+    }
+
+    public void setAddition5(Addition addition5) {
+        this.addition5 = addition5;
+    }
+
+    public void setAddition6(Addition addition6) {
+        this.addition6 = addition6;
     }
 
     public Addition getAddition5() {
@@ -103,7 +153,7 @@ class HealthyBurger extends Hamburger{
 
 class DeluxeBurger extends Hamburger{
     public DeluxeBurger(String breadRoll, String meat) {
-        super(breadRoll, meat, new Drink(), new Chips(), new NoItem(), new NoItem());
+        super(breadRoll, meat);
     }
 
     public void printFinal() {
