@@ -1,6 +1,7 @@
 package com.company;
 
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class arrSort {
@@ -55,19 +56,21 @@ public class arrSort {
     }
 
     public static int[] mySort(int[] arr){
-        boolean sorted = false;
 
+        int[] sortedArr = Arrays.copyOf(arr,arr.length);
+
+        boolean sorted = false;
         while (!sorted){
             sorted = true;
-            for(int i =1; i<arr.length; i++){
-                if(arr[i-1] < arr[i]){
-                    int temp = arr[i];
-                    arr[i] = arr[i-1];
-                    arr[i-1] = temp;
+            for(int i =1; i<sortedArr.length; i++){
+                if(sortedArr[i-1] < sortedArr[i]){
+                    int temp = sortedArr[i];
+                    sortedArr[i] = sortedArr[i-1];
+                    sortedArr[i-1] = temp;
                     sorted = false;
                 }
             }
         }
-        return arr;
+        return sortedArr;
     }
 }

@@ -8,10 +8,15 @@ public class Main {
 
         int[] sortedArr = arrSort.mySort(newIntArr);
 
-        for (int i = 0; i < sortedArr.length; i++) {
-            System.out.println(sortedArr[i]);
+        printArr(newIntArr);
+        printArr(sortedArr);
+
+
+    }
+
+    public static void printArr(int[] arr){
+        for(int i=0; i<arr.length; i++){
+            System.out.println("index "+i+" : "+arr[i]);
         }
-
-
     }
 }
