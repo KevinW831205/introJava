@@ -15,7 +15,7 @@ public class arrSort {
 
         while (integersToGet<=0){
             System.out.println("Invalid Input. Enter a positive Integer");
-            getNumberOfInt();
+            integersToGet = getNumberOfInt();
         }
 
 
