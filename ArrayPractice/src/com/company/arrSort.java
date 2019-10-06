@@ -9,7 +9,6 @@ public class arrSort {
 
     public static int[] getArr(){
         int integersToGet = -1;
-        int integersGotten = 0;
 
         integersToGet = getNumberOfInt();
 
@@ -18,21 +17,28 @@ public class arrSort {
             integersToGet = getNumberOfInt();
         }
 
+        int[] intArr = new int[integersToGet];
 
-        int intArr[] = new int[integersToGet];
-//
-//        while (integersToGet<integersGotten){
-//            System.out.println("Enter number "+integersGotten+1);
-//            boolean hasNextInt = scanner.hasNextInt();
-//            hasNextInt = scanner.hasNextInt();
-//            if(hasNextInt){
-//                intArr[integersGotten] = scanner.nextInt();
-//            } else {
-//                System.out.println("Invalid input, enter an integer");
-//            }
-//        }
+        for(int i =0 ; i<intArr.length; i++){
+            System.out.println("Enter an integer" + (i + 1));
+            intArr[i] = getInteger();
+        }
 
         return intArr;
+    }
+
+    public static int getInteger(){
+        Scanner scanner = new Scanner(System.in);
+        boolean hasNextInt = scanner.hasNextInt();
+
+        if(hasNextInt) {
+            return scanner.nextInt();
+        } else {
+            System.out.println("Invalid Input");
+            getInteger();
+        }
+
+        return -1;
     }
 
     public static int getNumberOfInt(){
