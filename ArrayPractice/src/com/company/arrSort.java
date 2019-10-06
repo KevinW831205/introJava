@@ -12,8 +12,8 @@ public class arrSort {
 
         integersToGet = getNumberOfInt();
 
-        while (integersToGet<=0){
-            System.out.println("Invalid Input. Enter a positive Integer");
+        while (integersToGet<=1){
+            System.out.println("Invalid Input. Enter Integer greater than 2");
             integersToGet = getNumberOfInt();
         }
 
@@ -55,7 +55,19 @@ public class arrSort {
     }
 
     public static int[] mySort(int[] arr){
+        boolean sorted = false;
 
+        while (!sorted){
+            sorted = true;
+            for(int i =1; i<arr.length; i++){
+                if(arr[i-1] < arr[i]){
+                    int temp = arr[i];
+                    arr[i] = arr[i-1];
+                    arr[i-1] = temp;
+                    sorted = false;
+                }
+            }
+        }
         return arr;
     }
 }
