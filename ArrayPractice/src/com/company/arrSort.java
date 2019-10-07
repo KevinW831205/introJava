@@ -5,9 +5,6 @@ import java.util.Arrays;
 import java.util.Scanner;
 
 public class arrSort {
-
-
-
     public static int[] getArr(){
         int integersToGet = -1;
 
