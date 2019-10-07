@@ -39,7 +39,7 @@ public class GroceryList {
 
         int position = groceryList.indexOf(searchItem);
         if(position >=0){
-            return "contains item at position "+position;
+            return "contains item at position "+(position+1);
         } else {
             return "does not contain item";
         }
