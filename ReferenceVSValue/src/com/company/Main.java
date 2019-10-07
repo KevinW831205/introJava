@@ -61,7 +61,7 @@ public class Main {
 //        int[] arr1 = minimumElement.readIntegers(count);
 //        System.out.println(minimumElement.findMin(arr1));
 
-        int[] arr2 = new int[] {1,2,3,4,5};
+        int[] arr2 = new int[] {6,7,10,1,2,3,4,5};
         System.out.println(Arrays.toString(arr2));
         reverseArray.reverse(arr2);
         System.out.println(Arrays.toString(arr2));
