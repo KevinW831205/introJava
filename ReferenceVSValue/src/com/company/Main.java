@@ -55,10 +55,15 @@ public class Main {
 //        System.out.println("after dereference");
 //        System.out.println("myIntArray "+ Arrays.toString(myIntArray));
 //        System.out.println("anotherArray "+ Arrays.toString(anotherArray));
+//
+//        System.out.println("Enter count");
+//        int count = scanner.nextInt();
+//        int[] arr1 = minimumElement.readIntegers(count);
+//        System.out.println(minimumElement.findMin(arr1));
 
-        System.out.println("Enter count");
-        int count = scanner.nextInt();
-        int[] arr1 = minimumElement.readIntegers(count);
-        System.out.println(minimumElement.findMin(arr1));
+        int[] arr2 = new int[] {1,2,3,4,5};
+        System.out.println(Arrays.toString(arr2));
+        reverseArray.reverse(arr2);
+        System.out.println(Arrays.toString(arr2));
     }
 }
