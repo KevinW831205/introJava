@@ -36,9 +36,13 @@ public class Main {
                 case 5:
                     searchForItem();
                     break;
+                case 7:
+                    processArrayList();
+                    break;
                 case 6:
                     quit = true;
                     break;
+
             }
         }
     }
@@ -63,7 +67,7 @@ public class Main {
         groceryList.printGroceryList();
         System.out.print("Select an item to modify ");
         String itemNo = scanner.nextLine();
-        scanner.nextLine();
+//        scanner.nextLine();
         System.out.print("Enter Replacement  ");
         String newItem = scanner.nextLine();
 //        groceryList.modifyGroceryItem(itemNo-1,newItem);
@@ -87,5 +91,19 @@ public class Main {
             System.out.println("didn't find item");
         }
 //        System.out.println(groceryList.findItem(searchItem));
+    }
+
+    public static void processArrayList(){
+        // way to duplicate array list
+//        ArrayList<String> newArray = new ArrayList<String>();
+//        newArray.addAll(groceryList.getGroceryList());
+
+        // also duplicates
+        ArrayList<String> newArray2 = new ArrayList<String>(groceryList.getGroceryList());
+
+        // converting array list to String
+        String[] array3 = new String[groceryList.getGroceryList().size()];
+        array3 = groceryList.getGroceryList().toArray(array3);
+
     }
 }
