@@ -47,10 +47,10 @@ public class Main {
 
 
         while (!exit){
+            printInstructions();
             System.out.println("Enter an command");
             command = scanner.nextInt();
             scanner.nextLine();
-            printInstructions();
 
             switch (command){
                 case 0:
@@ -89,11 +89,12 @@ public class Main {
         System.out.println("\nEnter ");
         System.out.println("\t 0 - To print Instructions");
         System.out.println("\t 1 - To print Branches");
-        System.out.println("\t 2 - To print a Branches Customer");
-        System.out.println("\t 3 - To add a customer to a Branch");
-        System.out.println("\t 4 - To print a customers balance");
-        System.out.println("\t 5 - To add a transaction for a customer");
-        System.out.println("\t 6 - To quit the application");
+        System.out.println("\t 2 - To add a branch");
+        System.out.println("\t 3 - To print a Branches Customer");
+        System.out.println("\t 4 - To add a customer to a Branch");
+        System.out.println("\t 5 - To print a customers balance");
+        System.out.println("\t 6 - To add a transaction for a customer");
+        System.out.println("\t 7 - To quit the application");
     }
 
     public static void addBranch(){
@@ -109,7 +110,11 @@ public class Main {
     }
 
     public static void addCustomerToBranch(){
-
+        System.out.println("Enter branch to add customer to: ");
+        String branchName = scanner.nextLine();
+        System.out.println("Enter customer name: ");
+        String customerName = scanner.nextLine();
+        theBank.addCustomerToBranch(branchName,customerName);
     }
 
     public static void printCustomerBalance(){

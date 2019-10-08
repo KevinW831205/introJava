@@ -12,10 +12,10 @@ public class Bank {
 
     public void addBranch(String branchName){
         if(findBranch(branchName)>=0){
-            branches.add(new Branch(branchName));
+            System.out.println("Branch name exists");
             return;
         }
-        System.out.println("Branch name exists");
+        branches.add(new Branch(branchName));
     }
 
     private int findBranch(Branch branch){
