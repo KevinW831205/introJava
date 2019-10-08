@@ -32,12 +32,12 @@ public class Main {
                 case 3:
                     modifyContact();
                     break;
-//                case 4:
-//                    removeItem();
-//                    break;
-//                case 5:
-//                    searchForItem();
-//                    break;
+                case 4:
+                    removeContact();
+                    break;
+                case 5:
+                    findConatct();
+                    break;
                 case 6:
                     quit = true;
                     break;
@@ -79,5 +79,17 @@ public class Main {
         String newNumber = scanner.nextLine();
         Contact updatedContact = new Contact (newName,newNumber);
         phone.modifyContact(name,updatedContact);
+    }
+
+    public static void removeContact(){
+        System.out.println("Enter Contact Name to remove: ");
+        String name = scanner.nextLine();
+        phone.removeContact(name);
+    }
+
+    public static void findConatct(){
+        System.out.println("Enter Contact Name to find: ");
+        String name = scanner.nextLine();
+        phone.findAndPrint(name);
     }
 }

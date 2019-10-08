@@ -15,44 +15,65 @@ public class MobilePhone {
     }
 
     public boolean addContact(Contact contact) {
-        if(findContact(contact.getName())>=0){
-            System.out.println("Contact on file");
+        if (findContact(contact.getName()) >= 0) {
+            System.out.println("Contact already exists");
             return false;
         }
         contactList.add(contact);
         return true;
     }
 
-    public void modifyContact(String name, Contact newContact) {
+    public boolean modifyContact(String name, Contact newContact) {
         int position = findContact(name);
-        contactList.set(position,newContact);
+        if (position >= 0) {
+            contactList.set(position, newContact);
+            System.out.println("updated " + name + " contact information");
+            return true;
+        } else {
+            System.out.println("error " + name + "  was not found");
+            return false;
+        }
     }
 
-
-
-    public void removeContact(String name) {
+    public boolean removeContact(String name) {
         int position = findContact(name);
         if (position >= 0) {
             contactList.remove(position);
             System.out.println("Removed " + name);
+            return true;
         } else {
             System.out.println("Couldn't find " + name + " in contact");
+            return false;
         }
     }
+
+    public boolean findAndPrint(String name){
+        int position = findContact(name);
+        if(position>=0){
+            System.out.println("Found "+name+"\nnumber: "+contactList.get(position).getPhoneNumber());
+            return true;
+        } else {
+            System.out.println("Can't find "+name);
+            return false;
+        }
+
+    }
+
 
     private int findContact(Contact contact) {
         return this.contactList.indexOf(contact);
     }
 
-    private int findContact(String name){
-        for(int i=0; i<this.contactList.size(); i++){
+    private int findContact(String name) {
+        for (int i = 0; i < this.contactList.size(); i++) {
             Contact contact = this.contactList.get(i);
-            if(contact.getName().equals(name)){
+            if (contact.getName().equals(name)) {
                 return i;
             }
         }
         return -1;
     }
+
 
 
 }
