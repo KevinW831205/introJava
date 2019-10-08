@@ -26,9 +26,15 @@ public class MobilePhone {
     public boolean modifyContact(String name, Contact newContact) {
         int position = findContact(name);
         if (position >= 0) {
-            contactList.set(position, newContact);
-            System.out.println("updated " + name + " contact information");
-            return true;
+            int updatingPositionExist = findContact(newContact.getName());
+            if(updatingPositionExist>=0){
+                System.out.println("That name already exists");
+                return false;
+            } else {
+                contactList.set(position, newContact);
+                System.out.println("updated " + name + " contact information");
+                return true;
+            }
         } else {
             System.out.println("error " + name + "  was not found");
             return false;
