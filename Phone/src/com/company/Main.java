@@ -70,17 +70,14 @@ public class Main {
         }
     }
 
-////    public static void modifyContact() {
-////        System.out.println("Enter Contact Name to Modify: ");
-////        String name = scanner.nextLine();
-////        if (phone.(name)) {
-////            System.out.println("Enter new name: ");
-////            String newName = scanner.nextLine();
-////            System.out.println("Enter new number");
-////            String newNumber = scanner.nextLine();
-////            phone.modifyContact(name,newName,newNumber);
-////        } else {
-////            System.out.println("Couldn't find contact");
-////        }
-//    }
+    public static void modifyContact() {
+        System.out.println("Enter Contact Name to Modify: ");
+        String name = scanner.nextLine();
+        System.out.println("Enter new contact name");
+        String newName = scanner.nextLine();
+        System.out.println("Enter new contact number");
+        String newNumber = scanner.nextLine();
+        Contact updatedContact = new Contact (newName,newNumber);
+        phone.modifyContact(name,updatedContact);
+    }
 }

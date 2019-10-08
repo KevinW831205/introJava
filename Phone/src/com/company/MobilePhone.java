@@ -23,20 +23,12 @@ public class MobilePhone {
         return true;
     }
 
-    public void modifyContact(String name, String newName, String newNumber) {
+    public void modifyContact(String name, Contact newContact) {
         int position = findContact(name);
-        Contact newContact = new Contact(newName, newNumber);
-        if (position >= 0) {
-            modifyContact(position, newContact);
-            System.out.println("Updated contact " + name);
-        } else {
-            System.out.println("couldn't find contact");
-        }
+        contactList.set(position,newContact);
     }
 
-    private void modifyContact(int position, Contact updatedContact) {
-        contactList.set(position, updatedContact);
-    }
+
 
     public void removeContact(String name) {
         int position = findContact(name);
