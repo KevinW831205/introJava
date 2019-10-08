@@ -118,11 +118,22 @@ public class Main {
     }
 
     public static void printCustomerBalance(){
-
+        System.out.println("Branch of the customer: ");
+        String branchName = scanner.nextLine();
+        System.out.println("Customer Name: ");
+        String customerName = scanner.nextLine();
+        theBank.printCustomerTransaction(branchName,customerName);
     }
 
     public static void addTransactionToCustomer(){
-
+        System.out.println("Branch of the customer: ");
+        String branchName = scanner.nextLine();
+        System.out.println("Customer Name: ");
+        String customerName = scanner.nextLine();
+        System.out.println("Transaction amount: ");
+        int amount = scanner.nextInt();
+        scanner.nextLine();
+        theBank.addTransactionForCustomerInBranch(branchName,customerName,amount);
     }
 
 

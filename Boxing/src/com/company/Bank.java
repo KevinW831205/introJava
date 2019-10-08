@@ -61,8 +61,12 @@ public class Bank {
 
     public void printCustomerTransaction(String branchName ,String customerName){
         int branchIndex = findBranch(branchName);
-        Branch targetBranch = branches.get(branchIndex);
-        targetBranch.printCustomerTransaction(customerName);
+        if(branchIndex>=0){
+            Branch targetBranch = branches.get(branchIndex);
+            targetBranch.printCustomerTransaction(customerName);
+        }else{
+            System.out.println("Branch does not exist");
+        }
     }
 
     public void printBranches(){
