@@ -3,7 +3,16 @@ package com.company;
 import java.util.ArrayList;
 
 public class Branch {
+    private String branchName;
     private ArrayList<Customer> customers = new ArrayList<Customer>();
+
+    public Branch(String branchName) {
+        this.branchName = branchName;
+    }
+
+    public String getBranchName() {
+        return branchName;
+    }
 
     public void addCustomer(String customerName) {
         if (findCustomer(customerName) >= 0) {
@@ -40,6 +49,6 @@ public class Branch {
         Customer customer = customers.get(customerIndex);
         System.out.println(customer.getCustomerName() + "'s Account Transactions");
         customer.getTransactions();
-        System.out.printf("Balance: "+ customer.getBalance());
+        System.out.println("Balance: "+ customer.getBalance());
     }
 }
