@@ -60,27 +60,27 @@ public class Main {
     public static void addContact() {
         System.out.println("Enter Contact Name: ");
         String name = scanner.nextLine();
-        boolean contactExists = phone.contactExists(name);
-        if(contactExists){
-            System.out.println("Contact name already exists");
+        System.out.println("Enter Contact Number: ");
+        String number = scanner.nextLine();
+        boolean success = phone.addContact(new Contact(name,number));
+        if(success){
+            System.out.println("added "+name+" to contact");
         } else {
-            System.out.println("Enter Contact Phone Number:");
-            String number = scanner.nextLine();
-            phone.addContact(name, number);
+            System.out.println("error");
         }
     }
 
-    public static void modifyContact() {
-        System.out.println("Enter Contact Name to Modify: ");
-        String name = scanner.nextLine();
-        if (phone.contactExists(name)) {
-            System.out.println("Enter new name: ");
-            String newName = scanner.nextLine();
-            System.out.println("Enter new number");
-            String newNumber = scanner.nextLine();
-            phone.modifyContact(name,newName,newNumber);
-        } else {
-            System.out.println("Couldn't find contact");
-        }
-    }
+////    public static void modifyContact() {
+////        System.out.println("Enter Contact Name to Modify: ");
+////        String name = scanner.nextLine();
+////        if (phone.(name)) {
+////            System.out.println("Enter new name: ");
+////            String newName = scanner.nextLine();
+////            System.out.println("Enter new number");
+////            String newNumber = scanner.nextLine();
+////            phone.modifyContact(name,newName,newNumber);
+////        } else {
+////            System.out.println("Couldn't find contact");
+////        }
+//    }
 }

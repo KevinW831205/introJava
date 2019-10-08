@@ -14,13 +14,17 @@ public class MobilePhone {
         }
     }
 
-    public void addContact(String name, String phoneNumber) {
-        Contact contactEntry = new Contact(name, phoneNumber);
-        contactList.add(contactEntry);
+    public boolean addContact(Contact contact) {
+        if(findContact(contact.getName())>=0){
+            System.out.println("Contact on file");
+            return false;
+        }
+        contactList.add(contact);
+        return true;
     }
 
     public void modifyContact(String name, String newName, String newNumber) {
-        int position = findContactByName(name);
+        int position = findContact(name);
         Contact newContact = new Contact(newName, newNumber);
         if (position >= 0) {
             modifyContact(position, newContact);
@@ -35,7 +39,7 @@ public class MobilePhone {
     }
 
     public void removeContact(String name) {
-        int position = findContactByName(name);
+        int position = findContact(name);
         if (position >= 0) {
             contactList.remove(position);
             System.out.println("Removed " + name);
@@ -44,27 +48,19 @@ public class MobilePhone {
         }
     }
 
-    public int findContactByName(String name) {
-        System.out.println("find contact by name");
-        name = name.toLowerCase();
-        for (int i = 0; i < contactList.size(); i++) {
-            String contactName = contactList.get(i).getName();
-            System.out.println("input name " + name);
-            System.out.println("list name " + contactList.get(i).getName().toLowerCase());
-            System.out.println(name == contactName);
-            if (name == contactName) {
-                System.out.println(i);
+    private int findContact(Contact contact) {
+        return this.contactList.indexOf(contact);
+    }
+
+    private int findContact(String name){
+        for(int i=0; i<this.contactList.size(); i++){
+            Contact contact = this.contactList.get(i);
+            if(contact.getName().equals(name)){
                 return i;
             }
         }
-        System.out.println(-1);
         return -1;
     }
 
-    public boolean contactExists(String name) {
-        if (findContactByName(name) >= 0) {
-            return true;
-        }
-        return false;
-    }
+
 }
