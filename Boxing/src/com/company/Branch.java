@@ -14,12 +14,13 @@ public class Branch {
         return branchName;
     }
 
-    public void addCustomer(String customerName) {
+
+    public boolean addCustomer(String customerName) {
         if (findCustomer(customerName) >= 0) {
-            System.out.println("Error creating account, customer name exists");
+            return false;
         } else {
             customers.add(new Customer((customerName)));
-            System.out.println(customerName + "'s account was created");
+            return true;
         }
     }
 
@@ -42,6 +43,7 @@ public class Branch {
             checkBalance(index);
         } else {
             System.out.println("can't find customer name");
+            return -1;
         }
     }
 
@@ -50,5 +52,18 @@ public class Branch {
         System.out.println(customer.getCustomerName() + "'s Account Transactions");
         customer.getTransactions();
         System.out.println("Balance: "+ customer.getBalance());
+        return customer.getBalance();
     }
+
+    public void addTransaction(String customerName, int amount){
+        int customerIndex = findCustomer(customerName);
+        if(customerIndex>=0){
+            Customer targetCustomer = customers.get(customerIndex);
+            targetCustomer.addTransaction(amount);
+        } else {
+            System.out.println("Can't find customer");
+        }
+    }
+
+
 }

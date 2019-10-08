@@ -19,24 +19,19 @@ public class Customer {
         return transactions;
     }
 
-    public void deposit(int amount){
-        if(amount>0){
+    public void addTransaction(int amount){
+        if(amount == 0){
+            System.out.println("Invalid transaction");
+        } else if(amount>0) {
             transactions.add(amount);
+            System.out.println("Transaction Successful");
         } else {
-            System.out.println("Invalid deposit amount");
-        }
-    }
-
-    public void withdraw(int amount){
-        if(amount>0){
-            if(getBalance() - amount >= 0){
-                transactions.add(amount * -1);
-                System.out.println("Withdrew "+amount);
+            if(getBalance() + amount <0){
+                System.out.println("Invalid Transaction Insufficient Balance");
             } else {
-                System.out.println("Insufficient Balance");
+                transactions.add(amount);
+                System.out.println("Transaction Successful");
             }
-        } else {
-            System.out.println("Invalid withdraw amount");
         }
     }
 

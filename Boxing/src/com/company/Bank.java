@@ -26,4 +26,34 @@ public class Bank {
         return -1;
     }
 
+    public void addCustomerToBranch(String branchName, String customerName){
+        int branchIndex = findBranch(branchName);
+        if(branchIndex>=0){
+            Branch BranchToAdd = branches.get(branchIndex);
+            boolean success =  BranchToAdd.addCustomer(customerName);
+            if(success){
+                System.out.println("Created "+customerName +" account and added to "+branchName);
+            } else {
+                System.out.println("Error customer name exists");
+            }
+        } else {
+            System.out.println("Can't find Branch");
+        }
+    }
+
+    public void addTransactionForCustomerInBranch(String branchName, String customerName, int transactionAmount){
+        int BranchIndex = findBranch(branchName);
+        Branch customerBranch = branches.get(BranchIndex);
+        customerBranch.add
+
+    }
+
+    public void printCustomers(){
+
+    }
+
+    public void printCustomerTransaction(String customerName){
+
+    }
+
 }
