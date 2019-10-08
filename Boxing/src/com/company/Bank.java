@@ -3,7 +3,12 @@ package com.company;
 import java.util.ArrayList;
 
 public class Bank {
+    String bankName;
     ArrayList<Branch> branches = new ArrayList<Branch>();
+
+    public Bank(String bankName) {
+        this.bankName = bankName;
+    }
 
     public void addBranch(String branchName){
         if(findBranch(branchName)>=0){
@@ -44,16 +49,34 @@ public class Bank {
     public void addTransactionForCustomerInBranch(String branchName, String customerName, int transactionAmount){
         int BranchIndex = findBranch(branchName);
         Branch customerBranch = branches.get(BranchIndex);
-        customerBranch.add
+        customerBranch.addTransaction(customerName,transactionAmount);
 
     }
 
-    public void printCustomers(){
-
+    public void printCustomersOfBranch(String branchName){
+        int branchIndex = findBranch(branchName);
+        Branch targetBranch = branches.get(branchIndex);
+        targetBranch.printCustomers();
     }
 
-    public void printCustomerTransaction(String customerName){
-
+    public void printCustomerTransaction(String branchName ,String customerName){
+        int branchIndex = findBranch(branchName);
+        Branch targetBranch = branches.get(branchIndex);
+        targetBranch.printCustomerTransaction(customerName);
     }
 
+    public void printBranches(){
+        System.out.println("Branches of "+getBankName());
+        for(int i=0; i<branches.size();i++){
+            System.out.println(branches.get(i).getBranchName());
+        }
+    }
+
+    public String getBankName() {
+        return bankName;
+    }
+
+    public ArrayList<Branch> getBranches() {
+        return branches;
+    }
 }

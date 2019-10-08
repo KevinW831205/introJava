@@ -45,7 +45,8 @@ public class Customer {
 
     public void printTransaction(){
         for(int i=0; i<transactions.size();i++){
-            System.out.println(transactions.get(i).intValue());
+            System.out.println("Transaction "+i+" : "+ transactions.get(i).intValue());
         };
+        System.out.println("Balance: "+getBalance());
     }
 }

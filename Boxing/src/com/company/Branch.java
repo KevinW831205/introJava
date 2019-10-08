@@ -37,10 +37,10 @@ public class Branch {
         return -1;
     }
 
-    public int checkBalance(String customerName){
+    private int checkBalance(String customerName){
         int index = findCustomer(customerName);
         if(index>=0){
-            checkBalance(index);
+            return checkBalance(index);
         } else {
             System.out.println("can't find customer name");
             return -1;
@@ -64,6 +64,24 @@ public class Branch {
             System.out.println("Can't find customer");
         }
     }
+
+    public void printCustomers(){
+        System.out.println(getBranchName() + " customers:");
+        for(int i =0; i<customers.size();i++){
+            System.out.println((i+1) +". "+customers.get(i).getCustomerName());
+        }
+    }
+
+    public void printCustomerTransaction(String customerName){
+        int customerIndex = findCustomer(customerName);
+        if(customerIndex >= 0){
+            Customer targetCustomer = customers.get(customerIndex);
+            targetCustomer.printTransaction();
+        } else {
+            System.out.println("Unable to find customer");
+        }
+    }
+
 
 
 }

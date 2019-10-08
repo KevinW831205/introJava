@@ -1,9 +1,12 @@
 package com.company;
 
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class Main {
 
+    private static Bank theBank = new Bank("The Bank");
+    private static Scanner scanner = new Scanner(System.in);
     public static void main(String[] args) {
 	// write your code here
 
@@ -37,10 +40,92 @@ public class Main {
 //            System.out.println("i"+i+" "+val);
 //        }
 
+        // Bank exercise
+
+        boolean exit = false;
+        int command = 0;
+
+
+        while (!exit){
+            System.out.println("Enter an command");
+            command = scanner.nextInt();
+            scanner.nextLine();
+            printInstructions();
+
+            switch (command){
+                case 0:
+                    printInstructions();
+                    break;
+                case 1:
+                    theBank.printBranches();
+                    break;
+                case 2:
+                    addBranch();
+                    break;
+                case 3:
+                    printCustomersOfBranch();
+                    break;
+                case 4:
+                    addCustomerToBranch();
+                    break;
+                case 5:
+                    printCustomerBalance();
+                    break;
+                case 6:
+                    addTransactionToCustomer();
+                    break;
+                case 7:
+                    exit = true;
+                    break;
+            }
+
+
+        }
 
 
     }
+
+    public static void printInstructions(){
+        System.out.println("\nEnter ");
+        System.out.println("\t 0 - To print Instructions");
+        System.out.println("\t 1 - To print Branches");
+        System.out.println("\t 2 - To print a Branches Customer");
+        System.out.println("\t 3 - To add a customer to a Branch");
+        System.out.println("\t 4 - To print a customers balance");
+        System.out.println("\t 5 - To add a transaction for a customer");
+        System.out.println("\t 6 - To quit the application");
+    }
+
+    public static void addBranch(){
+        System.out.println("Enter branch name: ");
+        String branchName = scanner.nextLine();
+        theBank.addBranch(branchName);
+    }
+
+    public static void printCustomersOfBranch(){
+        System.out.println("Enter branch name: ");
+        String branchName = scanner.nextLine();
+        theBank.printCustomersOfBranch(branchName);
+    }
+
+    public static void addCustomerToBranch(){
+
+    }
+
+    public static void printCustomerBalance(){
+
+    }
+
+    public static void addTransactionToCustomer(){
+
+    }
+
+
 }
+
+
+
+
 
 //class IntClass{
 //    private int value;
