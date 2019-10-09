@@ -1,5 +1,6 @@
 package com.company;
 
+import javax.swing.*;
 import java.util.ListIterator;
 import java.util.Scanner;
 
@@ -35,6 +36,7 @@ public class Main {
         boolean playing = true;
         boolean forward = true;
         ListIterator<Song> songListIterator = playlist.getPlaylistSongs().listIterator();
+        printMenu();
 
         if (playlist.getPlaylistSongs().size() == 0) {
             System.out.println("No songs in playlist");
@@ -83,16 +85,46 @@ public class Main {
 
                     break;
                 case 3:
+                    if(forward){
+                        if(songListIterator.hasPrevious()){
+                            System.out.println("Replaying "+songListIterator.previous().toString());
+                            forward =false;
+                        } else {
+                            System.out.println("Beginning of list");
+                        }
+                    } else {
+                        if(songListIterator.hasNext()){
+                            System.out.println("Replaying "+songListIterator.next().toString());
+                            forward=true;
+                        } else {
+                            System.out.println("End of list");
+                        }
+                    }
+
                     break;
                 case 4:
                     playlist.printPlaylist();
                     break;
+                case 5:
+                    printMenu();
+                    break;
+                case 6:
+                    if(playlist.getPlaylistSongs().size() >0){
+                        songListIterator.remove();
+                        if(songListIterator.hasNext()){
+                            System.out.println("Now playing "+songListIterator.next().toString());
+                        } else if(songListIterator.hasPrevious()){
+                            System.out.println("Now playing "+songListIterator.previous().toString());
+                        }else{
+                            System.out.println("Empty playlist");
+                        }
+                    }
 
             }
-
-
         }
+    }
 
-
+    private static void printMenu(){
+        System.out.println("0 - to quit\n2 - play next\n3 - play previous\n4 - printPlaylist\n5 - printMenu\n6- delete");
     }
 }
