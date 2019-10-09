@@ -1,6 +1,7 @@
 package com.company;
 
 import java.util.LinkedList;
+import java.util.ListIterator;
 
 public class Playlist {
     String playlistName;
@@ -37,5 +38,11 @@ public class Playlist {
         }
     }
 
+    public String getPlaylistName() {
+        return playlistName;
+    }
 
+    public LinkedList<Song> getPlaylistSongs() {
+        return playlistSongs;
+    }
 }

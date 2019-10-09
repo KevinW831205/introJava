@@ -13,6 +13,7 @@ public class Song {
         return title;
     }
 
+
     public String getDuration() {
         return duration;
     }
