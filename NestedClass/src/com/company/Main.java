@@ -46,28 +46,45 @@ public class Main {
 
 
         // anonymous
-        btnPrint.setOnClickListener(new Button.OnClickListener() {
-            @Override
-            public void onClick(String title) {
-                System.out.println(title+" was print in anonymous class");
-            }
-        });
-        listen();
+//        btnPrint.setOnClickListener(new Button.OnClickListener() {
+//            @Override
+//            public void onClick(String title) {
+//                System.out.println(title+" was print in anonymous class");
+//            }
+//        });
+//        listen();
+
+        Dog dog = new Dog("d1");
+        dog.breathe();
+        dog.eat();
+
+        // before making bird abstract
+//        Bird bird = new Bird("b1");
+//        bird.breathe();
+//        bird.eat();
+
+        Parrot p1 = new Parrot("p1");
+        p1.fly();
+        p1.breathe();
+        p1.eat();
+
+        Penguin p2 = new Penguin("penguin2");
+        p2.fly();
     }
 
-    private static void listen(){
-        boolean quit = false;
-        while(!quit){
-            int choice = scanner.nextInt();
-            scanner.nextLine();
-            switch (choice){
-                case 0:
-                    quit = true;
-                    break;
-                case 1:
-                    btnPrint.onClick();
-                    break;
-            }
-        }
-    }
+//    private static void listen(){
+//        boolean quit = false;
+//        while(!quit){
+//            int choice = scanner.nextInt();
+//            scanner.nextLine();
+//            switch (choice){
+//                case 0:
+//                    quit = true;
+//                    break;
+//                case 1:
+//                    btnPrint.onClick();
+//                    break;
+//            }
+//        }
+//    }
 }
