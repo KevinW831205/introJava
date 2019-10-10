@@ -16,6 +16,10 @@ public class Gearbox {
         this.gears = new ArrayList<Gear>();
         Gear neutral = new Gear(0, 0.0);
         this.gears.add(neutral);
+
+        for(int i=1; i<maxGears; i++){
+            addGear(i, i*5.3);
+        }
     }
 
     public void operateClutch(boolean in){
@@ -47,7 +51,7 @@ public class Gearbox {
         }
     }
 
-    // Gear is an innerclass
+    // Gear is an innerclass, not other class knows about it except for gearbox (encapsualtion)
     private class Gear{
         private int gearNumber;
         private double ratio;
