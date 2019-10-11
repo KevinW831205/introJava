@@ -22,10 +22,25 @@ public class Main {
         BaseballPlayer bsp1 = new BaseballPlayer("bsp1");
         BasketballPlayer bkp1 = new BasketballPlayer("bkp1");
 
+//        issue players of different type can add to the same team
         Team t1 = new Team("t1");
         t1.addPlayer(fp1);
         t1.addPlayer(bsp1);
         t1.addPlayer(bkp1);
+        System.out.println(t1.numberOfPlayers());
+
+        Team<FootballPlayer> t2 = new Team<>("t2");
+        t2.addPlayer(fp1);
+//        t2.addPlayer(bsp1);
+
+        Team<BaseballPlayer> t3 = new Team<>("t3");
+        Team<BasketballPlayer> t4 = new Team<>("t4");
+
+        Team<FootballPlayer> t5 = new Team<>("t5");
+
+        t2.matchResult(t5,3,2);
+
+//        t2.matchResult(t3,3,2);
 
 
     }

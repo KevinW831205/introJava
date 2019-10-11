@@ -2,13 +2,13 @@ package com.company;
 
 import java.util.ArrayList;
 
-public class Team {
+public class Team<T extends Player> {
     private String name;
     private int played = 0;
     private int won = 0;
     private int loss = 0;
 
-    private ArrayList<Player> members = new ArrayList<>();
+    private ArrayList<T> members = new ArrayList<>();
 
     public Team(String name) {
         this.name = name;
@@ -18,7 +18,7 @@ public class Team {
         return name;
     }
 
-    public boolean addPlayer(Player player){
+    public boolean addPlayer(T player){
         if(members.contains(player)){
             System.out.println(player.getName()+" is already on the team");
             return false;
@@ -33,17 +33,21 @@ public class Team {
         return this.members.size();
     }
 
-    public void matchReuslt(Team opponent, int ourScore, int opponentScore){
+    public void matchResult(Team<T> opponent, int ourScore, int opponentScore){
+        String message = "";
         if(ourScore>opponentScore){
             won ++;
+            message = " won ";
         } else if(ourScore<opponentScore) {
             loss++;
+            message = " loss ";
         } else {
 
         }
         played++;
         if(opponent != null){
-            opponent.matchReuslt(null, opponentScore , ourScore);
+            System.out.println(getName() + message + opponent.getName());
+            opponent.matchResult(null, opponentScore , ourScore);
         }
     }
 
