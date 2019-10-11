@@ -59,10 +59,19 @@ public class Main {
     public static void main(String[] args) {
         // write your code here
 
-        String stringData = "Darwin Brisbane Perth Melbourne Canberra Adelaide Sydney Canberra";
+        PracticeLinkedList mylist = new PracticeLinkedList(null);
+//        mylist.traverse(mylist.getRoot());
+
+//        String stringData = "Darwin Brisbane Perth Melbourne Canberra Adelaide Sydney Canberra";
+        String stringData = "1 3 5 6 2 34 53";
         String[] data = stringData.split(" ");
         for (String s : data) {
-
+            mylist.addItem(new Node(s));
         }
+
+        mylist.traverse(mylist.getRoot());
+        mylist.removeItem(new Node("34"));
+        mylist.removeItem(new Node("33"));
+        mylist.traverse(mylist.getRoot());
     }
 }
