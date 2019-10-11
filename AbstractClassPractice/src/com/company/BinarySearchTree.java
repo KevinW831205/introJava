@@ -82,7 +82,7 @@ public class BinarySearchTree implements NodeList{
             if(parent.next() == item){
                 parent.setNext(item.next());
             } else if(parent.previous() == item){
-                parent.setPrevious(item.next())
+                parent.setPrevious(item.next());
             } else{
                 this.root = item.next();
             }

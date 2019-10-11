@@ -64,8 +64,8 @@ public class Main {
 
 //        mylist.traverse(mylist.getRoot());
 
-        String stringData = "Darwin Brisbane Perth Melbourne Canberra Adelaide Sydney Canberra";
-//        String stringData = "1 3 5 6 2 34 53";
+//        String stringData = "Darwin Brisbane Perth Melbourne Canberra Adelaide Sydney Canberra";
+        String stringData = "1 3 5 6 2 34 53";
         String[] data = stringData.split(" ");
         for (String s : data) {
             mylist.addItem(new Node(s));
@@ -79,6 +79,8 @@ public class Main {
 //        mylist.removeItem(new Node("33"));
 //        mylist.traverse(mylist.getRoot());
 
+        tree.removeItem(new Node("3"));
+        tree.traverse(tree.getRoot());
 
 
 
