@@ -67,7 +67,7 @@ public class PracticeLinkedList implements NodeList {
         while (currentItem != null){
             int comparison = currentItem.comparedTo(item);
             if(comparison == 0){
-                if(currentItem == this.root){
+                if(currentItem == this.root){ // if this first item
                     this.root = currentItem.next();
                 } else {
                     currentItem.previous().setNext(currentItem.next());
@@ -96,5 +96,12 @@ public class PracticeLinkedList implements NodeList {
                 root = root.next();
             }
         }
+//
+        // recursion as records increase the recursions get to high
+//        if(root != null){
+//            System.out.println(root.getValue());
+//            traverse(root.next());
+//        }
+
     }
 }

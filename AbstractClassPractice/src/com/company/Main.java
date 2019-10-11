@@ -60,18 +60,27 @@ public class Main {
         // write your code here
 
         PracticeLinkedList mylist = new PracticeLinkedList(null);
+        BinarySearchTree tree = new BinarySearchTree(null);
+
 //        mylist.traverse(mylist.getRoot());
 
-//        String stringData = "Darwin Brisbane Perth Melbourne Canberra Adelaide Sydney Canberra";
-        String stringData = "1 3 5 6 2 34 53";
+        String stringData = "Darwin Brisbane Perth Melbourne Canberra Adelaide Sydney Canberra";
+//        String stringData = "1 3 5 6 2 34 53";
         String[] data = stringData.split(" ");
         for (String s : data) {
             mylist.addItem(new Node(s));
+            tree.addItem(new Node(s));
         }
 
-        mylist.traverse(mylist.getRoot());
-        mylist.removeItem(new Node("34"));
-        mylist.removeItem(new Node("33"));
-        mylist.traverse(mylist.getRoot());
+        tree.traverse(tree.getRoot());
+
+//        mylist.traverse(mylist.getRoot());
+//        mylist.removeItem(new Node("34"));
+//        mylist.removeItem(new Node("33"));
+//        mylist.traverse(mylist.getRoot());
+
+
+
+
     }
 }
