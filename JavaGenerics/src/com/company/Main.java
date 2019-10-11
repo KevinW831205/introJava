@@ -23,11 +23,11 @@ public class Main {
         BasketballPlayer bkp1 = new BasketballPlayer("bkp1");
 
 //        issue players of different type can add to the same team
-        Team t1 = new Team("t1");
-        t1.addPlayer(fp1);
-        t1.addPlayer(bsp1);
-        t1.addPlayer(bkp1);
-        System.out.println(t1.numberOfPlayers());
+//        Team t1 = new Team("t1");
+//        t1.addPlayer(fp1);
+//        t1.addPlayer(bsp1);
+//        t1.addPlayer(bkp1);
+//        System.out.println(t1.numberOfPlayers());
 
         Team<FootballPlayer> t2 = new Team<>("t2");
         t2.addPlayer(fp1);
@@ -42,6 +42,8 @@ public class Main {
 
 //        t2.matchResult(t3,3,2);
 
+        System.out.println(t2.compareTo(t5));
+//        System.out.printf(t2.compareTo(t4)); // error
 
     }
 
