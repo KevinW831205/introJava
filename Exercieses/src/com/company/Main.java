@@ -1,9 +1,12 @@
 package com.company;
 
+import com.example.packagepractice.Series;
 import jdk.jshell.Diag;
 import org.w3c.dom.UserDataHandler;
 
 import java.awt.geom.Area;
+
+
 
 public class Main {
 
@@ -149,12 +152,19 @@ public class Main {
 //        Cylinder cl1 = new Cylinder(3,10);
 //        System.out.println(cl1.getArea());
 //        System.out.println(cl1.getVolume());;
+//
+//        Rectangle r1 = new Rectangle(2,3);
+//        Cuboid c1 = new Cuboid(2,1,1);
+//
+//        System.out.println(c1.getVolume());
+//        System.out.println(c1.getArea());
 
-        Rectangle r1 = new Rectangle(2,3);
-        Cuboid c1 = new Cuboid(2,1,1);
+        for(int i=0; i<=10; i++){
+            System.out.println(Series.nSum(i));
+            System.out.println(Series.fibonacci(i));
+            System.out.println(Series.factorial(i));
 
-        System.out.println(c1.getVolume());
-        System.out.println(c1.getArea());
+        }
 
     }   // closing for main
 }
