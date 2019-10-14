@@ -14,5 +14,8 @@ public class Main {
 
         ScopeCheck.InnerClass innerClass = scopeInstance.new InnerClass();
         innerClass.timesTwo();
+        scopeInstance.useInner();
+        System.out.println(innerClass.var2);
+//        System.out.println(innerClass.var1);
     }
 }
