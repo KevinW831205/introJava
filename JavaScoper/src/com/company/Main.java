@@ -1,5 +1,7 @@
 package com.company;
 
+import java.util.Scanner;
+
 public class Main {
 
     public static void main(String[] args) {
@@ -17,5 +19,12 @@ public class Main {
         scopeInstance.useInner();
         System.out.println(innerClass.var2);
 //        System.out.println(innerClass.var1);
+
+
+        X x = new X(new Scanner(System.in));
+        x.x();
+
     }
+
+
 }
