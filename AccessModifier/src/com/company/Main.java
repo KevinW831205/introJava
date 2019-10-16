@@ -32,7 +32,18 @@ public class Main {
 //        System.out.println(thirdInstance.getName() + " is instance number "+secondInstance.getNumInstances());
 
 //        int answer = multiply(7);
+//
+//        SomeClass one = new SomeClass("one");
+//        SomeClass two = new SomeClass("two");
+//        SomeClass three = new SomeClass("three");
+//
+//        System.out.println(one.getInstanceNumber());
+//        System.out.println(two.getInstanceNumber());
+//        System.out.println(three.getInstanceNumber());
 
+
+        Password pass = new Password(12345);
+        pass.storePassword();
     }
 
     public int multiply(int number){
