@@ -41,14 +41,22 @@ public class Main {
 //        System.out.println(two.getInstanceNumber());
 //        System.out.println(three.getInstanceNumber());
 
+//
+//        Password pass = new ExtendedPassword(12345);
+//        pass.storePassword(); //
+//
+//        pass.login(12345);
+//        pass.login(345);
+        System.out.println("Main called");
+        SIBTest test =new SIBTest();
+        test.someMethod();
+        System.out.println("Owner is "+SIBTest.owner);
 
-        Password pass = new Password(12345);
-        pass.storePassword();
     }
-
-    public int multiply(int number){
-        // need static method to be accessed in a static instance
-        return number * multiplier;
-    }
+//
+//    public int multiply(int number){
+//        // need static method to be accessed in a static instance
+//        return number * multiplier;
+//    }
 
 }

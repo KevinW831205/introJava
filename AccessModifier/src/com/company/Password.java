@@ -12,7 +12,8 @@ public class Password {
         return password ^ key;
     }
 
-    public void storePassword(){
+    public final void storePassword(){
+        // can make methods final to prevent overridden
         System.out.println("Saving password as "+ this.encryptedPassword);
     }
 
