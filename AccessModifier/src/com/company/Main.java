@@ -47,10 +47,12 @@ public class Main {
 //
 //        pass.login(12345);
 //        pass.login(345);
-        System.out.println("Main called");
-        SIBTest test =new SIBTest();
-        test.someMethod();
-        System.out.println("Owner is "+SIBTest.owner);
+//        System.out.println("Main called");
+//        SIBTest test =new SIBTest();
+//        test.someMethod();
+//        System.out.println("Owner is "+SIBTest.owner);
+
+
 
     }
 //
@@ -58,5 +60,10 @@ public class Main {
 //        // need static method to be accessed in a static instance
 //        return number * multiplier;
 //    }
+
+
+
+
+
 
 }
