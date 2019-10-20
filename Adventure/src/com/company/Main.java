@@ -38,6 +38,14 @@ public class Main {
         locations.get(5).addExit("W",2);
 //        locations.get(5).addExit("Q",0);
 
+        Map<String,String> vocabulary = new HashMap<String,String>();
+        vocabulary.put("QUIT","Q");
+        vocabulary.put("SOUTH","S");
+        vocabulary.put("NORTH","N");
+        vocabulary.put("EAST","E");
+        vocabulary.put("WEST","W");
+
+
 
         int loc = 1;
         while (true){
@@ -54,7 +62,19 @@ public class Main {
             System.out.println();
 
             String direction = scanner.nextLine().toUpperCase();
-            direction = directionFromString(direction);
+//            direction = directionFromString(direction);
+
+            if(direction.length() >1 ){
+                String[] words = direction.split(" ");
+                for(String word : words){
+                    if( vocabulary.containsKey(word)){
+                        direction = vocabulary.get(word);
+                        break;
+                    }
+                }
+            }
+
+
             if(exits.containsKey(direction)){
                 loc = exits.get(direction);
             } else {
@@ -70,30 +90,30 @@ public class Main {
 
     }
 
-    public static String directionFromString(String string){
-        String[] s = string.split(" ");
-        for(String i: s){
-            switch (i.toUpperCase()){
-                case "NORTH":
-                case "N":
-                    return "N";
-                case "SOUTH":
-                case "S":
-                    return "S";
-                case "EAST":
-                case "E":
-                    return "E";
-                case "WEST":
-                case "W":
-                    return "W";
-                case "Q":
-                    return "Q";
-                default:
-                    break;
-            }
-        }
-        return "";
-    }
+//    public static String directionFromString(String string){
+//        String[] s = string.split(" ");
+//        for(String i: s){
+//            switch (i.toUpperCase()){
+//                case "NORTH":
+//                case "N":
+//                    return "N";
+//                case "SOUTH":
+//                case "S":
+//                    return "S";
+//                case "EAST":
+//                case "E":
+//                    return "E";
+//                case "WEST":
+//                case "W":
+//                    return "W";
+//                case "Q":
+//                    return "Q";
+//                default:
+//                    break;
+//            }
+//        }
+//        return "";
+//    }
 
 }
 
