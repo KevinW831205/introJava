@@ -12,7 +12,7 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
 
         Map<String,Integer> tempExit = new HashMap<String, Integer>();
-        locations.put(0, new Location(0, "location 0 (exit)",tempExit));
+        locations.put(0, new Location(0, "location 0 (exit)",null));
         /*
         locations.put(0, new Location(0, "location 0 (exit)"));
         locations.put(1, new Location(1, "location 1"));
