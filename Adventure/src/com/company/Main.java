@@ -54,14 +54,46 @@ public class Main {
             System.out.println();
 
             String direction = scanner.nextLine().toUpperCase();
+            direction = directionFromString(direction);
             if(exits.containsKey(direction)){
                 loc = exits.get(direction);
             } else {
                 System.out.println("You cannot go in that direction");
             }
-
         }
 
 
+//        String[] x = "a s d".split(" ");
+//        for(String i : x){
+//            System.out.println(i);
+//        }
+
     }
+
+    public static String directionFromString(String string){
+        String[] s = string.split(" ");
+        for(String i: s){
+            switch (i.toUpperCase()){
+                case "NORTH":
+                case "N":
+                    return "N";
+                case "SOUTH":
+                case "S":
+                    return "S";
+                case "EAST":
+                case "E":
+                    return "E";
+                case "WEST":
+                case "W":
+                    return "W";
+                case "Q":
+                    return "Q";
+                default:
+                    break;
+            }
+        }
+        return "";
+    }
+
 }
+
