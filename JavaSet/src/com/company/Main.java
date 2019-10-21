@@ -66,6 +66,16 @@ public class Main {
         for(HeavenlyBody moon: moons){
             System.out.println("\t"+moon.getName());
         }
+
+        HeavenlyBody somePlanet = new HeavenlyBody("somePlanet",324);   // .equals of hashset only checks for same reference
+        planets.add(somePlanet);
+        for(HeavenlyBody planet:planets){
+            System.out.println("\t" + planet.getName() + planet.getOrbitalPeriod());
+        }
+
+
+
+
     }
 }
 
