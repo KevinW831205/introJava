@@ -30,8 +30,9 @@ public final class HeavenlyBody {
         return new HashSet<>(this.satellites);
     }
 
+
     @Override
-    public boolean equals(HeavenlyBody obj){
+    public boolean equals(Object obj){
         if(this == obj){
              return true;
         }
