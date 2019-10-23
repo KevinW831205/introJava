@@ -45,5 +45,47 @@ public class SetMain {
 
         nature.addAll(Arrays.asList(arrayWords1));
         divine.addAll(Arrays.asList(arrayWords2));
+
+
+        System.out.println("nature - divine: ");
+        Set<String> diff1 = new HashSet<>(nature);
+        diff1.removeAll(divine);
+        printSet(diff1);
+
+        System.out.println("divine - nature:");
+        Set<String> diff2 = new HashSet<>(divine);
+        diff2.removeAll(nature);
+        printSet(diff2);
+
+        Set<String> symmetricDifference = new HashSet<>(nature);
+        symmetricDifference.addAll(divine);
+        Set<String> intersection1 = new HashSet<>(nature);
+        intersection1.retainAll(divine);
+
+        System.out.println("Symmetric difference");
+        symmetricDifference.removeAll(intersection1);
+        printSet(symmetricDifference);
+
+        if(nature.containsAll(divine)){
+            System.out.println("divine is a subset of nature");
+        }
+        if(nature.containsAll(intersection1)){
+            System.out.println("intersection1 is subset of nature ");
+        }
+
+        if(divine.containsAll(intersection1)){
+            System.out.println("intersection1 is a subset of divine" );
+        }
+
     }
+
+    private static void printSet(Set<String> set){
+        System.out.print("\t");
+        for(String s : set){
+            System.out.print(s+" ");
+        }
+        System.out.println();
+    }
+
+
 }
