@@ -209,7 +209,25 @@ public class Main {
         System.out.println(earth2.equals(earth1));
         System.out.println(earth1.equals(temp));
 
+        temp = new Star("hb1",0);
+        solarSystem.put(temp.getKey(), temp);
 
+        temp = new Planet("hb1",2);
+        solarSystem.put(temp.getKey(), temp);
+
+
+        System.out.println(solarSystem.get(HeavenlyBody.makeKey("hb1",HeavenlyBody.BodyTypes.STAR)));
+        System.out.println(solarSystem.get(HeavenlyBody.makeKey("hb1",HeavenlyBody.BodyTypes.PLANET)));
+
+        temp = new Star("hb1",10);
+        solarSystem.put(temp.getKey(), temp);
+        System.out.println(solarSystem.get(HeavenlyBody.makeKey("hb1",HeavenlyBody.BodyTypes.STAR)));
+
+        System.out.println();
+        System.out.println("Solar system contains");
+        for(HeavenlyBody heavenlyBody: solarSystem.values()){
+            System.out.println(heavenlyBody);
+        }
 
     }
 }
