@@ -13,6 +13,7 @@ public class Main {
     public static void main(String[] args) {
 	// write your code here
 
+        /*
         HeavenlyBody temp = new HeavenlyBody("Mercury", 88);
         solarSystem.put(temp.getName(), temp);
         planets.add(temp);
@@ -27,7 +28,7 @@ public class Main {
 
         HeavenlyBody tempMoon = new HeavenlyBody("Moon", 27);
         solarSystem.put(tempMoon.getName(), tempMoon);
-        temp.addMoon(tempMoon);
+        temp.addSatellites(tempMoon);
 
         temp = new HeavenlyBody("somePlanet", 424);
         solarSystem.put(temp.getName(), temp);
@@ -35,14 +36,14 @@ public class Main {
 
         tempMoon = new HeavenlyBody("Moon1", 25);
         solarSystem.put(tempMoon.getName(), tempMoon);
-        temp.addMoon(tempMoon);
+        temp.addSatellites(tempMoon);
 //        tempMoon = new HeavenlyBody("Moon1",27);
 //        temp.addMoon(tempMoon);
 
 
         tempMoon = new HeavenlyBody("Moon2", 26);
         solarSystem.put(tempMoon.getName(), tempMoon);
-        temp.addMoon(tempMoon);
+        temp.addSatellites(tempMoon);
 
 
 
@@ -72,6 +73,8 @@ public class Main {
         for(HeavenlyBody planet:planets){
             System.out.println("\t" + planet.getName() + planet.getOrbitalPeriod());
         }
+
+         */
 
 
 

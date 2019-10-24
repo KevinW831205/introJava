@@ -37,8 +37,8 @@ public final class HeavenlyBody {
         return bodyType;
     }
 
-    public boolean addMoon(HeavenlyBody moon){
-        return this.satellites.add(moon);
+    public boolean addSatellites(HeavenlyBody satellites){
+            return this.satellites.add(satellites);
     }
 
     public Set<HeavenlyBody> getSatellites(){
@@ -47,25 +47,31 @@ public final class HeavenlyBody {
 
 
     @Override
-    public boolean equals(Object obj){
+    public final boolean equals(Object obj){
         if(this == obj){
              return true;
         }
 
-        System.out.println("obj.getClass() is "+obj.getClass());
-        System.out.println(("this.getClass() is "+this.getClass()));
-        if((obj == null) || (obj.getClass() != this.getClass())){
-            return false;
-        }
+//        if((obj == null) || (obj.getClass() != this.getClass())){
+//            return false;
+//        }
 
-        String objName = ((HeavenlyBody) obj).getName();
-        return this.name.equals(objName);
+        if(obj instanceof HeavenlyBody){
+            HeavenlyBody theObject = (HeavenlyBody) obj;
+            if(this.name.equals(theObject.getName())){
+                return this.bodyType == theObject.getBodyType();
+            }
+        }
+        return false;
     }
 
     @Override
-    public int hashCode() {
-        System.out.println("hash code of heavenly body name "+this.name.hashCode());
-        return this.name.hashCode() + 57;
+    public final int hashCode() {
+        return this.name.hashCode() + 57 + this.bodyType.hashCode();
     }
 
+    @Override
+    public String toString() {
+        return this.name+": "+this.bodyType+", Orbital Period: "+this.orbitalPeriod;
+    }
 }
