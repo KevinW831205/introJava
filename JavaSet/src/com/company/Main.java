@@ -77,6 +77,21 @@ public class Main {
          */
 
 
+        HeavenlyBody temp = new Planet("Mercury",88);
+        solarSystem.put(temp.getName(),temp);
+        planets.add(temp);
+
+        temp = new Planet("Venus",225);
+        solarSystem.put(temp.getName(),temp);
+        planets.add(temp);
+
+        temp = new Planet("Earth",365);
+        solarSystem.put(temp.getName(),temp);
+        planets.add(temp);
+
+        temp = new Planet("Mars",560);
+        solarSystem.put(temp.getName(),temp);
+        planets.add(temp);
 
 
     }
