@@ -88,11 +88,58 @@ public class Main {
         temp = new Planet("Earth",365);
         solarSystem.put(temp.getName(),temp);
         planets.add(temp);
+        HeavenlyBody tempMoon = new Moon("Moon",28);
+        solarSystem.put(tempMoon.getName(),tempMoon);
+        temp.addSatellites(tempMoon);
 
         temp = new Planet("Mars",560);
         solarSystem.put(temp.getName(),temp);
         planets.add(temp);
 
+//        temp = new Star("Mars",560);
+//        solarSystem.put(temp.getName(),temp);
+//        planets.add(temp);
+
+
+        temp = new Planet("SomePlanet",864);
+        solarSystem.put(temp.getName(),temp);
+        planets.add(temp);
+        tempMoon = new Moon("Moon1",66);
+        solarSystem.put(tempMoon.getName(),tempMoon);
+        temp.addSatellites(tempMoon);
+
+
+        System.out.println("Planets");
+        for(HeavenlyBody planet:planets){
+            System.out.println("\t" + planet.getName());
+        }
+
+        HeavenlyBody body = solarSystem.get("SomePlanet");
+        System.out.println("moons of "+body.getName());
+        for(HeavenlyBody moons : body.getSatellites()){
+            System.out.println("\t" + moons.getName());
+        }
+
+        Set<HeavenlyBody> moons = new HashSet<>();
+        for(HeavenlyBody planet:planets){
+            moons.addAll(planet.getSatellites());
+        }
+        System.out.println("All Moons");
+        for(HeavenlyBody moon: moons){
+            System.out.println("\t"+moon.getName());
+        }
+
+        for(HeavenlyBody planet:planets){
+//            System.out.println("\t" + planet.getName() + planet.getOrbitalPeriod());
+            System.out.println(planet);
+        }
+
+        HeavenlyBody earth1 = new Planet("Earth1",365);
+        HeavenlyBody earth2 = new Planet("Earth1",365);
+
+        System.out.println(earth1.equals(earth2));
+        System.out.println(earth2.equals(earth1));
+        System.out.println(earth1.equals(temp));
 
     }
 }
