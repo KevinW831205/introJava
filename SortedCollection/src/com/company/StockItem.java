@@ -1,6 +1,6 @@
 package com.company;
 
-public class StockItem implements Comparable<StockItem>{
+public class StockItem implements Comparable<StockItem> {
     private final String name;
     private double price;
     private int quantityStock;
@@ -25,19 +25,19 @@ public class StockItem implements Comparable<StockItem>{
         return price;
     }
 
-    public int getQuantityStock() {
+    public int quantityInStock() {
         return quantityStock;
     }
 
     public void setPrice(double price) {
-        if(price > 0.0){
+        if (price > 0.0) {
             this.price = price;
         }
     }
 
-    public void adjustStock(int quantity){
+    public void adjustStock(int quantity) {
         int newQuantity = this.quantityStock + quantity;
-        if(newQuantity >=0){
+        if (newQuantity >= 0) {
             this.quantityStock = newQuantity;
         }
     }
@@ -45,11 +45,11 @@ public class StockItem implements Comparable<StockItem>{
     @Override
     public boolean equals(Object obj) {
         System.out.println("Entering StockItem.equals");
-        if(obj == this){
+        if (obj == this) {
             return true;
         }
 
-        if( (obj == null) || (obj.getClass() != this.getClass()){
+        if ((obj == null) || (obj.getClass() != this.getClass())) {
             return false;
         }
 
@@ -65,11 +65,11 @@ public class StockItem implements Comparable<StockItem>{
     @Override
     public int compareTo(StockItem o) {
         System.out.println("Entering StockItem.compareTo");
-        if(this == o){
+        if (this == o) {
             return 0;
         }
 
-        if(o != null){
+        if (o != null) {
             return this.name.compareTo(o.getName());
         }
 
@@ -78,6 +78,6 @@ public class StockItem implements Comparable<StockItem>{
 
     @Override
     public String toString() {
-        return this.name +" : price "+this.price;
+        return this.name + " : price " + this.price;
     }
 }
