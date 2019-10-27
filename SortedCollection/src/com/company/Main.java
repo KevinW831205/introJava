@@ -1,5 +1,7 @@
 package com.company;
 
+import java.util.Map;
+
 public class Main {
 
     private static StockList stockList = new StockList();
@@ -38,6 +40,7 @@ public class Main {
 
         sellItem(myBasket,"apple",2);
         System.out.println(myBasket);
+
         sellItem(myBasket,"apple",300);
         System.out.println(myBasket);
 
@@ -47,12 +50,24 @@ public class Main {
         sellItem(myBasket,"cake",5);
         System.out.println(myBasket);
 
+//        temp = new StockItem("pen",1.12);
+//        stockList.Items().put(temp.getName(),temp);
+
+        stockList.Items().get("apple").adjustStock(2000);
+        System.out.println(stockList);
+
+        stockList.get("apple").adjustStock(100000);
+        System.out.println(stockList);
+
+        for(Map.Entry<String, Double> price: stockList.PriceList().entrySet()){
+            System.out.println(price.getKey()+" costs "+price.getValue());
+        }
     }
 
     public static int sellItem(Basket basket,String item, int quantity){
         StockItem stockitem = stockList.get(item);
         if(stockitem == null){
-            System.out.println("Invalid item");
+            System.out.println("Invalid item "+item);
             return 0;
         }
 
