@@ -4,11 +4,13 @@ public class StockItem implements Comparable<StockItem> {
     private final String name;
     private double price;
     private int quantityStock;
+    private int reserved;
 
     public StockItem(String name, double price) {
         this.name = name;
         this.price = price;
         this.quantityStock = 0;
+        this.reserved = 0;
     }
 
     public StockItem(String name, double price, int quantityStock) {
@@ -40,6 +42,17 @@ public class StockItem implements Comparable<StockItem> {
         if (newQuantity >= 0) {
             this.quantityStock = newQuantity;
         }
+    }
+
+    public void reserveStock(int quantity) {
+        int tempReserved = this.reserved + quantity;
+        if (tempReserved <= this.quantityStock) {
+            this.reserved = tempReserved;
+            System.out.println(this.name + " reserved count: "+this.reserved);
+        } else {
+            System.out.println("Unable to reserve");
+        }
+
     }
 
     @Override
