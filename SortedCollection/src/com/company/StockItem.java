@@ -31,7 +31,7 @@ public class StockItem implements Comparable<StockItem> {
         return reserved;
     }
 
-    public int quantityInStock() {
+    public int availableQuantity() {
         return quantityStock - reserved;
     }
 
@@ -49,7 +49,7 @@ public class StockItem implements Comparable<StockItem> {
     }
 
     public int reserveStock(int quantity) {
-        if (quantity <= quantityInStock()) {
+        if (quantity <= availableQuantity()) {
             this.reserved += quantity;
             System.out.println(this.name + " reserved count: " + this.reserved);
             return quantity;
