@@ -27,8 +27,12 @@ public class StockItem implements Comparable<StockItem> {
         return price;
     }
 
+    public int getReserved() {
+        return reserved;
+    }
+
     public int quantityInStock() {
-        return quantityStock;
+        return quantityStock - reserved;
     }
 
     public void setPrice(double price) {
@@ -44,15 +48,23 @@ public class StockItem implements Comparable<StockItem> {
         }
     }
 
-    public void reserveStock(int quantity) {
-        int tempReserved = this.reserved + quantity;
-        if (tempReserved <= this.quantityStock) {
-            this.reserved = tempReserved;
-            System.out.println(this.name + " reserved count: "+this.reserved);
+    public int reserveStock(int quantity) {
+        if (quantity <= quantityInStock()) {
+            this.reserved += quantity;
+            System.out.println(this.name + " reserved count: " + this.reserved);
+            return quantity;
         } else {
             System.out.println("Unable to reserve");
+            return 0;
         }
+    }
 
+    public int cancelReserve(int quantity) {
+        if(quantity <= reserved){
+            this.reserved -= quantity;
+            return quantity;
+        }
+        return 0;
     }
 
     @Override
@@ -91,6 +103,6 @@ public class StockItem implements Comparable<StockItem> {
 
     @Override
     public String toString() {
-        return this.name + " : price " + this.price;
+        return this.name + " : price " + this.price + " reserved: " + this.reserved;
     }
 }
