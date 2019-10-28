@@ -32,12 +32,21 @@ public class MainPractice {
 
 
         Basket basket1 = new Basket("b1");
-        Basket basket2 = new Basket("b1");
+        Basket basket2 = new Basket("b2");
 
         putInBasket(basket1,"apple",20);
         putInBasket(basket1,"banana",20);
         putInBasket(basket1,"apple",2000);
+        System.out.println(basket1);
+        checkOut(basket1);
+        System.out.println(basket1);
+
+        temp = new StockItem("banana",0.50,30);
+        stockList.addStock(temp);
         putInBasket(basket2,"banana",20);
+        removeItem(basket2,"banana",10);
+        removeItem(basket2,"banana",30);
+        System.out.println(basket2);
         System.out.println(stockList);
 
 
@@ -61,7 +70,7 @@ public class MainPractice {
             System.out.println("Invalid item " + item);
             return 0;
         }
-        if((stockList.cancelStock(item, quantity)) == quantity){
+        if((basket.removeFromBasket(stockItem, quantity)) == quantity){
             return stockList.cancelStock(item,quantity);
         }
         return 0;
