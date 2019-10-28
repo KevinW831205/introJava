@@ -24,7 +24,7 @@ public class MainPractice {
         stockList.addStock(temp);
 
         stockList.get("apple").reserveStock(5);
-
+        stockList.get("apple").cancelReserve(3);
 
         System.out.println(stockList);
 
