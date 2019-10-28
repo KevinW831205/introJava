@@ -41,7 +41,6 @@ public class StockList {
             return quantity;
         }
         return 0;
-
  */
     }
 
