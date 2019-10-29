@@ -5,9 +5,9 @@
 <?import javafx.scene.control.Label?>
 <GridPane fx:controller="sample.Controller"
           xmlns:fx="http://javafx.com/fxml" alignment="center" hgap="10" vgap="10">
-    <Button>button1</Button>
-    <Button>button2</Button>
-    <Button>button3</Button>
-    <Button>button4</Button>
-    <Button>button5WithSomeAdditionalText</Button>
+    <Button GridPane.columnIndex="0" GridPane.rowIndex = "0">button1</Button>
+    <Button GridPane.columnIndex="0" GridPane.rowIndex = "1">button2</Button>
+    <Button GridPane.columnIndex="1" GridPane.rowIndex = "0">button3</Button>
+    <Button GridPane.columnIndex="1" GridPane.rowIndex = "1">button4</Button>
+    <Button GridPane.columnIndex="2" GridPane.rowIndex = "0">button5WithSomeAdditionalText</Button>
 </GridPane>
