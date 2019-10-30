@@ -17,6 +17,7 @@
 <?import javafx.collections.FXCollections?>
 <?import java.lang.String?>
 
+<?import javafx.scene.control.ChoiceBox?>
 <GridPane fx:controller="sample.Controller"
           xmlns:fx="http://javafx.com/fxml" alignment="center" hgap="10" vgap="10">
     <Button GridPane.rowIndex="0" GridPane.columnIndex="0" text="Super Click Me">Click Me
@@ -66,10 +67,10 @@
 
     <TextField GridPane.rowIndex="3" GridPane.columnIndex="1"  />
     <PasswordField GridPane.rowIndex="4" GridPane.columnIndex="0"></PasswordField>
-    <ComboBox GridPane.rowIndex="4" GridPane.columnIndex="1" GridPane.columnSpan="2">
+    <ComboBox GridPane.rowIndex="4" GridPane.columnIndex="1" GridPane.columnSpan="2"> <!-- editable="true" -->
         <items>
             <FXCollections fx:factory="observableArrayList">
-                <String fx:value="val1  with extended length  with extended length with extended length with extended length with extended length with extended length with extended length with extended length"></String>
+                <String fx:value="val1  with extended length"></String>
                 <String fx:value="val2  with extended length"></String>
                 <String fx:value="val3  with extended length"></String>
                 <String fx:value="val4  with extended length"></String>
@@ -80,6 +81,20 @@
             <String fx:value="val5  with extended length"></String>
         </value>
     </ComboBox>
+
+    <ChoiceBox GridPane.rowIndex="4" GridPane.columnIndex="4">
+
+        <items>
+            <FXCollections fx:factory="observableArrayList">
+                <String fx:value="cb1"></String>
+                <String fx:value="cb2"></String>
+                <String fx:value="cb3"></String>
+                <String fx:value="cb4"></String>
+                <String fx:value="cb1"></String>
+            </FXCollections>
+        </items>
+
+    </ChoiceBox>
 
 
 </GridPane>
