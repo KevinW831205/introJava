@@ -45,6 +45,19 @@
     <top>
         <Label alignment="CENTER" BorderPane.alignment="CENTER" style="-fx-border-color:blue; -fx-border-width:3; -fx-border-style:dashed;">Top position label</Label>
     </top>
+
+    <left>
+        <Label alignment="CENTER">Left Label</Label>
+    </left>
+
+    <right>
+        <Label alignment="CENTER">Right Label</Label>
+    </right>
+
+    <center>
+        <Label alignment="CENTER">Center Label with additional text: asdflkjajsdlfjalksfjdlkfjaskldfjasdflkj</Label>
+    </center>
+
     <bottom>
         <HBox spacing="10" alignment="TOP_RIGHT">
             <padding>

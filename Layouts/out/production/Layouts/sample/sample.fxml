@@ -43,8 +43,21 @@
 
 <BorderPane fx:controller="sample.Controller" xmlns:fx="http://javafx.com/fxml">
     <top>
-        <Label alignment="CENTER" prefWidth="500" style="-fx-border-color:blue; -fx-border-width:3; -fx-border-style:dashed; -fx-border-radius=5px">Top position label</Label>
+        <Label alignment="CENTER" BorderPane.alignment="CENTER" style="-fx-border-color:blue; -fx-border-width:3; -fx-border-style:dashed;">Top position label</Label>
     </top>
+
+    <left>
+        <Label alignment="CENTER">Left Label</Label>
+    </left>
+
+    <right>
+        <Label alignment="CENTER">Right Label</Label>
+    </right>
+
+    <center>
+        <Label alignment="CENTER">Center Label with additional text: asdflkjajsdlfjalksfjdlkfjaskldfj</Label>
+    </center>
+
     <bottom>
         <HBox spacing="10" alignment="TOP_RIGHT">
             <padding>
