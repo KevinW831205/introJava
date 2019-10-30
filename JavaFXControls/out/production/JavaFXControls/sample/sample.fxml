@@ -12,6 +12,8 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.control.ToggleButton?>
 <?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.PasswordField?>
 <GridPane fx:controller="sample.Controller"
           xmlns:fx="http://javafx.com/fxml" alignment="center" hgap="10" vgap="10">
     <Button GridPane.rowIndex="0" GridPane.columnIndex="0" text="Super Click Me">Click Me
@@ -37,9 +39,11 @@
     <fx:define>
         <ToggleGroup fx:id="colorToggleGroup"/>
     </fx:define>
-    <RadioButton GridPane.rowIndex = "1" GridPane.columnIndex="0" text="Red" toggleGroup="$colorToggleGroup"/>
-    <RadioButton GridPane.rowIndex = "1" GridPane.columnIndex="1" text="Blue" toggleGroup="$colorToggleGroup" selected="true"/>
-    <RadioButton GridPane.rowIndex = "1" GridPane.columnIndex="2" text="Green" toggleGroup="$colorToggleGroup"/>
+    <HBox GridPane.rowIndex="1" GridPane.columnIndex="0">
+        <RadioButton text="Red" toggleGroup="$colorToggleGroup"/>
+        <RadioButton text="Blue" toggleGroup="$colorToggleGroup" selected="true"/>
+        <RadioButton text="Green" toggleGroup="$colorToggleGroup"/>
+    </HBox>
 
     <CheckBox text="Selection" GridPane.rowIndex="2" GridPane.columnIndex="0" />  <!--indeterminate="true"-->
 
@@ -54,7 +58,11 @@
         <ToggleButton text="3"/>
 
     </HBox>
+
     <ToggleButton text="Toggle Me" GridPane.rowIndex="3" GridPane.columnIndex="0"></ToggleButton>
+
+    <TextField GridPane.rowIndex="3" GridPane.columnIndex="1"  />
+    <PasswordField GridPane.rowIndex="3" GridPane.columnIndex="2"></PasswordField>
 
 
 
