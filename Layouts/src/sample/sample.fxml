@@ -6,6 +6,8 @@
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.FlowPane?>
+
 
 <!--<GridPane fx:controller="sample.Controller"-->
 <!--          xmlns:fx="http://javafx.com/fxml" alignment="top_center" hgap="10" vgap="10" gridLinesVisible="true">-->
@@ -41,33 +43,48 @@
 <!--    <Button text="When text become way waywyaywwaywayway to long" prefWidth="90"/>-->
 <!--</HBox>-->
 
-<BorderPane fx:controller="sample.Controller" xmlns:fx="http://javafx.com/fxml">
-    <top>
-        <Label alignment="CENTER" BorderPane.alignment="CENTER" style="-fx-border-color:blue; -fx-border-width:3; -fx-border-style:dashed;">Top position label</Label>
-    </top>
+<!--<BorderPane fx:controller="sample.Controller" xmlns:fx="http://javafx.com/fxml">-->
+<!--    <top>-->
+<!--        <Label alignment="CENTER" BorderPane.alignment="CENTER" style="-fx-border-color:blue; -fx-border-width:3; -fx-border-style:dashed;">Top position label</Label>-->
+<!--    </top>-->
 
-    <left>
-        <Label alignment="CENTER">Left Label</Label>
-    </left>
+<!--    <left>-->
+<!--        <Label alignment="CENTER">Left Label</Label>-->
+<!--    </left>-->
 
-    <right>
-        <Label alignment="CENTER">Right Label</Label>
-    </right>
+<!--    <right>-->
+<!--        <Label alignment="CENTER">Right Label</Label>-->
+<!--    </right>-->
 
-    <center>
-        <Label alignment="CENTER">Center Label with additional text: asdflkjajsdlfjalksfjdlkfjaskldfjasdflkj</Label>
-    </center>
+<!--    <center>-->
+<!--        <Label alignment="CENTER">Center Label with additional text: asdflkjajsdlfjalksfjdlkfjaskldfjasdflkj</Label>-->
+<!--    </center>-->
 
-    <bottom>
-        <HBox spacing="10" alignment="TOP_RIGHT">
-            <padding>
-                <Insets bottom="10" right="10"/>
-            </padding>
-            <Button text="Okay" prefWidth="90"/>
-            <Button text="Cancel" prefWidth="90"/>
-            <Button text="Help" prefWidth="90"/>
-        </HBox>
-    </bottom>
-</BorderPane>
+<!--    <bottom>-->
+<!--        <HBox spacing="10" alignment="TOP_RIGHT">-->
+<!--            <padding>-->
+<!--                <Insets bottom="10" right="10"/>-->
+<!--            </padding>-->
+<!--            <Button text="Okay" prefWidth="90"/>-->
+<!--            <Button text="Cancel" prefWidth="90"/>-->
+<!--            <Button text="Help" prefWidth="90"/>-->
+<!--        </HBox>-->
+<!--    </bottom>-->
+<!--</BorderPane>-->
+
+
+<FlowPane fx:controller="sample.Controller" xmlns:fx="http://javafx.com/fxml" orientation="HORIZONTAL">
+    <Button>Button1</Button>
+    <Button>Button2</Button>
+    <Button>Button3</Button>
+    <Button>Button4</Button>
+    <Button>Button5</Button>
+    <Button>Button6</Button>
+    <Button>Button7</Button>
+    <Button>Button8</Button>
+    <Button>Button9</Button>
+    <Button>Button10</Button>
+
+</FlowPane>
 
 
