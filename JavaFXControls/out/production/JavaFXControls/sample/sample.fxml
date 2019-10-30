@@ -10,7 +10,7 @@
     <Button GridPane.rowIndex="0" GridPane.columnIndex="0" text="Super Click Me">Click Me
         <graphic>
             <ImageView>
-<!--                <Image url="@/o0600065014012711889.png"/>-->
+                <Image url="@\Java\JavaFXControls\asset\image\o0600065014012711889.png"/>
             </ImageView>
         </graphic>
     </Button>
