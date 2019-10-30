@@ -7,6 +7,8 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.TilePane?>
+<?import javafx.scene.layout.StackPane?>
 
 
 <!--<GridPane fx:controller="sample.Controller"-->
@@ -73,18 +75,25 @@
 <!--</BorderPane>-->
 
 
-<FlowPane fx:controller="sample.Controller" xmlns:fx="http://javafx.com/fxml" orientation="VERTICAL">
-    <Button>Button1</Button>
-    <Button>Button2</Button>
-    <Button>Button3</Button>
-    <Button>Button4</Button>
-    <Button>Button5</Button>
-    <Button>Button6</Button>
-    <Button>Button7</Button>
-    <Button>Button8</Button>
-    <Button>Button9</Button>
-    <Button>Button10</Button>
+<!--<FlowPane fx:controller="sample.Controller" xmlns:fx="http://javafx.com/fxml" orientation="VERTICAL">-->
+<!--    <Button>Button1</Button>-->
+<!--    <Button>Button2</Button>-->
+<!--    <Button>Button3</Button>-->
+<!--    <Button>Button4</Button>-->
+<!--    <Button>Button5</Button>-->
+<!--    <Button>Button6</Button>-->
+<!--    <Button>Button7</Button>-->
+<!--    <Button>Button8</Button>-->
+<!--    <Button>Button9</Button>-->
+<!--    <Button>Button10</Button>-->
+<!--</FlowPane>-->
 
-</FlowPane>
+
+<StackPane fx:controller="sample.Controller" xmlns:fx="http://javafx.com/fxml">
+    <Label style="-fx-background-color: green">Label 1</Label>
+    <Button style="-fx-background-color: red">Button 1</Button>
+    <Label style="-fx-background-color: blue">Label 1</Label>
+
+</StackPane>
 
 
