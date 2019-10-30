@@ -3,7 +3,15 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
 <GridPane fx:controller="sample.Controller"
           xmlns:fx="http://javafx.com/fxml" alignment="center" hgap="10" vgap="10">
-    <Button GridPane.rowIndex="0" GridPane.columnIndex="0">Click Me</Button>
+    <Button GridPane.rowIndex="0" GridPane.columnIndex="0" text="Super Click Me">Click Me
+        <graphic>
+            <ImageView>
+<!--                <Image url="@/o0600065014012711889.png"/>-->
+            </ImageView>
+        </graphic>
+    </Button>
 </GridPane>
