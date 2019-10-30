@@ -5,37 +5,53 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.BorderPane?>
+
 <!--<GridPane fx:controller="sample.Controller"-->
 <!--          xmlns:fx="http://javafx.com/fxml" alignment="top_center" hgap="10" vgap="10" gridLinesVisible="true">-->
-<!--&lt;!&ndash;    <padding>&ndash;&gt;-->
-<!--&lt;!&ndash;        <Insets top="10"/>&ndash;&gt;-->
-<!--&lt;!&ndash;    </padding>&ndash;&gt;-->
+<!--    <padding>-->
+<!--        <Insets top="10"/>-->
+<!--    </padding>-->
 
 
-<!--&lt;!&ndash;    <columnConstraints>&ndash;&gt;-->
-<!--&lt;!&ndash;        <ColumnConstraints percentWidth="400"/>&ndash;&gt;-->
-<!--&lt;!&ndash;        <ColumnConstraints percentWidth="400"/>&ndash;&gt;-->
-<!--&lt;!&ndash;    </columnConstraints>&ndash;&gt;-->
+<!--    <columnConstraints>-->
+<!--        <ColumnConstraints percentWidth="400"/>-->
+<!--        <ColumnConstraints percentWidth="400"/>-->
+<!--    </columnConstraints>-->
 
-<!--&lt;!&ndash;    <Button GridPane.columnIndex="0" GridPane.rowIndex = "0" >button1</Button>&ndash;&gt;-->
-<!--&lt;!&ndash;    <Button GridPane.columnIndex="1" GridPane.rowIndex = "0" GridPane.halignment="CENTER">button2</Button>&ndash;&gt;-->
-<!--&lt;!&ndash;    <Button GridPane.columnIndex="0" GridPane.rowIndex = "1">button3</Button>&ndash;&gt;-->
-<!--&lt;!&ndash;    <Button GridPane.columnIndex="0" GridPane.rowIndex = "3">button4</Button>&ndash;&gt;-->
-<!--&lt;!&ndash;    <Button GridPane.columnIndex="0" GridPane.rowIndex = "2" GridPane.columnSpan="2">button5WithSomeAdditionalText</Button>&ndash;&gt;-->
+<!--    <Button GridPane.columnIndex="0" GridPane.rowIndex = "0" >button1</Button>-->
+<!--    <Button GridPane.columnIndex="1" GridPane.rowIndex = "0" GridPane.halignment="CENTER">button2</Button>-->
+<!--    <Button GridPane.columnIndex="0" GridPane.rowIndex = "1">button3</Button>-->
+<!--    <Button GridPane.columnIndex="0" GridPane.rowIndex = "3">button4</Button>-->
+<!--    <Button GridPane.columnIndex="0" GridPane.rowIndex = "2" GridPane.columnSpan="2">button5WithSomeAdditionalText</Button>-->
 
 <!--</GridPane>-->
-<HBox fx:controller="sample.Controller" xmlns:fx="http://javafx.com/fxml" alignment="BOTTOM_RIGHT"
-    style="-fx-border-color: red; -fx-border-width:3; -fx-border-style: dashed;"
-      spacing="10"
->
-    <padding>
-        <Insets bottom="10" right="10"/>
-    </padding>
 
-    <Button text="Okay" prefWidth="90"/>
-    <Button text="Cancel" prefWidth="90"/>
-    <Button text="Help" prefWidth="90"/>
-    <Button text="When text become way waywyaywwaywayway to long" prefWidth="90"/>
+<!--<HBox fx:controller="sample.Controller" xmlns:fx="http://javafx.com/fxml" alignment="BOTTOM_RIGHT"-->
+<!--      style="-fx-border-color: red; -fx-border-width:3; -fx-border-style: dashed;"-->
+<!--      spacing="10"-->
+<!--&gt;-->
+<!--    <padding>-->
+<!--        <Insets bottom="10" right="10"/>-->
+<!--    </padding>-->
+
+<!--    <Button text="Okay" prefWidth="90"/>-->
+<!--    <Button text="Cancel" prefWidth="90"/>-->
+<!--    <Button text="Help" prefWidth="90"/>-->
+<!--    <Button text="When text become way waywyaywwaywayway to long" prefWidth="90"/>-->
+<!--</HBox>-->
+
+<BorderPane fx:controller="sample.Controller" xmlns:fx="http://javafx.com/fxml">
+    <bottom>
+        <HBox spacing="10">
+            <padding>
+                <Insets bottom="10" right="10"/>
+            </padding>
+            <Button text="Okay" prefWidth="90"/>
+            <Button text="Cancel" prefWidth="90"/>
+            <Button text="Help" prefWidth="90"/>
+        </HBox>
+    </bottom>
+</BorderPane>
 
 
-</HBox>
