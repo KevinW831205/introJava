@@ -22,7 +22,7 @@
     <Button GridPane.rowIndex="0" GridPane.columnIndex="0" text="Super Click Me">Click Me
         <graphic>
             <ImageView>
-                <Image url="@\Java\JavaFXControls\asset\image\o0600065014012711889.png"/>
+<!--                <Image url="@\Java\JavaFXControls\asset\image\o0600065014012711889.png"/>-->
             </ImageView>
         </graphic>
     </Button>
@@ -33,7 +33,7 @@
         </font>
         <graphic>
             <ImageView>
-                <Image url="@\Java\JavaFXControls\asset\image\o0600065014012711889.png" />
+<!--                <Image url="@\Java\JavaFXControls\asset\image\o0600065014012711889.png" />-->
             </ImageView>
         </graphic>
     </Label>
@@ -66,16 +66,19 @@
 
     <TextField GridPane.rowIndex="3" GridPane.columnIndex="1"  />
     <PasswordField GridPane.rowIndex="4" GridPane.columnIndex="0"></PasswordField>
-    <ComboBox GridPane.rowIndex="4" GridPane.columnIndex="1">
+    <ComboBox GridPane.rowIndex="4" GridPane.columnIndex="1" GridPane.columnSpan="2">
         <items>
             <FXCollections fx:factory="observableArrayList">
-                <String fx:value="val1"></String>
-                <String fx:value="val2"></String>
-                <String fx:value="val3"></String>
-                <String fx:value="val4"></String>
-                <String fx:value="val5"></String>
+                <String fx:value="val1  with extended length  with extended length with extended length with extended length with extended length with extended length with extended length with extended length"></String>
+                <String fx:value="val2  with extended length"></String>
+                <String fx:value="val3  with extended length"></String>
+                <String fx:value="val4  with extended length"></String>
+                <String fx:value="val5  with extended length"></String>
             </FXCollections>
         </items>
+        <value>
+            <String fx:value="val5  with extended length"></String>
+        </value>
     </ComboBox>
 
 
