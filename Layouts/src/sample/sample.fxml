@@ -42,8 +42,11 @@
 <!--</HBox>-->
 
 <BorderPane fx:controller="sample.Controller" xmlns:fx="http://javafx.com/fxml">
+    <top>
+        <Label alignment="CENTER" BorderPane.alignment="CENTER" style="-fx-border-color:blue; -fx-border-width:3; -fx-border-style:dashed;">Top position label</Label>
+    </top>
     <bottom>
-        <HBox spacing="10">
+        <HBox spacing="10" alignment="TOP_RIGHT">
             <padding>
                 <Insets bottom="10" right="10"/>
             </padding>
