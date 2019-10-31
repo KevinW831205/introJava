@@ -110,7 +110,9 @@
     <ColorPicker GridPane.rowIndex="6" GridPane.columnIndex="1"/>
     <DatePicker GridPane.rowIndex="6" GridPane.columnIndex="2"/>
 
-    <Accordion GridPane.rowIndex="7" GridPane.columnIndex="0" GridPane.columnSpan="2">
+
+
+    <Accordion GridPane.rowIndex="7" GridPane.columnIndex="0" GridPane.columnSpan="2" expandedPane="$tp3">
         <panes>
             <TitledPane text="Title abc">
                 <Label text="inner title"/>
@@ -118,13 +120,12 @@
             <TitledPane text="Title def">
             <Label text="inner title"/>
             </TitledPane>
-            <TitledPane text="Title ghi">
+            <TitledPane fx:id="tp3" text="Title ghi">
                 <Label text="inner title"/>
             </TitledPane>
             <TitledPane text="Title jkl">
                 <Label text="inner title"/>
             </TitledPane>
-
         </panes>
     </Accordion>
 
