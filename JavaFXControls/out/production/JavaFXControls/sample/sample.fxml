@@ -22,23 +22,26 @@
 <?import javafx.scene.control.Spinner?>
 <?import javafx.scene.control.ColorPicker?>
 <?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.control.Accordion?>
 <GridPane fx:controller="sample.Controller"
           xmlns:fx="http://javafx.com/fxml" alignment="center" hgap="10" vgap="10">
     <Button GridPane.rowIndex="0" GridPane.columnIndex="0" text="Super Click Me">Click Me
         <graphic>
             <ImageView>
-<!--                <Image url="@\Java\JavaFXControls\asset\image\o0600065014012711889.png"/>-->
+                <!--                <Image url="@\Java\JavaFXControls\asset\image\o0600065014012711889.png"/>-->
             </ImageView>
         </graphic>
     </Button>
 
-    <Label GridPane.rowIndex="0" GridPane.columnIndex="1" text="Some Label that is long" textFill="blue" wrapText="true">
+    <Label GridPane.rowIndex="0" GridPane.columnIndex="1" text="Some Label that is long" textFill="blue"
+           wrapText="true">
         <font>
             <Font name="Arial Italic" size="40"/>
         </font>
         <graphic>
             <ImageView>
-<!--                <Image url="@\Java\JavaFXControls\asset\image\o0600065014012711889.png" />-->
+                <!--                <Image url="@\Java\JavaFXControls\asset\image\o0600065014012711889.png" />-->
             </ImageView>
         </graphic>
     </Label>
@@ -53,7 +56,7 @@
         <RadioButton text="Green" toggleGroup="$colorToggleGroup"/>
     </HBox>
 
-    <CheckBox text="Selection" GridPane.rowIndex="2" GridPane.columnIndex="0" />  <!--indeterminate="true"-->
+    <CheckBox text="Selection" GridPane.rowIndex="2" GridPane.columnIndex="0"/>  <!--indeterminate="true"-->
 
     <VBox GridPane.rowIndex="2" GridPane.columnIndex="1">
         <CheckBox text="a"/>
@@ -69,7 +72,7 @@
 
     <ToggleButton text="Toggle Me" GridPane.rowIndex="3" GridPane.columnIndex="0"></ToggleButton>
 
-    <TextField GridPane.rowIndex="3" GridPane.columnIndex="1"  />
+    <TextField GridPane.rowIndex="3" GridPane.columnIndex="1"/>
     <PasswordField GridPane.rowIndex="4" GridPane.columnIndex="0"></PasswordField>
     <ComboBox GridPane.rowIndex="4" GridPane.columnIndex="1" GridPane.columnSpan="2"> <!-- editable="true" -->
         <items>
@@ -100,10 +103,29 @@
 
     </ChoiceBox>
 
-    <Slider GridPane.rowIndex="5" GridPane.columnIndex="0" GridPane.columnSpan="4" min="0" max="100" showTickLabels="true" showTickMarks="true" minorTickCount="4" snapToTicks="true" orientation="VERTICAL"/>
+    <Slider GridPane.rowIndex="5" GridPane.columnIndex="0" GridPane.columnSpan="4" min="0" max="100"
+            showTickLabels="true" showTickMarks="true" minorTickCount="4" snapToTicks="true" orientation="VERTICAL"/>
     <Spinner GridPane.rowIndex="6" GridPane.columnIndex="0" min="0" max="100" editable="true" initialValue="50"/>
 
-    <ColorPicker GridPane.rowIndex="6" GridPane.columnIndex="1" />
+    <ColorPicker GridPane.rowIndex="6" GridPane.columnIndex="1"/>
     <DatePicker GridPane.rowIndex="6" GridPane.columnIndex="2"/>
+
+    <Accordion GridPane.rowIndex="7" GridPane.columnIndex="0" GridPane.columnSpan="2">
+        <panes>
+            <TitledPane text="Title abc">
+                <Label text="inner title"/>
+            </TitledPane>
+            <TitledPane text="Title def">
+            <Label text="inner title"/>
+            </TitledPane>
+            <TitledPane text="Title ghi">
+                <Label text="inner title"/>
+            </TitledPane>
+            <TitledPane text="Title jkl">
+                <Label text="inner title"/>
+            </TitledPane>
+
+        </panes>
+    </Accordion>
 
 </GridPane>
