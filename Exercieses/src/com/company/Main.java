@@ -158,13 +158,15 @@ public class Main {
 //
 //        System.out.println(c1.getVolume());
 //        System.out.println(c1.getArea());
+//
+//        for(int i=0; i<=10; i++){
+//            System.out.println(Series.nSum(i));
+//            System.out.println(Series.fibonacci(i));
+//            System.out.println(Series.factorial(i));
+//
+//        }
 
-        for(int i=0; i<=10; i++){
-            System.out.println(Series.nSum(i));
-            System.out.println(Series.fibonacci(i));
-            System.out.println(Series.factorial(i));
 
-        }
 
     }   // closing for main
 }

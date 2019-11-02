@@ -8,5 +8,7 @@
           xmlns:fx="http://javafx.com/fxml" alignment="center" hgap="10" vgap="10">
 
     <TextField GridPane.rowIndex="0" GridPane.columnIndex="0" fx:id="textField1"/>
-    <Button GridPane.rowIndex="1" GridPane.columnIndex="0" onAction="#onButtonClick">Say Hello</Button>
+    <Button GridPane.rowIndex="1" GridPane.columnIndex="0" onAction="#onButtonClick" fx:id="helloButton">Say Hello</Button>
+
+    <Button GridPane.rowIndex="1" GridPane.columnIndex="1" onAction="#onButtonClick" fx:id="byeButton">Say Bye</Button>
 </GridPane>
