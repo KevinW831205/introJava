@@ -32,6 +32,13 @@ public class Controller {
         } else {
             System.out.println("unknown button");
         }
+
+//        try{
+//            Thread.sleep(10000);
+//        } catch (InterruptedException event){
+//
+//        }
+
         if(clearTextFieldCB.isSelected()){
             textField1.clear();
             helloButton.setDisable(true);
