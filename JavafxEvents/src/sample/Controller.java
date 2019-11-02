@@ -34,6 +34,8 @@ public class Controller {
         }
         if(clearTextFieldCB.isSelected()){
             textField1.clear();
+            helloButton.setDisable(true);
+            byeButton.setDisable(true);
         }
     }
 
