@@ -5,6 +5,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.ListView;
 import javafx.scene.control.SelectionMode;
 import javafx.scene.control.SelectionModel;
+import javafx.scene.control.TextArea;
 
 import java.time.LocalDate;
 import java.time.Month;
@@ -16,7 +17,9 @@ public class Controller {
     private List<Todoitem> todoitems;
 
     @FXML
-    private ListView todoListView;
+    private ListView<Todoitem> todoListView;
+    @FXML
+    private TextArea itemDetail;
 
     public void initialize(){
         Todoitem item1 = new Todoitem("Learn Java","do x y z practice", LocalDate.of(2019, Month.NOVEMBER,5));
@@ -39,9 +42,8 @@ public class Controller {
 
     @FXML
     public void handleClickListView(){
-        Todoitem item = (Todoitem) todoListView.getSelectionModel().getSelectedItem();
-        System.out.println("Selected "+item);
-
-
+        Todoitem item = todoListView.getSelectionModel().getSelectedItem();
+//        System.out.println("Selected "+
+        itemDetail.setText(item.getDetails());
     }
 }
