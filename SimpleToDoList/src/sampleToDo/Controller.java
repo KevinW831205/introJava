@@ -1,6 +1,8 @@
 package sampleToDo;
 
 import dataModel.Todoitem;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 
@@ -34,9 +36,20 @@ public class Controller {
         todoitems.add(item4);
         todoitems.add(item5);
 
+        todoListView.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<Todoitem>() {
+            @Override
+            public void changed(ObservableValue<? extends Todoitem> observable, Todoitem oldValue, Todoitem newValue) {
+                if(newValue != null){
+                    Todoitem item = todoListView.getSelectionModel().getSelectedItem();
+                    itemDetail.setText(item.getDetails());
+                    deadLineLabel.setText(item.getDeadline().toString());
+                }
+            }
+        });
+
         todoListView.getItems().setAll(todoitems);
         todoListView.getSelectionModel().setSelectionMode(SelectionMode.SINGLE);
-
+        todoListView.getSelectionModel().selectFirst();
     }
 
     @FXML

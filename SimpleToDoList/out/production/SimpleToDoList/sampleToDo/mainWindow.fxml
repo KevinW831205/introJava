@@ -12,12 +12,12 @@
 <BorderPane fx:controller="sampleToDo.Controller"
             xmlns:fx="http://javafx.com/">
     <left>
-        <ListView fx:id="todoListView" onMouseClicked="#handleClickListView">
+        <ListView fx:id="todoListView">
 
         </ListView>
     </left>
     <center>
-        <VBox >
+        <VBox style="-fx-background-color:white">
             <TextArea fx:id="itemDetail" editable="false" VBox.vgrow="ALWAYS"/>
             <HBox>
                 <Label text = "Due: " style = "-fx-background-color:white" >
