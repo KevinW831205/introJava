@@ -6,6 +6,9 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
 <BorderPane fx:controller="sampleToDo.Controller"
             xmlns:fx="http://javafx.com/">
     <left>
@@ -14,7 +17,21 @@
         </ListView>
     </left>
     <center>
-        <TextArea fx:id="itemDetail" editable="false"/>
+        <VBox>
+            <TextArea fx:id="itemDetail" editable="false"/>
+            <HBox>
+                <Label text = "Due: " >
+                    <font>
+                      <Font name="Times New Roman Bold" size="20"/>
+                    </font>
+                </Label>
+                <Label fx:id="deadLineLabel">
+                    <font>
+                        <Font name="Times New Roman Bold" size="20"/>
+                    </font>
+                </Label>
+            </HBox>
+        </VBox>
     </center>
 
 </BorderPane>

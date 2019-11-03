@@ -2,10 +2,7 @@ package sampleToDo;
 
 import dataModel.Todoitem;
 import javafx.fxml.FXML;
-import javafx.scene.control.ListView;
-import javafx.scene.control.SelectionMode;
-import javafx.scene.control.SelectionModel;
-import javafx.scene.control.TextArea;
+import javafx.scene.control.*;
 
 import java.time.LocalDate;
 import java.time.Month;
@@ -20,6 +17,8 @@ public class Controller {
     private ListView<Todoitem> todoListView;
     @FXML
     private TextArea itemDetail;
+    @FXML
+    private Label deadLineLabel;
 
     public void initialize(){
         Todoitem item1 = new Todoitem("Learn Java","do x y z practice", LocalDate.of(2019, Month.NOVEMBER,5));
@@ -44,11 +43,13 @@ public class Controller {
     public void handleClickListView(){
         Todoitem item = todoListView.getSelectionModel().getSelectedItem();
 //        System.out.println("Selected "+
-        StringBuilder sb = new StringBuilder(item.getDetails());
-        sb.append("\n\n\n\n");
-        sb.append("Due: ");
-        sb.append(item.getDeadline());
-        itemDetail.setText(sb.toString());
+//        StringBuilder sb = new StringBuilder(item.getDetails());
+//        sb.append("\n\n\n\n");
+//        sb.append("Due: ");
+//        sb.append(item.getDeadline());
+//        itemDetail.setText(sb.toString());
+        itemDetail.setText(item.getDetails());
+        deadLineLabel.setText(item.getDeadline().toString());
 
     }
 }
