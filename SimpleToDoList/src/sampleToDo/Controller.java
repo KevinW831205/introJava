@@ -44,6 +44,11 @@ public class Controller {
     public void handleClickListView(){
         Todoitem item = todoListView.getSelectionModel().getSelectedItem();
 //        System.out.println("Selected "+
-        itemDetail.setText(item.getDetails());
+        StringBuilder sb = new StringBuilder(item.getDetails());
+        sb.append("\n\n\n\n");
+        sb.append("Due: ");
+        sb.append(item.getDeadline());
+        itemDetail.setText(sb.toString());
+
     }
 }
