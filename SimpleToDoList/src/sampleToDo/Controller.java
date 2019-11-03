@@ -8,6 +8,7 @@ import javafx.scene.control.*;
 
 import java.time.LocalDate;
 import java.time.Month;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -28,7 +29,6 @@ public class Controller {
         Todoitem item3 = new Todoitem("Something","Something more detail", LocalDate.of(2019, Month.DECEMBER,5));
         Todoitem item4 = new Todoitem("Just example","more detail examples", LocalDate.of(2020, Month.NOVEMBER,5));
         Todoitem item5 = new Todoitem("Birthday","Happy", LocalDate.of(2019, Month.JANUARY,5));
-
         todoitems = new ArrayList<>();
         todoitems.add(item1);
         todoitems.add(item2);
@@ -42,7 +42,8 @@ public class Controller {
                 if(newValue != null){
                     Todoitem item = todoListView.getSelectionModel().getSelectedItem();
                     itemDetail.setText(item.getDetails());
-                    deadLineLabel.setText(item.getDeadline().toString());
+                    DateTimeFormatter df = DateTimeFormatter.ofPattern("yyyy MM dd");
+                    deadLineLabel.setText(df.format(item.getDeadline()));
                 }
             }
         });
@@ -63,6 +64,5 @@ public class Controller {
 //        itemDetail.setText(sb.toString());
         itemDetail.setText(item.getDetails());
         deadLineLabel.setText(item.getDeadline().toString());
-
     }
 }
