@@ -4,6 +4,7 @@ import dataModel.Todoitem;
 import javafx.fxml.FXML;
 import javafx.scene.control.ListView;
 import javafx.scene.control.SelectionMode;
+import javafx.scene.control.SelectionModel;
 
 import java.time.LocalDate;
 import java.time.Month;
@@ -36,4 +37,11 @@ public class Controller {
 
     }
 
+    @FXML
+    public void handleClickListView(){
+        Todoitem item = (Todoitem) todoListView.getSelectionModel().getSelectedItem();
+        System.out.println("Selected "+item);
+
+
+    }
 }
