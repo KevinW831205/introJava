@@ -1,5 +1,6 @@
 package sampleToDo;
 
+import dataModel.ToDoData;
 import dataModel.Todoitem;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
@@ -24,17 +25,20 @@ public class Controller {
     private Label deadLineLabel;
 
     public void initialize(){
-        Todoitem item1 = new Todoitem("Learn Java","do x y z practice", LocalDate.of(2019, Month.NOVEMBER,5));
-        Todoitem item2 = new Todoitem("Attend orientation","Location", LocalDate.of(2019, Month.NOVEMBER,6));
-        Todoitem item3 = new Todoitem("Something","Something more detail", LocalDate.of(2019, Month.DECEMBER,5));
-        Todoitem item4 = new Todoitem("Just example","more detail examples", LocalDate.of(2020, Month.NOVEMBER,5));
-        Todoitem item5 = new Todoitem("Birthday","Happy", LocalDate.of(2019, Month.JANUARY,5));
-        todoitems = new ArrayList<>();
-        todoitems.add(item1);
-        todoitems.add(item2);
-        todoitems.add(item3);
-        todoitems.add(item4);
-        todoitems.add(item5);
+
+
+//        Todoitem item1 = new Todoitem("Learn Java","do x y z practice", LocalDate.of(2019, Month.NOVEMBER,5));
+//        Todoitem item2 = new Todoitem("Attend orientation","Location", LocalDate.of(2019, Month.NOVEMBER,6));
+//        Todoitem item3 = new Todoitem("Something","Something more detail", LocalDate.of(2019, Month.DECEMBER,5));
+//        Todoitem item4 = new Todoitem("Just example","more detail examples", LocalDate.of(2020, Month.NOVEMBER,5));
+//        Todoitem item5 = new Todoitem("Birthday","Happy", LocalDate.of(2019, Month.JANUARY,5));
+//        todoitems = new ArrayList<>();
+//        todoitems.add(item1);
+//        todoitems.add(item2);
+//        todoitems.add(item3);
+//        todoitems.add(item4);
+//        todoitems.add(item5);
+//        ToDoData.getInstance().setTodoitems(todoitems);
 
         todoListView.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<Todoitem>() {
             @Override
@@ -48,7 +52,7 @@ public class Controller {
             }
         });
 
-        todoListView.getItems().setAll(todoitems);
+        todoListView.getItems().setAll(ToDoData.getInstance().getTodoitems());
         todoListView.getSelectionModel().setSelectionMode(SelectionMode.SINGLE);
         todoListView.getSelectionModel().selectFirst();
     }
