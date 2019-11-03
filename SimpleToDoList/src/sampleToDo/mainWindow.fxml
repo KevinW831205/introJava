@@ -8,7 +8,7 @@
 <BorderPane fx:controller="sampleToDo.Controller"
             xmlns:fx="http://javafx.com/">
     <left>
-        <ListView>
+        <ListView fx:id="todoListView">
 
         </ListView>
     </left>
