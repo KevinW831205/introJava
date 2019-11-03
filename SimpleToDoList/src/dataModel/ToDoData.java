@@ -1,5 +1,14 @@
 package dataModel;
 
+import javafx.collections.FXCollections;
+
+import java.io.BufferedReader;
+import java.io.IOError;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
 
@@ -24,5 +33,26 @@ public class ToDoData {
         this.todoitems = todoitems;
     }
 
+    public void loadTodoItems() throws IOException{
+        todoitems = FXCollections.observableArrayList();
+        Path path = Paths.get(filename);
+        BufferedReader br = Files.newBufferedReader(path);
+        String input;
 
+        try{
+            while((input = br.readLine()) != null){
+                String[] itemPieces = input.split("\t");
+                String description = itemPieces[0];
+                String details = itemPieces[1];
+                String dateString = itemPieces[2];
+                LocalDate date = LocalDate.parse(dateString,df);
+                Todoitem item = new Todoitem(description,details,date);
+                todoitems.add(item);
+            }
+        } finally {
+            if(br != null){
+                br.close();
+            }
+        }
+    }
 }
