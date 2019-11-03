@@ -2,14 +2,13 @@ package dataModel;
 
 import javafx.collections.FXCollections;
 
-import java.io.BufferedReader;
-import java.io.IOError;
-import java.io.IOException;
+import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.util.Iterator;
 import java.util.List;
 
 public class ToDoData {
@@ -54,5 +53,28 @@ public class ToDoData {
                 br.close();
             }
         }
+    }
+
+    public void storeTodoItems() throws IOException{
+        Path path = Paths.get(filename);
+        BufferedWriter bw = Files.newBufferedWriter(path);
+
+        try{
+            Iterator<Todoitem> iterator = todoitems.iterator();
+            while (iterator.hasNext()){
+                Todoitem item = iterator.next();
+                bw.write(String.format( "%s\t%S\t%s",
+                        item.getDescription(),
+                        item.getDetails(),
+                        item.getDeadline().format(df)
+                        ));
+                bw.newLine();
+            }
+        }finally {
+            if(bw!= null){
+                bw.close();
+            }
+        }
+
     }
 }
