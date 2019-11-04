@@ -76,6 +76,8 @@ public class Controller {
                             setText(item.getDescription());
                             if (item.getDeadline().equals(LocalDate.now())) {
                                 setTextFill(Color.RED);
+                            } else if(item.getDeadline().equals(LocalDate.now().plusDays(1))){
+                                setTextFill(Color.YELLOW);
                             }
                         }
 
