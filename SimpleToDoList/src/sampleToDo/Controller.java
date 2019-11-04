@@ -82,9 +82,10 @@ public class Controller {
     public void showAddTodoItemDialog(){
         Dialog<ButtonType> dialog = new Dialog<>();
         dialog.initOwner(mainBorderPane.getScene().getWindow());
+        FXMLLoader fxmlLoader = new FXMLLoader();
+        fxmlLoader.setLocation(getClass().getResource("addTodoDialog.fxml"));
         try{
-            Parent root = FXMLLoader.load(getClass().getResource("addTodoDialog.fxml"));
-            dialog.getDialogPane().setContent(root);
+            dialog.getDialogPane().setContent(fxmlLoader.load());
         } catch (IOException e){
             System.out.println("Can't load additem dialog");
             e.printStackTrace();;

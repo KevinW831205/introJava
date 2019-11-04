@@ -28,6 +28,10 @@ public class ToDoData {
         return todoitems;
     }
 
+    public void addTodoItem(Todoitem item){
+        todoitems.add(item);
+    }
+
 //    public void setTodoitems(List<Todoitem> todoitems) {
 //        this.todoitems = todoitems;
 //    }
@@ -76,4 +80,5 @@ public class ToDoData {
             }
         }
     }
+
 }
