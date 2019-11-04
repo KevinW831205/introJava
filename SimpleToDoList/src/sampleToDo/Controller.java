@@ -16,6 +16,7 @@ import java.time.Month;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 public class Controller {
 
@@ -29,6 +30,7 @@ public class Controller {
     private Label deadLineLabel;
     @FXML
     private BorderPane mainBorderPane;
+
 
     public void initialize(){
 
@@ -86,6 +88,16 @@ public class Controller {
         } catch (IOException e){
             System.out.println("Can't load additem dialog");
             e.printStackTrace();;
+        }
+
+        dialog.getDialogPane().getButtonTypes().add(ButtonType.OK);
+        dialog.getDialogPane().getButtonTypes().add(ButtonType.CANCEL);
+
+        Optional<ButtonType> result = dialog.showAndWait();
+        if(result.isPresent() && result.get() == ButtonType.OK){
+            System.out.println("Ok pressed");
+        } else {
+            System.out.println("Button pressed");
         }
 
     }
