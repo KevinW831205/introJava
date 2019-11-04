@@ -69,4 +69,6 @@ public class Controller {
         itemDetail.setText(item.getDetails());
         deadLineLabel.setText(item.getDeadline().toString());
     }
+
+
 }
