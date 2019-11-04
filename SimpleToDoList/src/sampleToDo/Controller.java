@@ -6,15 +6,11 @@ import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
 import javafx.scene.control.*;
 import javafx.scene.layout.BorderPane;
 
 import java.io.IOException;
-import java.time.LocalDate;
-import java.time.Month;
 import java.time.format.DateTimeFormatter;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -96,6 +92,10 @@ public class Controller {
 
         Optional<ButtonType> result = dialog.showAndWait();
         if(result.isPresent() && result.get() == ButtonType.OK){
+            DialogController dctrl = fxmlLoader.getController();
+            Todoitem addedItem = dctrl.processResult();
+            todoListView.getItems().setAll(ToDoData.getInstance().getTodoitems());
+            todoListView.getSelectionModel().select(addedItem);
             System.out.println("Ok pressed");
         } else {
             System.out.println("Button pressed");
