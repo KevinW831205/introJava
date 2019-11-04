@@ -14,7 +14,7 @@
 <?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.SeparatorMenuItem?>
 <BorderPane fx:controller="sampleToDo.Controller"
-            xmlns:fx="http://javafx.com/">
+            xmlns:fx="http://javafx.com/" fx:id="mainBorderPane">
     <top>
         <MenuBar>
             <Menu text="File">

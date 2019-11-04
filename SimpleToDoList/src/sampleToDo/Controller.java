@@ -5,8 +5,12 @@ import dataModel.Todoitem;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.control.*;
+import javafx.scene.layout.BorderPane;
 
+import java.io.IOException;
 import java.time.LocalDate;
 import java.time.Month;
 import java.time.format.DateTimeFormatter;
@@ -23,6 +27,8 @@ public class Controller {
     private TextArea itemDetail;
     @FXML
     private Label deadLineLabel;
+    @FXML
+    private BorderPane mainBorderPane;
 
     public void initialize(){
 
@@ -70,5 +76,18 @@ public class Controller {
         deadLineLabel.setText(item.getDeadline().toString());
     }
 
+    @FXML
+    public void showAddTodoItemDialog(){
+        Dialog<ButtonType> dialog = new Dialog<>();
+        dialog.initOwner(mainBorderPane.getScene().getWindow());
+        try{
+            Parent root = FXMLLoader.load(getClass().getResource("addTodoDialog.fxml"));
+            dialog.getDialogPane().setContent(root);
+        } catch (IOException e){
+            System.out.println("Can't load additem dialog");
+            e.printStackTrace();;
+        }
+
+    }
 
 }
