@@ -4,12 +4,15 @@ import dataModel.ToDoData;
 import dataModel.Todoitem;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.*;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.paint.Color;
 import javafx.util.Callback;
+
 import java.io.IOException;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
@@ -28,10 +31,24 @@ public class Controller {
     private Label deadLineLabel;
     @FXML
     private BorderPane mainBorderPane;
+    @FXML
+    ContextMenu listContextMenu;
 
 
     public void initialize() {
 
+        listContextMenu = new ContextMenu();
+        MenuItem deleteMenuItem = new MenuItem("Delete");
+        deleteMenuItem.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                Todoitem item = todoListView.getSelectionModel().getSelectedItem();
+                deleteItem(item);
+
+            }
+        });
+
+        listContextMenu.getItems().addAll(deleteMenuItem);
 
 //        Todoitem item1 = new Todoitem("Learn Java","do x y z practice", LocalDate.of(2019, Month.NOVEMBER,5));
 //        Todoitem item2 = new Todoitem("Attend orientation","Location", LocalDate.of(2019, Month.NOVEMBER,6));
@@ -76,13 +93,23 @@ public class Controller {
                             setText(item.getDescription());
                             if (item.getDeadline().isBefore(LocalDate.now().plusDays(1))) {
                                 setTextFill(Color.RED);
-                            } else if(item.getDeadline().equals(LocalDate.now().plusDays(1))){
+                            } else if (item.getDeadline().equals(LocalDate.now().plusDays(1))) {
                                 setTextFill(Color.ORANGE);
                             }
                         }
 
                     }
                 };
+
+                cell.emptyProperty().addListener(
+                        (obs, wasEmpty, isNowEmpty) -> {
+                            if (isNowEmpty) {
+                                cell.setContextMenu(null);
+                            } else {
+                                cell.setContextMenu(listContextMenu);
+                            }
+                        });
+
                 return cell;
             }
         });
@@ -132,6 +159,17 @@ public class Controller {
 //            System.out.println("Button pressed");
         }
 
+    }
+
+    public void deleteItem(Todoitem item) {
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setTitle("Deleting Todo Item");
+        alert.setHeaderText("Deleting " + item.getDescription());
+        alert.setContentText("Are you sure to delete " + item.getDetails() + "\n Press Ok to confirm or cancel to back out");
+        Optional<ButtonType> result = alert.showAndWait();
+        if (result.isPresent() && result.get() == ButtonType.OK) {
+            ToDoData.getInstance().deleteTodoItem(item);
+        }
     }
 
 }
