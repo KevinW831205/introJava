@@ -1,20 +1,22 @@
 package dataModel;
 
 import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 
-import java.io.*;
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.Iterator;
-import java.util.List;
 
 public class ToDoData {
     private static ToDoData instance = new ToDoData();
     private static String filename = "TodoListItems.txt";
-    private List<Todoitem> todoitems;
+    private ObservableList<Todoitem> todoitems;
     private DateTimeFormatter df;
     public static ToDoData getInstance(){
         return instance;
@@ -24,7 +26,7 @@ public class ToDoData {
         df = DateTimeFormatter.ofPattern("yyyy-MM-dd");
     }
 
-    public List<Todoitem> getTodoitems() {
+    public ObservableList<Todoitem> getTodoitems() {
         return todoitems;
     }
 
