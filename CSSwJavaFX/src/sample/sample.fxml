@@ -16,4 +16,6 @@
 
     <RadioButton text="radiobutton" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
 
+    <Label fx:id="label1" text="JavaFX effects" GridPane.rowIndex="1" GridPane.columnIndex="1" onMouseEntered="#handleMouseOver" onMouseExited="#handleMouseExit" rotate="90" />
+
 </GridPane>
