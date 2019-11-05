@@ -4,6 +4,7 @@ import dataModel.ToDoData;
 import dataModel.Todoitem;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
+import javafx.collections.transformation.FilteredList;
 import javafx.collections.transformation.SortedList;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -22,6 +23,7 @@ import java.time.format.DateTimeFormatter;
 import java.util.Comparator;
 import java.util.List;
 import java.util.Optional;
+import java.util.function.Predicate;
 
 public class Controller {
 
@@ -39,6 +41,8 @@ public class Controller {
     private ContextMenu listContextMenu;
     @FXML
     private ToggleButton filterToggleButton;
+
+    private FilteredList<Todoitem> filteredList;
 
 
     public void initialize() {
@@ -92,7 +96,14 @@ public class Controller {
             }
         });
 
-        SortedList<Todoitem> sortedList = new SortedList<Todoitem>(ToDoData.getInstance().getTodoitems(),
+        filteredList = new FilteredList<Todoitem>(ToDoData.getInstance().getTodoitems(), new Predicate<Todoitem>() {
+            @Override
+            public boolean test(Todoitem todoitem) {
+                return true;
+            }
+        });
+
+        SortedList<Todoitem> sortedList = new SortedList<Todoitem>(filteredList,
                 new Comparator<Todoitem>() {
                     @Override
                     public int compare(Todoitem o1, Todoitem o2) {
@@ -241,11 +252,21 @@ public class Controller {
         }
     }
 
-    public void handleFilterButton(){
-        if(filterToggleButton.isSelected()){
-            System.out.println("Filtering");
-        } else{
-            System.out.println("Show all");
+    public void handleFilterButton() {
+        if (filterToggleButton.isSelected()) {
+            filteredList.setPredicate(new Predicate<Todoitem>() {
+                @Override
+                public boolean test(Todoitem todoitem) {
+                    return todoitem.getDeadline().equals(LocalDate.now());
+                }
+            });
+        } else {
+            filteredList.setPredicate(new Predicate<Todoitem>() {
+                @Override
+                public boolean test(Todoitem todoitem) {
+                    return true;
+                }
+            });
         }
     }
 
