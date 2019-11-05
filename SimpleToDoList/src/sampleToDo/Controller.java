@@ -39,16 +39,27 @@ public class Controller {
 
         listContextMenu = new ContextMenu();
         MenuItem deleteMenuItem = new MenuItem("Delete");
+        MenuItem editMenuItem = new MenuItem("Edit");
         deleteMenuItem.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
                 Todoitem item = todoListView.getSelectionModel().getSelectedItem();
                 deleteItem(item);
+            }
+        });
 
+
+        editMenuItem.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                Todoitem item = todoListView.getSelectionModel().getSelectedItem();
+                System.out.println("editing item");
+                showEditItemDialog(item);
             }
         });
 
         listContextMenu.getItems().addAll(deleteMenuItem);
+        listContextMenu.getItems().addAll(editMenuItem);
 
 //        Todoitem item1 = new Todoitem("Learn Java","do x y z practice", LocalDate.of(2019, Month.NOVEMBER,5));
 //        Todoitem item2 = new Todoitem("Attend orientation","Location", LocalDate.of(2019, Month.NOVEMBER,6));
@@ -142,7 +153,6 @@ public class Controller {
         } catch (IOException e) {
             System.out.println("Can't load additem dialog");
             e.printStackTrace();
-            ;
         }
 
         dialog.getDialogPane().getButtonTypes().add(ButtonType.OK);
@@ -158,6 +168,38 @@ public class Controller {
         } else {
 //            System.out.println("Button pressed");
         }
+    }
+
+    @FXML
+    public void showEditItemDialog(Todoitem item){
+        Dialog<ButtonType> dialog = new Dialog<>();
+        dialog.initOwner(mainBorderPane.getScene().getWindow());
+        dialog.setTitle("Editing Todo Item");
+        dialog.setHeaderText("Editing todo item "+ item.getDescription() );
+
+        FXMLLoader fxmlLoader = new FXMLLoader();
+        fxmlLoader.setLocation(getClass().getResource("addTodoDialog.fxml"));
+        try {
+            dialog.getDialogPane().setContent(fxmlLoader.load());
+        } catch (IOException e) {
+            System.out.println("Can't load editItem dialog");
+            e.printStackTrace();
+        }
+
+        dialog.getDialogPane().getButtonTypes().add(ButtonType.OK);
+        dialog.getDialogPane().getButtonTypes().add(ButtonType.CANCEL);
+
+        Optional<ButtonType> result = dialog.showAndWait();
+        if (result.isPresent() && result.get() == ButtonType.OK) {
+            DialogController dctrl = fxmlLoader.getController();
+            Todoitem addedItem = dctrl.editResult(item);
+//            todoListView.getItems().setAll(ToDoData.getInstance().getTodoitems());
+            todoListView.getSelectionModel().select(addedItem);
+//            System.out.println("Ok pressed");
+        } else {
+//            System.out.println("Button pressed");
+        }
+
 
     }
 

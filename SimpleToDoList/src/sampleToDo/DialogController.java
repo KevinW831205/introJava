@@ -28,4 +28,13 @@ public class DialogController {
         return newItem;
     }
 
+    public Todoitem editResult(Todoitem editingItem){
+        String descriptionVal = descriptionInput.getText().trim();
+        String detailVal = detailInput.getText().trim();
+        LocalDate deadlineVal = deadlineInput.getValue();
+
+        ToDoData.getInstance().editTodoItem(editingItem,descriptionVal,detailVal,deadlineVal);
+        return editingItem;
+    }
+
 }
