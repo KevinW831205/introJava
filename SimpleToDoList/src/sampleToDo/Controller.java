@@ -186,12 +186,14 @@ public class Controller {
             e.printStackTrace();
         }
 
+        DialogController dctrl = fxmlLoader.getController();
+
+        dctrl.populateWhenEdit(item);
         dialog.getDialogPane().getButtonTypes().add(ButtonType.OK);
         dialog.getDialogPane().getButtonTypes().add(ButtonType.CANCEL);
 
         Optional<ButtonType> result = dialog.showAndWait();
         if (result.isPresent() && result.get() == ButtonType.OK) {
-            DialogController dctrl = fxmlLoader.getController();
             Todoitem addedItem = dctrl.editResult(item);
 //            todoListView.getItems().setAll(ToDoData.getInstance().getTodoitems());
             todoListView.getSelectionModel().select(addedItem);

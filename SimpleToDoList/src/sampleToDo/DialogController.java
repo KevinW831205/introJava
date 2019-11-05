@@ -28,6 +28,12 @@ public class DialogController {
         return newItem;
     }
 
+    public void populateWhenEdit(Todoitem editingItem){
+        descriptionInput.setText(editingItem.getDescription());
+        detailInput.setText(editingItem.getDetails());
+        deadlineInput.setValue(editingItem.getDeadline());
+    }
+
     public Todoitem editResult(Todoitem editingItem){
         String descriptionVal = descriptionInput.getText().trim();
         String detailVal = detailInput.getText().trim();
