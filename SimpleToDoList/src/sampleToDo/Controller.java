@@ -4,6 +4,7 @@ import dataModel.ToDoData;
 import dataModel.Todoitem;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
+import javafx.collections.transformation.SortedList;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -18,6 +19,7 @@ import javafx.util.Callback;
 import java.io.IOException;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Optional;
 
@@ -88,8 +90,17 @@ public class Controller {
             }
         });
 
+        SortedList<Todoitem> sortedList = new SortedList<Todoitem>(ToDoData.getInstance().getTodoitems(),
+                new Comparator<Todoitem>() {
+                    @Override
+                    public int compare(Todoitem o1, Todoitem o2) {
+                        return o1.getDeadline().compareTo(o2.getDeadline());
+                    }
+                });
+
 //        todoListView.getItems().setAll(ToDoData.getInstance().getTodoitems());
-        todoListView.setItems(ToDoData.getInstance().getTodoitems());
+//        todoListView.setItems(ToDoData.getInstance().getTodoitems());
+        todoListView.setItems(sortedList);
         todoListView.getSelectionModel().setSelectionMode(SelectionMode.SINGLE);
         todoListView.getSelectionModel().selectFirst();
 
@@ -130,10 +141,10 @@ public class Controller {
     }
 
     @FXML
-    public void handleKeyPressed(KeyEvent keyEvent){
+    public void handleKeyPressed(KeyEvent keyEvent) {
         Todoitem selectedItem = todoListView.getSelectionModel().getSelectedItem();
-        if(selectedItem != null){
-            if(keyEvent.getCode().equals(KeyCode.DELETE)){
+        if (selectedItem != null) {
+            if (keyEvent.getCode().equals(KeyCode.DELETE)) {
                 deleteItem(selectedItem);
             }
         }
@@ -183,11 +194,11 @@ public class Controller {
     }
 
     @FXML
-    public void showEditItemDialog(Todoitem item){
+    public void showEditItemDialog(Todoitem item) {
         Dialog<ButtonType> dialog = new Dialog<>();
         dialog.initOwner(mainBorderPane.getScene().getWindow());
         dialog.setTitle("Editing Todo Item");
-        dialog.setHeaderText("Editing todo item "+ item.getDescription() );
+        dialog.setHeaderText("Editing todo item " + item.getDescription());
 
         FXMLLoader fxmlLoader = new FXMLLoader();
         fxmlLoader.setLocation(getClass().getResource("addTodoDialog.fxml"));
