@@ -44,6 +44,9 @@ public class Controller {
 
     private FilteredList<Todoitem> filteredList;
 
+    private Predicate<Todoitem> allItems;
+    private Predicate<Todoitem> todayItems;
+
 
     public void initialize() {
 
@@ -96,12 +99,21 @@ public class Controller {
             }
         });
 
-        filteredList = new FilteredList<Todoitem>(ToDoData.getInstance().getTodoitems(), new Predicate<Todoitem>() {
+        allItems = new Predicate<Todoitem>() {
             @Override
             public boolean test(Todoitem todoitem) {
                 return true;
             }
-        });
+        };
+
+        todayItems = new Predicate<Todoitem>() {
+            @Override
+            public boolean test(Todoitem todoitem) {
+                return todoitem.getDeadline().equals(LocalDate.now());
+            }
+        };
+
+        filteredList = new FilteredList<Todoitem>(ToDoData.getInstance().getTodoitems(), allItems);
 
         SortedList<Todoitem> sortedList = new SortedList<Todoitem>(filteredList,
                 new Comparator<Todoitem>() {
@@ -253,20 +265,20 @@ public class Controller {
     }
 
     public void handleFilterButton() {
+        Todoitem selectedItem = todoListView.getSelectionModel().getSelectedItem();
         if (filterToggleButton.isSelected()) {
-            filteredList.setPredicate(new Predicate<Todoitem>() {
-                @Override
-                public boolean test(Todoitem todoitem) {
-                    return todoitem.getDeadline().equals(LocalDate.now());
-                }
-            });
+            filteredList.setPredicate(todayItems);
+            if(filteredList.isEmpty()){
+                itemDetail.clear();
+                deadLineLabel.setText("");
+            } else if(filteredList.contains(selectedItem)){
+                todoListView.getSelectionModel().select(selectedItem);
+            } else{
+                todoListView.getSelectionModel().selectFirst();
+            }
         } else {
-            filteredList.setPredicate(new Predicate<Todoitem>() {
-                @Override
-                public boolean test(Todoitem todoitem) {
-                    return true;
-                }
-            });
+            filteredList.setPredicate(allItems);
+            todoListView.getSelectionModel().select(selectedItem);
         }
     }
 
