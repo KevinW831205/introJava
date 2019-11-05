@@ -87,12 +87,9 @@ public class ToDoData {
         todoitems.remove(item);
     }
 
-    public void editTodoItem(Todoitem item, String description, String details, LocalDate deadline){
+    public void editTodoItem(Todoitem item, Todoitem newItem){
         int editItemIndex = todoitems.indexOf(item);
-        Todoitem editing = todoitems.get(editItemIndex);
-        editing.setDescription(description);
-        editing.setDetails(details);
-        editing.setDeadline(deadline);
+        todoitems.set(editItemIndex,newItem);
     }
 
 }

@@ -39,8 +39,10 @@ public class DialogController {
         String detailVal = detailInput.getText().trim();
         LocalDate deadlineVal = deadlineInput.getValue();
 
-        ToDoData.getInstance().editTodoItem(editingItem,descriptionVal,detailVal,deadlineVal);
-        return editingItem;
+        Todoitem newItem = new Todoitem(descriptionVal,detailVal,deadlineVal);
+
+        ToDoData.getInstance().editTodoItem(editingItem,newItem);
+        return newItem;
     }
 
 }
