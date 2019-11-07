@@ -5,7 +5,7 @@ import jdk.jshell.Diag;
 import org.w3c.dom.UserDataHandler;
 
 import java.awt.geom.Area;
-
+import java.util.ArrayList;
 
 
 public class Main {
@@ -166,7 +166,8 @@ public class Main {
 //
 //        }
 
-
+        int[] num = {1,1,1,1,3,3,3};
+        System.out.println( FindOddInt.FindIt(num) );
 
     }   // closing for main
 }
