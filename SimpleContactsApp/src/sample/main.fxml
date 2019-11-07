@@ -31,6 +31,10 @@
                     <items>
                         <MenuItem text="Edit" onAction="#showEditContactDialog"/>
                     </items>
+                    <items>
+                        <MenuItem text="Delete" onAction="#deleteContact"/>
+                    </items>
+
                 </Menu>
             </MenuBar>
         </VBox>

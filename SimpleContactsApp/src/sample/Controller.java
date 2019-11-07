@@ -61,6 +61,7 @@ public class Controller {
         if(selectedContact == null){
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("No contacts selected");
+            alert.setHeaderText(null);
             alert.setContentText("Please select the contact you want to edit");
             alert.showAndWait();
             return;
@@ -89,5 +90,30 @@ public class Controller {
             contactController.updateContact(selectedContact);
             data.saveContacts();
         }
+    }
+
+    @FXML
+    public void deleteContact(){
+        Contact selectedContact = contactsTable.getSelectionModel().getSelectedItem();
+        if(selectedContact == null){
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("No contacts selected");
+            alert.setHeaderText(null);
+            alert.setContentText("Please select the contact you want to edit");
+            alert.showAndWait();
+            return;
+        }
+
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setTitle("Delete Contact");
+        alert.setHeaderText(null);
+        alert.setContentText("Are your sure you want to delete "+selectedContact.getFirstName() +" "+selectedContact.getLastName());
+
+        Optional<ButtonType> result = alert.showAndWait();
+        if(result.isPresent() && result.get() == ButtonType.OK){
+            data.deleteContact(selectedContact);
+            data.saveContacts();
+        }
+
     }
 }

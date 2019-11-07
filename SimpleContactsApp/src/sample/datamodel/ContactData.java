@@ -45,7 +45,7 @@ public class ContactData {
         contacts.add(contactAdding);
     }
 
-    public void deleteContact(ContextMenu contactDeleting){
+    public void deleteContact(Contact contactDeleting){
         contacts.remove(contactDeleting);
     }
 
