@@ -17,14 +17,14 @@
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.cell.PropertyValueFactory?>
 <BorderPane fx:controller="sample.Controller"
-            xmlns:fx="http://javafx.com/fxml">
+            xmlns:fx="http://javafx.com/fxml" fx:id="mainBorderPane">
 
     <top>
         <VBox>
             <MenuBar>
                 <Menu text="Contacts">
                     <items>
-                        <MenuItem text="Add" />
+                        <MenuItem text="Add" onAction="#showAddContactDialog" />
                         <SeparatorMenuItem/>
                         <MenuItem text="Exit" />
                     </items>
