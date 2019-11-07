@@ -1,6 +1,8 @@
-package sample;
+package sample.datamodel;
 
+import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.scene.control.ContextMenu;
 
 import javax.xml.stream.XMLEventFactory;
 import javax.xml.stream.XMLEventReader;
@@ -32,10 +34,21 @@ public class ContactData {
     private ObservableList<Contact> contacts;
 
     public ContactData() {
-        // *** initialize the contacts list here ***
+        contacts = FXCollections.observableArrayList();
+
     }
 
-    // *** Add methods to add/delete/access contacts here ***
+    public ObservableList<Contact> getContacts(){
+        return contacts;
+    }
+
+    public void addContact(Contact contactAdding){
+        contacts.add(contactAdding);
+    }
+
+    public void deleteContact(ContextMenu contactDeleting){
+        contacts.remove(contactDeleting);
+    }
 
     public void loadContacts() {
         try {

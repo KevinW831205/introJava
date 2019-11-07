@@ -15,6 +15,7 @@
 <?import javafx.scene.control.Tooltip?>
 <?import javafx.scene.control.ToggleButton?>
 <?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
 <BorderPane fx:controller="sample.Controller"
             xmlns:fx="http://javafx.com/fxml">
 
@@ -33,12 +34,28 @@
     </top>
 
     <center>
-        <TableView>
+        <TableView fx:id="contactsTable">
             <columns>
-                <TableColumn text="First Name"/>
-                <TableColumn text="Last Name"/>
-                <TableColumn text="Phone Number"/>
-                <TableColumn text="Notes"/>
+                <TableColumn text="First Name">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="firstName"/>
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn text="Last Name">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="lastName"/>
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn text="Phone Number">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="phoneNumber"/>
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn text="Notes">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="notes"/>
+                    </cellValueFactory>
+                </TableColumn>
             </columns>
         </TableView>
     </center>
