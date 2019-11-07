@@ -41,42 +41,41 @@ public class Controller {
     @FXML
     public void handleSaveClick() {
         FileChooser chooser = new FileChooser();
-        chooser.setTitle("Save Application File");
+        chooser.setTitle("Save application file");
         chooser.getExtensionFilters().addAll(
                 new FileChooser.ExtensionFilter("Text", "*.txt"),
-                new FileChooser.ExtensionFilter("PDF", "*.pdf"),
-                new FileChooser.ExtensionFilter("Image", "*.png","*.jpg","*.gif"),
-                new FileChooser.ExtensionFilter("All Files", "*.*")
+                new FileChooser.ExtensionFilter("PDF", "*.pdf")
         );
         File file = chooser.showSaveDialog(mainGridPane.getScene().getWindow());
         if (file != null) {
             System.out.println(file.getPath());
         } else {
-            System.out.println("No file choosen");
+            System.out.println("chooser not doing what was expected");
         }
     }
 
     @FXML
-    public void handleOpenClick() {
-        FileChooser chooser = new FileChooser();
-        //        DirectoryChooser chooser = new DirectoryChooser();
+    void handleOpenClick() {
 
-        chooser.setTitle("Open Application File");
+        FileChooser chooser = new FileChooser();
+        chooser.setTitle("Open application files");
+
         chooser.getExtensionFilters().addAll(
-                new FileChooser.ExtensionFilter("Zip", "*.zip"),
-                new FileChooser.ExtensionFilter("PDF", "*.pdf")
+                new FileChooser.ExtensionFilter("Text", "*.txt"),
+                new FileChooser.ExtensionFilter("PDF", "*.pdf"),
+                new FileChooser.ExtensionFilter("Image","*.jpg","*.gif","*.png"),
+                new FileChooser.ExtensionFilter("All","*.*")
         );
 
-//        File file = chooser.showOpenDialog(mainGridPane.getScene().getWindow());
+        //      File file = chooser.showOpenDialog(mainGridPane.getScene().getWindow());
         List<File> file = chooser.showOpenMultipleDialog(mainGridPane.getScene().getWindow());
-
         if (file != null) {
-            //            System.out.println(file.getPath());
-            for(int i=0; i<file.size(); i++){
+//            System.out.println(file.getPath());
+            for(int i=0; i<file.size();i++){
                 System.out.println(file.get(i));
             }
         } else {
-            System.out.println("No file choosen");
+            System.out.println("chooser not doing what was expected");
         }
 
     }
