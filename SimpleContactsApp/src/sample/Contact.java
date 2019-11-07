@@ -9,6 +9,13 @@ public class Contact {
     private SimpleStringProperty notes;
 
 
+    public Contact(String firstName, String lastName, String phoneNumber, String notes) {
+        this.firstName.set(firstName);
+        this.lastName.set(lastName);
+        this.phoneNumber.set(phoneNumber);
+        this.notes.set(notes);
+    }
+
     public Contact() {
         this.firstName= new SimpleStringProperty();
         this.lastName = new SimpleStringProperty();
