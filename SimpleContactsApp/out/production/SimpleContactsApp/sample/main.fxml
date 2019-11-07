@@ -25,8 +25,11 @@
                 <Menu text="Contacts">
                     <items>
                         <MenuItem text="Add" onAction="#showAddContactDialog" />
-                        <SeparatorMenuItem/>
-                        <MenuItem text="Exit" />
+<!--                        <SeparatorMenuItem/>-->
+<!--                        <MenuItem text="Exit" />-->
+                    </items>
+                    <items>
+                        <MenuItem text="Edit" onAction="#showEditContactDialog"/>
                     </items>
                 </Menu>
             </MenuBar>
