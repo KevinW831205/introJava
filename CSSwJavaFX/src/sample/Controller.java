@@ -10,6 +10,7 @@ import javafx.stage.DirectoryChooser;
 import javafx.stage.FileChooser;
 
 import java.io.File;
+import java.util.List;
 
 public class Controller {
     @FXML
@@ -38,15 +39,44 @@ public class Controller {
     }
 
     @FXML
-    public void handleClick() {
-//        FileChooser chooser = new FileChooser();
-//        chooser.showOpenDialog(mainGridPane.getScene().getWindow());
-        DirectoryChooser chooser = new DirectoryChooser();
-        File file = chooser.showDialog(mainGridPane.getScene().getWindow());
-        if(file != null){
+    public void handleSaveClick() {
+        FileChooser chooser = new FileChooser();
+        chooser.setTitle("Save Application File");
+        chooser.getExtensionFilters().addAll(
+                new FileChooser.ExtensionFilter("Text", "*.txt"),
+                new FileChooser.ExtensionFilter("PDF", "*.pdf"),
+                new FileChooser.ExtensionFilter("Image", "*.png","*.jpg","*.gif"),
+                new FileChooser.ExtensionFilter("All Files", "*.*")
+        );
+        File file = chooser.showSaveDialog(mainGridPane.getScene().getWindow());
+        if (file != null) {
             System.out.println(file.getPath());
         } else {
-            System.out.println("chooser not doing what was expected");
+            System.out.println("No file choosen");
+        }
+    }
+
+    @FXML
+    public void handleOpenClick() {
+        FileChooser chooser = new FileChooser();
+        //        DirectoryChooser chooser = new DirectoryChooser();
+
+        chooser.setTitle("Open Application File");
+        chooser.getExtensionFilters().addAll(
+                new FileChooser.ExtensionFilter("Zip", "*.zip"),
+                new FileChooser.ExtensionFilter("PDF", "*.pdf")
+        );
+
+//        File file = chooser.showOpenDialog(mainGridPane.getScene().getWindow());
+        List<File> file = chooser.showOpenMultipleDialog(mainGridPane.getScene().getWindow());
+
+        if (file != null) {
+            //            System.out.println(file.getPath());
+            for(int i=0; i<file.size(); i++){
+                System.out.println(file.get(i));
+            }
+        } else {
+            System.out.println("No file choosen");
         }
 
     }
