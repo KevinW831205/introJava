@@ -1,10 +1,15 @@
 package sample;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.Dialog;
+import javafx.scene.control.TableView;
 import javafx.scene.layout.BorderPane;
+import sample.datamodel.Contact;
+import sample.datamodel.ContactData;
 
 import java.io.IOException;
 import java.util.Optional;
@@ -12,6 +17,17 @@ import java.util.Optional;
 public class Controller {
     @FXML
     private BorderPane mainBorderPane;
+    @FXML
+    private TableView<Contact> contactsTable;
+
+    private ContactData data;
+
+    public void initialize(){
+        data = new ContactData();
+        data.loadContacts();
+        contactsTable.setItems(data.getContacts());
+
+    }
 
     @FXML
     public void showAddContactDialog(){
@@ -32,7 +48,10 @@ public class Controller {
 
         Optional<ButtonType> result = dialog.showAndWait();
         if(result.isPresent() && result.get() == ButtonType.OK){
-
+            ContactController contactController = fxmlLoader.getController();
+            Contact newContact = contactController.getNewContact();
+            data.addContact(newContact);
+            data.saveContacts();
         }
 
     }

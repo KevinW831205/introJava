@@ -3,10 +3,10 @@ package sample.datamodel;
 import javafx.beans.property.SimpleStringProperty;
 
 public class Contact {
-    private SimpleStringProperty firstName;
-    private SimpleStringProperty lastName;
-    private SimpleStringProperty phoneNumber;
-    private SimpleStringProperty notes;
+    private SimpleStringProperty firstName = new SimpleStringProperty();
+    private SimpleStringProperty lastName= new SimpleStringProperty();
+    private SimpleStringProperty phoneNumber = new SimpleStringProperty();
+    private SimpleStringProperty notes = new SimpleStringProperty();
 
 
     public Contact(String firstName, String lastName, String phoneNumber, String notes) {
@@ -17,10 +17,7 @@ public class Contact {
     }
 
     public Contact() {
-        this.firstName= new SimpleStringProperty();
-        this.lastName = new SimpleStringProperty();
-        this.phoneNumber = new SimpleStringProperty();
-        this.notes = new SimpleStringProperty();
+
     }
 
     public String getFirstName() {

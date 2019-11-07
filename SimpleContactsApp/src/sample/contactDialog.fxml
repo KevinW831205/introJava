@@ -13,7 +13,7 @@
             <TextField fx:id="firstNameInput" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
 
             <Label text="Last Name: " GridPane.rowIndex="1" GridPane.columnIndex="0"/>
-            <TextField fx:id="lasttNameInput" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+            <TextField fx:id="lastNameInput" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
 
             <Label text="Phone Number: " GridPane.rowIndex="2" GridPane.columnIndex="0"/>
             <TextField fx:id="phoneNumberInput" GridPane.rowIndex="2" GridPane.columnIndex="1"/>

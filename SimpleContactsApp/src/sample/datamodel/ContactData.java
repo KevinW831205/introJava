@@ -3,7 +3,6 @@ package sample.datamodel;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.scene.control.ContextMenu;
-import sample.datamodel.Contact;
 
 import javax.xml.stream.XMLEventFactory;
 import javax.xml.stream.XMLEventReader;
@@ -32,11 +31,10 @@ public class ContactData {
     private static final String PHONE_NUMBER = "phone_number";
     private static final String NOTES = "notes";
 
-    private ObservableList<Contact> contacts;
+    private ObservableList<Contact> contacts ;
 
     public ContactData() {
         contacts = FXCollections.observableArrayList();
-
     }
 
     public ObservableList<Contact> getContacts(){
