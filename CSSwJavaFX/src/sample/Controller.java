@@ -55,7 +55,7 @@ public class Controller {
     }
 
     @FXML
-    void handleOpenClick() {
+    public void handleOpenClick() {
 
         FileChooser chooser = new FileChooser();
         chooser.setTitle("Open application files");
@@ -78,5 +78,10 @@ public class Controller {
             System.out.println("chooser not doing what was expected");
         }
 
+    }
+
+    @FXML
+    public void handleLinkClick(){
+        System.out.println("clickes");
     }
 }
