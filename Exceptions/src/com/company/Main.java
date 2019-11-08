@@ -16,8 +16,10 @@ public class Main {
 
 //        int x = getInt();
 //        int x = getIntLBYL();
-        int x =getIntEAFP();
-        System.out.println("x: "+x);
+//        int x =getIntEAFP();
+//        System.out.println("x: "+x);
+
+
     }
 
     private static int getInt(){
