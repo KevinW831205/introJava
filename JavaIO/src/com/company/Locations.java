@@ -10,25 +10,17 @@ import java.util.Set;
 public class Locations implements Map<Integer, Location> {
     private static Map<Integer, Location> locations = new HashMap<Integer, Location>();
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         FileWriter locFile = null;
         try {
             locFile = new FileWriter("locations.txt");
-            for(Location location: locations.values()){
-                locFile.write(location.getLocationID()+","+location.getDescription()+"\n");
+            for (Location location : locations.values()) {
+                locFile.write(location.getLocationID() + "," + location.getDescription() + "\n");
             }
-        } catch (IOException e){
-            System.out.println("Filewriter catch block");
-            e.printStackTrace();
         } finally {
             System.out.println("File writer finally");
-            try{
-                if(locFile != null){
-                    locFile.close();
-                }
-            } catch (IOException e){
-                System.out.println("locfile close block");
-                e.printStackTrace();
+            if (locFile != null) {
+                locFile.close();
             }
         }
     }
@@ -62,7 +54,6 @@ public class Locations implements Map<Integer, Location> {
         tempExit.put("W", 2);
         locations.put(5, new Location(5, "You are in the forest", tempExit));
     }
-
 
 
     @Override
