@@ -1,5 +1,6 @@
 package com.company;
 
+import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -57,6 +58,30 @@ public class Locations implements Map<Integer, Location> {
             }
         }
 
+        // read exits with buffer reader
+        try{
+            scanner= new Scanner(new BufferedReader(new FileReader("directions.txt")));
+            scanner.useDelimiter(",");
+            while(scanner.hasNextLine()){
+                int loc = scanner.nextInt();
+                scanner.skip(scanner.delimiter());
+                String direction = scanner.next();
+                scanner.skip(scanner.delimiter());
+                String dest = scanner.nextLine();
+                int destination = Integer.parseInt(dest);
+                System.out.println(loc + ": "+direction+": "+destination);
+                Location location = locations.get(loc);
+                location.addExit(direction,destination);
+            }
+        } catch (IOException e){
+            e.printStackTrace();
+        } finally {
+            if(scanner != null){
+                scanner.close();
+            }
+        }
+
+
 
 /*
         // initialization
@@ -89,6 +114,7 @@ public class Locations implements Map<Integer, Location> {
         locations.put(5, new Location(5, "You are in the forest", tempExit));
 
  */
+
     }
 
 
