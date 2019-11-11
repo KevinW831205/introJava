@@ -34,7 +34,8 @@ public class Locations implements Map<Integer, Location> {
 //            }
 //        }
 
-
+        /*
+        // byte stream
         try (DataOutputStream locFile = new DataOutputStream(new BufferedOutputStream(new FileOutputStream("locations.dat")))) {
             for (Location location : locations.values()) {
                 locFile.writeInt(location.getLocationID());
@@ -51,13 +52,40 @@ public class Locations implements Map<Integer, Location> {
                 }
             }
         }
+         */
+
+        //serialization
+        try (ObjectOutputStream locFile = new ObjectOutputStream(new BufferedOutputStream(new FileOutputStream("locations.dat")))) {
+            for (Location location : locations.values()) {
+                locFile.writeObject(location);
+            }
+        }
+
+
     }
 
     static {
+        try (ObjectInputStream locFile = new ObjectInputStream(new BufferedInputStream(new FileInputStream("locations.dat")))) {
+            boolean eof = false;
+            while (!eof){
+                try{
+                    Location location = (Location) locFile.readObject();
+                    System.out.println("Read location "+location.getLocationID() + " : "+location.getDescription());
+                    System.out.println("Found "+location.getExits().size()+" exits");
 
+                    locations.put(location.getLocationID(),location);
+                } catch (EOFException e){
+                    eof =true;
+                }
+            }
+        } catch (IOException io){
+            System.out.println("IO esception");
+        } catch (ClassNotFoundException e){
+            System.out.println("Class not found exception "+e.getMessage());
+        }
 
+/*
         //Binary data
-
         try (DataInputStream locFile = new DataInputStream(new BufferedInputStream(new FileInputStream("locations.dat")))) {
             boolean eof = false;
             while (!eof) {
@@ -82,6 +110,8 @@ public class Locations implements Map<Integer, Location> {
         } catch (IOException io) {
             System.out.println("IO exception");
         }
+
+ */
 
 
         /*
