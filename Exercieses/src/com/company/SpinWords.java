@@ -13,6 +13,7 @@ public class SpinWords {
         String[] words = sentence.split(" ");
         String result = "";
 
+
         for (String word : words) {
             StringBuilder s = new StringBuilder(word);
             if (word.length() >= 5) {
@@ -24,5 +25,7 @@ public class SpinWords {
 
         return result.trim();
     }
+
+
 
 }

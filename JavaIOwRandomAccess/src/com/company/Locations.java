@@ -5,63 +5,39 @@ import java.util.*;
 
 public class Locations implements Map<Integer, Location> {
     private static Map<Integer, Location> locations = new LinkedHashMap<Integer, Location>();
+    private static Map<Integer, IndexRecord> index = new LinkedHashMap<Integer, IndexRecord>();
 
     public static void main(String[] args) throws IOException {
-//        FileWriter locFile = null;
-//        try {
-//            locFile = new FileWriter("locations.txt");
-//            for (Location location : locations.values()) {
-//                locFile.write(location.getLocationID() + "," + location.getDescription() + "\n");
-////                throw new IOException("test exception thrown while writing");
-//            }
-//        } finally {
-//            System.out.println("File writer finally");
-//            if (locFile != null) {
-//                System.out.println("closing locfile");
-//                locFile.close();
-//            }
-//        }
+        try (RandomAccessFile rao = new RandomAccessFile("locations_rand.dat","rwd")) {
+            rao.writeInt(locations.size());
+            int indexSize = locations.size()*3*Integer.BYTES;
+            int locationStart = (int) (indexSize + rao.getFilePointer() + Integer.BYTES);
+            rao.writeInt(locationStart);
 
-//        try (BufferedWriter locFile = new BufferedWriter(new FileWriter("locations.txt"));
-//             BufferedWriter dirFile = new BufferedWriter(new FileWriter("directions.txt"))) {
-//            for (Location location : locations.values()) {
-//                locFile.write(location.getLocationID() + "," + location.getDescription() + "\n");
-//                for (String direction : location.getExits().keySet()) {
-//                    if(!direction.equalsIgnoreCase("Q")){
-//                        dirFile.write(location.getLocationID() + "," + direction + "," + location.getExits().get(direction) + "\n");
-//                    }
-//                }
-//            }
-//        }
-
-        /*
-        // byte stream
-        try (DataOutputStream locFile = new DataOutputStream(new BufferedOutputStream(new FileOutputStream("locations.dat")))) {
-            for (Location location : locations.values()) {
-                locFile.writeInt(location.getLocationID());
-                locFile.writeUTF(location.getDescription());
-                System.out.println("Writing location" + location.getLocationID() + ": " + location.getDescription());
-                System.out.println("Writing " + (location.getExits().size() - 1) + " exits.");
-                locFile.writeInt(location.getExits().size() - 1);
-                for (String direction : location.getExits().keySet()) {
-                    if (!direction.equalsIgnoreCase("Q")) {
-                        System.out.println("\t\t" + direction + "," + location.getExits().get(direction));
-                        locFile.writeUTF(direction);
-                        locFile.writeInt(location.getExits().get(direction));
+            long indexStart = rao.getFilePointer();
+            int startPointer = locationStart;
+            rao.seek(startPointer);
+            for(Location location : locations.values()){
+                rao.writeInt(location.getLocationID());
+                rao.writeUTF(location.getDescription());
+                StringBuilder builder = new StringBuilder();
+                for(String direction: location.getExits().keySet()){
+                    if(!direction.equalsIgnoreCase("Q")){
+                        builder.append(direction);
+                        builder.append(",");
+                        builder.append(location.getExits());
+                        builder.append(",");
                     }
                 }
+                rao.writeUTF(builder.toString());
+
+                IndexRecord record = new IndexRecord(startPointer, (int) rao.getFilePointer() - startPointer);
+                index.put(location.getLocationID(), record);
+
+                startPointer = (int) rao.getFilePointer();
             }
+
         }
-         */
-
-        //serialization
-        try (ObjectOutputStream locFile = new ObjectOutputStream(new BufferedOutputStream(new FileOutputStream("locations.dat")))) {
-            for (Location location : locations.values()) {
-                locFile.writeObject(location);
-            }
-        }
-
-
     }
 
     static {
