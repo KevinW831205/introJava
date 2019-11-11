@@ -68,32 +68,32 @@ public class Locations implements Map<Integer, Location> {
             System.out.println("IOException in static in initializer "+ e.getMessage());
         }
 
-        /*
-        try (ObjectInputStream locFile = new ObjectInputStream(new BufferedInputStream(new FileInputStream("locations.dat")))) {
-            boolean eof = false;
-            while (!eof){
-                try{
-                    Location location = (Location) locFile.readObject();
-                    System.out.println("Read location "+location.getLocationID() + " : "+location.getDescription());
-                    System.out.println("Found "+location.getExits().size()+" exits");
-
-                    locations.put(location.getLocationID(),location);
-                } catch (EOFException e){
-                    eof =true;
-                }
-            }
-        } catch(InvalidClassException e){
-            System.out.println("Invalid class exception "+e.getMessage());
-
-        } catch (IOException io){
-            System.out.println("IO esception");
-        } catch (ClassNotFoundException e){
-            System.out.println("Class not found exception "+e.getMessage());
-        }
-
-         */
     }
 
+    public Location getLocation(int locationId) throws IOException{
+
+        IndexRecord record = index.get(locationId);
+        ra.seek(record.getStartByte());
+        int id = ra.readInt();
+        String description = ra.readUTF();
+        String exits = ra.readUTF();
+        String[] exitPart = exits.split(",");
+        Location location = new Location(locationId, description, null);
+        if(locationId != 0){
+            for(int i =0 ;i<exitPart.length; i++){
+                System.out.println("Exit part = " +exitPart[i]);
+                System.out.println("exit part i+1 = " + exitPart[i+1]);
+                String direction = exitPart[i];
+                int destination = Integer.parseInt(exitPart[++i]);
+                location.addExit(direction,destination);
+            }
+        }
+        return location;
+    }
+
+    public void close() throws IOException{
+        ra.close();
+    }
 
     @Override
     public int size() {
