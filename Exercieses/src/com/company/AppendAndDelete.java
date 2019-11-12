@@ -13,51 +13,26 @@ public class AppendAndDelete {
 
     public static String appendAndDelete(String s, String t, int k){
 
-        ArrayList<String> s1 = new ArrayList<String>();
-        for(String letter : s.split("")){
-            s1.add(letter);
-        }
+        int commonLength = 0;
 
-        ArrayList<String> t1 = new ArrayList<String>();
-        for(String letter : t.split("")){
-            t1.add(letter);
-        }
-
-        int smaller;
-        if(s1.size() < t1.size()){
-            smaller = s1.size();
-        } else {
-            smaller = t1.size();
-        }
-
-        int indexEqual = -1;
-        for(int i=0; i<smaller; i++){
-            if(s1.get(i).equals(t1.get(i))){
-                indexEqual = i;
+        for(int i=0; i< Math.min(s.length(),t.length()); i++){
+            if(s.charAt(i) == t.charAt(i)){
+                commonLength++;
             } else {
                 break;
             }
         }
 
-        int minMoves = (s1.size() + t1.size() - indexEqual*2 -2);
-
-        System.out.println(minMoves);
-        System.out.println(s1.size() + t1.size());
-        if(s1.size() + t1.size() < k){
+        if(s.length()+t.length()-2*commonLength > k){
+            return "No";
+        } else if((s.length()+t.length()-2*commonLength)%2 == k%2){
             return "Yes";
+        } else if(s.length()+t.length()-k <0){
+            return "Yes";
+        } else{
+            return "No";
         }
 
-        if(minMoves == k){
-            return "Yes";
-        } else if(minMoves < k){
-            return "Yes";
-        } else {
-            if((k-minMoves)%2 == 0){
-                return "Yes";
-            } else {
-                return "No";
-            }
-        }
     }
 
 }
