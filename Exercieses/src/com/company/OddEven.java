@@ -1,5 +1,7 @@
 package com.company;
 
+import static java.util.Arrays.stream;
+
 public class OddEven {
 
     public static void main(String[] args) {
@@ -9,17 +11,19 @@ public class OddEven {
 
     }
 
-    public static boolean isSumOdd(int[] arr){
+    public static String isSumOdd(int[] array){
 
-        int sum = 0;
-        for(int num : arr){
-            sum += num;
-        }
+//        int sum = 0;
+//        for(int num : array){
+//            sum += num;
+//        }
+//
+//        if(sum%2 != 0){
+//            return "odd";
+//        }
+//        return "even";
 
-        if(sum%2 != 0){
-            return true;
-        }
-        return false;
+        return stream(array).sum() % 2 == 0 ? "even" : "odd";
     }
 
 }
