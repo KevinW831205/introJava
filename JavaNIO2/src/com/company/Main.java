@@ -33,6 +33,19 @@ public class Main {
             int numBytes = binChannel.write(buffer);
             System.out.println("numBytes written was: " + numBytes);
 
+            ByteBuffer intBuffer = ByteBuffer.allocate(Integer.BYTES);
+            intBuffer.putInt(245);
+            intBuffer.flip();
+            numBytes = binChannel.write(intBuffer);
+            System.out.println("numBytes written was: " + numBytes);
+
+            intBuffer.flip();
+            intBuffer.putInt(-2450);
+            intBuffer.flip();
+            numBytes = binChannel.write(intBuffer);
+            System.out.println("numBytes written was: " + numBytes);
+
+
 
         } catch (IOException e) {
             e.printStackTrace();
