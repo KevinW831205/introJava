@@ -3,9 +3,9 @@ package com.company;
 public class QueensAttack {
     public static void main(String[] args) {
 
-        int[][] obstacles = new int[][]{new int[]{5, 3} , new int[]{2,3}};
+        int[][] obstacles = new int[][]{new int[]{4, 4}, new int[]{2, 3}};
 
-        System.out.println(queensAttack(5, 1, 3, 3, obstacles));
+        System.out.println(queensAttack(5, 1, 3, 2, obstacles));
 
     }
 
@@ -30,8 +30,8 @@ public class QueensAttack {
                         }
                     } else if (obstacle[1] < c_q) {
                         // below
-                        if(Math.abs(c_q - obstacle[1] -1) < rowCanMoveBelow){
-                            rowCanMoveBelow = Math.abs(c_q - obstacle[1] -1);
+                        if (Math.abs(c_q - obstacle[1] - 1) < rowCanMoveBelow) {
+                            rowCanMoveBelow = Math.abs(c_q - obstacle[1] - 1);
                         }
                     }
                 }
@@ -45,30 +45,30 @@ public class QueensAttack {
                         }
                     } else if (obstacle[0] < r_q) {
                         // below
-                        if(Math.abs(r_q - obstacle[1] -1) < rowCanMoveLeft){
-                            rowCanMoveBelow = Math.abs(r_q - obstacle[0] -1);
+                        if (Math.abs(r_q - obstacle[1] - 1) < rowCanMoveLeft) {
+                            rowCanMoveBelow = Math.abs(r_q - obstacle[0] - 1);
                         }
                     }
                 }
 
-
-
+                // in diagonal
+                if (Math.abs(obstacle[0] - r_q) == Math.abs(obstacle[1] - c_q)) {
+                    if (obstacle[0] < r_q && obstacle[1] > c_q) {
+                        // up left
+                        blockUpLeft = r_q - obstacle[0] - 1;
+                    } else if (obstacle[0] > r_q && obstacle[1] > c_q) {
+                        // up right
+                        blockUpRight = obstacle[0] - r_q - 1;
+                    } else if (obstacle[0] < r_q && obstacle[1] < c_q) {
+                        // down left
+                        blockDownLeft = blockUpLeft = r_q - obstacle[0] - 1;
+                    } else if( obstacle[0] > r_q && obstacle[1] < c_q){
+                        //down right
+                        blockDownRight = obstacle[0] - r_q - 1;
+                    }
+                }
             }
 
-//            for (int i = 0; i < obstacles.length; i++) {
-//                // in same column
-//                if(obstacles[i][0] == r_q){
-//                    if(obstacles[i][1] > c_q){
-//                        // above
-//                        if(Math.abs(obstacles[i][1] - c_q - 1) < rowCanMoveAbove){
-//                            rowCanMoveAbove = obstacles[i][1] - c_q -1;
-//                        }
-//
-//                    } else if(obstacles[i][1] < c_q){
-//                        // below
-//                    }
-//                }
-//            }
         }
 
 
