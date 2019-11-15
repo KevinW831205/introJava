@@ -46,6 +46,7 @@ public class NotDivisibleSubset {
             remainders.put(remainder,numberOfRemainder);
         }
 
+        System.out.println(remainders.toString());
 
         int largestNumberOfNonDivisible = 0;
         if(remainders.containsKey(0)){
@@ -54,9 +55,11 @@ public class NotDivisibleSubset {
         if(k%2==0 && remainders.containsKey(k/2)){
             largestNumberOfNonDivisible++;
         }
-        for(int i=1; i < k/2; i++ ){
+
+        for(int i=1; i < Math.ceil((double) k/2); i++ ){
             int n1 = remainders.getOrDefault(i, 0);
             int n2 = remainders.getOrDefault(k-i, 0);
+            System.out.println("n1 "+n1 +" n2 "+n2);
             if(n1 > n2){
                 largestNumberOfNonDivisible += n1;
             } else {
