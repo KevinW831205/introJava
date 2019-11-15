@@ -3,7 +3,7 @@ package com.company;
 public class QueensAttack {
     public static void main(String[] args) {
 
-        int[][] obstacles = new int[][]{ new int[]{4,4} };
+        int[][] obstacles = new int[][]{new int[]{3, 5} , new int[]{3,2}};
 
         System.out.println(queensAttack(5, 1, 3, 3, obstacles));
 
@@ -19,9 +19,24 @@ public class QueensAttack {
         int blockDownLeft = Math.min(Math.abs(r_q - 1), Math.abs(c_q - 1));
         int blockDownRight = Math.min(Math.abs(r_q - 1), Math.abs(n - c_q));
 
-        if(k > 0){
-            for(int[] obstacle : obstacles){
-                System.out.println(obstacle[1]);
+        if (k > 0) {
+            for (int[] obstacle : obstacles) {
+                //in same column
+                if (obstacle[0] == r_q) {
+                    if (obstacle[1] > c_q) {
+                        // above
+                        if (Math.abs(obstacle[1] - c_q - 1) < rowCanMoveAbove) {
+                            rowCanMoveAbove = Math.abs(obstacle[1] - c_q - 1);
+                        }
+                    } else if (obstacle[1] < c_q) {
+                        // below
+                        if(Math.abs(c_q - obstacle[1] -1) < rowCanMoveBelow){
+                            rowCanMoveBelow = Math.abs(c_q - obstacle[1] -1);
+                        }
+                    }
+                }
+
+
             }
 
 //            for (int i = 0; i < obstacles.length; i++) {
@@ -39,7 +54,6 @@ public class QueensAttack {
 //                }
 //            }
         }
-
 
 
         return rowCanMoveAbove + rowCanMoveBelow + rowCanMoveLeft + rowCanMoveRight + blockUpLeft + blockUpRight + blockDownLeft + blockDownRight;
