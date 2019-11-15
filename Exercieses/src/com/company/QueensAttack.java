@@ -3,7 +3,7 @@ package com.company;
 public class QueensAttack {
     public static void main(String[] args) {
 
-        int[][] obstacles = new int[][]{new int[]{3, 5} , new int[]{3,2}};
+        int[][] obstacles = new int[][]{new int[]{5, 3} , new int[]{2,3}};
 
         System.out.println(queensAttack(5, 1, 3, 3, obstacles));
 
@@ -35,6 +35,22 @@ public class QueensAttack {
                         }
                     }
                 }
+
+                // in same row
+                if (obstacle[1] == c_q) {
+                    if (obstacle[0] > r_q) {
+                        // above
+                        if (Math.abs(obstacle[0] - r_q - 1) < rowCanMoveRight) {
+                            rowCanMoveAbove = Math.abs(obstacle[1] - c_q - 1);
+                        }
+                    } else if (obstacle[0] < r_q) {
+                        // below
+                        if(Math.abs(r_q - obstacle[1] -1) < rowCanMoveLeft){
+                            rowCanMoveBelow = Math.abs(r_q - obstacle[0] -1);
+                        }
+                    }
+                }
+
 
 
             }
