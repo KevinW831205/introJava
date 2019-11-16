@@ -23,7 +23,23 @@ public class Main {
             buffer.put(outputBytes2);
             buffer.putInt(1000);
             buffer.flip();
-            binChannel.write(buffer)
+            binChannel.write(buffer);
+
+            RandomAccessFile ra = new RandomAccessFile("data.dat","rwd");
+            FileChannel channel = ra.getChannel();
+            ByteBuffer readBuffer = ByteBuffer.allocate(100);
+            channel.read(readBuffer);
+            readBuffer.flip();
+            byte[] inputString = new byte[outputBytes.length];
+            readBuffer.get(inputString);
+            System.out.println("input String = "+new String(inputString));
+            System.out.println("int1 = "+readBuffer.getInt());
+            System.out.println("int2 = "+readBuffer.getInt());
+            byte[] inputString2 = new byte[outputBytes2.length];
+            readBuffer.get(inputString2);
+            System.out.println("input String 2 = "+ new String(inputString2));
+            System.out.println("int3 = "+readBuffer.getInt());
+
 
 
             //writing text
@@ -38,16 +54,9 @@ public class Main {
 //                System.out.println(line);
 //            }
 
+
+
             //writing binary with try with resource
-
-
-
-
-
-
-
-
-
 //
 //            byte[] outputBytes = "Hello World!".getBytes();
 ////            ByteBuffer buffer = ByteBuffer.wrap(outputBytes);
