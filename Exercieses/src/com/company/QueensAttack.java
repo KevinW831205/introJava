@@ -3,9 +3,26 @@ package com.company;
 public class QueensAttack {
     public static void main(String[] args) {
 
-        int[][] obstacles = new int[][]{new int[]{4, 4}, new int[]{2, 3}};
+        /*
 
-        System.out.println(queensAttack(5, 1, 3, 2, obstacles));
+        5      O    O   O   X
+
+        4      X    Q   O   O
+
+        3      O    O   O
+
+        2   O       X       O
+
+        1
+
+            1   2   3   4   5
+
+
+         */
+
+        int[][] obstacles = new int[][]{new int[]{5, 5}, new int[]{4, 2} , new int[]{2,3}};
+
+        System.out.println(queensAttack(5, 3, 4, 3, obstacles));
 
     }
 
@@ -39,14 +56,14 @@ public class QueensAttack {
                 // in same row
                 if (obstacle[1] == c_q) {
                     if (obstacle[0] > r_q) {
-                        // above
+                        // right
                         if (Math.abs(obstacle[0] - r_q - 1) < rowCanMoveRight) {
-                            rowCanMoveAbove = Math.abs(obstacle[1] - c_q - 1);
+                            rowCanMoveRight = Math.abs(obstacle[1] - c_q - 1);
                         }
                     } else if (obstacle[0] < r_q) {
-                        // below
-                        if (Math.abs(r_q - obstacle[1] - 1) < rowCanMoveLeft) {
-                            rowCanMoveBelow = Math.abs(r_q - obstacle[0] - 1);
+                        // left
+                        if (Math.abs(r_q - obstacle[0] - 1) < rowCanMoveLeft) {
+                            rowCanMoveLeft = Math.abs(r_q - obstacle[0] - 1);
                         }
                     }
                 }
