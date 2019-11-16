@@ -16,14 +16,21 @@ public class Main {
             //writing relative
             ByteBuffer buffer= ByteBuffer.allocate(100);
             byte[] outputBytes = "Hello World!".getBytes();
-            buffer.put(outputBytes);
-            buffer.putInt(245);
-            buffer.putInt(-98765);
             byte[] outputBytes2 = "nice to meet you".getBytes();
-            buffer.put(outputBytes2);
-            buffer.putInt(1000);
+            buffer.put(outputBytes).putInt(245).putInt(-98765).put(outputBytes2).putInt(1000);
             buffer.flip();
             binChannel.write(buffer);
+
+
+//            byte[] outputBytes = "Hello World!".getBytes();
+//            buffer.put(outputBytes);
+//            buffer.putInt(245);
+//            buffer.putInt(-98765);
+//            byte[] outputBytes2 = "nice to meet you".getBytes();
+//            buffer.put(outputBytes2);
+//            buffer.putInt(1000);
+//            buffer.flip();
+//            binChannel.write(buffer);
 
             RandomAccessFile ra = new RandomAccessFile("data.dat","rwd");
             FileChannel channel = ra.getChannel();
