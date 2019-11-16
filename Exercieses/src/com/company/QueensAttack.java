@@ -20,7 +20,7 @@ public class QueensAttack {
 
          */
 
-        int[][] obstacles = new int[][]{new int[]{5, 5}, new int[]{4, 2} , new int[]{2,3}, new int[]{3,4}};
+        int[][] obstacles = new int[][]{new int[]{5, 5}, new int[]{4, 2}, new int[]{2, 3}, new int[]{2, 1}, new int[]{3, 2}, new int[]{3, 3}};
 
         System.out.println(queensAttack(5, 3, 4, 3, obstacles));
 
@@ -72,16 +72,16 @@ public class QueensAttack {
                 if (Math.abs(obstacle[0] - r_q) == Math.abs(obstacle[1] - c_q)) {
                     if (obstacle[0] > r_q && obstacle[1] < c_q) {
                         // up left
-                        blockUpLeft = Math.abs(r_q - obstacle[0])  - 1;
+                        blockUpLeft = Math.min(blockUpLeft, Math.abs(r_q - obstacle[0]) - 1);
                     } else if (obstacle[0] > r_q && obstacle[1] > c_q) {
                         // up right
-                        blockUpRight = Math.abs(r_q - obstacle[0])  - 1;
+                        blockUpRight = Math.min( blockUpRight, Math.abs(r_q - obstacle[0]) - 1);
                     } else if (obstacle[0] < r_q && obstacle[1] < c_q) {
                         // down left
-                        blockDownLeft = Math.abs(r_q - obstacle[0])  - 1;
-                    } else if( obstacle[0] < r_q && obstacle[1] > c_q){
+                        blockDownLeft = Math.min( blockDownLeft, Math.abs(r_q - obstacle[0]) - 1);
+                    } else if (obstacle[0] < r_q && obstacle[1] > c_q) {
                         //down right
-                        blockDownRight = Math.abs(r_q - obstacle[0])  - 1;
+                        blockDownRight = Math.min(blockDownRight,  Math.abs(r_q - obstacle[0]) - 1);
                     }
                 }
             }
