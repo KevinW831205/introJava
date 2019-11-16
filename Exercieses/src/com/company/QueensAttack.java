@@ -20,7 +20,7 @@ public class QueensAttack {
 
          */
 
-        int[][] obstacles = new int[][]{new int[]{5, 5}, new int[]{4, 2} , new int[]{2,3}};
+        int[][] obstacles = new int[][]{new int[]{5, 5}, new int[]{4, 2} , new int[]{2,3}, new int[]{3,2}};
 
         System.out.println(queensAttack(5, 3, 4, 3, obstacles));
 
@@ -78,7 +78,7 @@ public class QueensAttack {
                         blockUpRight = obstacle[0] - r_q - 1;
                     } else if (obstacle[0] < r_q && obstacle[1] < c_q) {
                         // down left
-                        blockDownLeft = blockUpLeft = r_q - obstacle[0] - 1;
+                        blockDownLeft = r_q - obstacle[0]  - 1;
                     } else if( obstacle[0] > r_q && obstacle[1] < c_q){
                         //down right
                         blockDownRight = obstacle[0] - r_q - 1;
