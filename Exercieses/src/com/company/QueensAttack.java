@@ -35,8 +35,8 @@ public class QueensAttack {
     static int queensAttack(int n, int k, int r_q, int c_q, int[][] obstacles) {
         int rowCanMoveAbove = n - r_q;
         int rowCanMoveBelow = r_q - 1;
-        int rowCanMoveLeft = c_q - 1;
-        int rowCanMoveRight = n - c_q;
+        int colCanMoveLeft = c_q - 1;
+        int colCanMoveRight = n - c_q;
         int blockUpLeft = Math.min(Math.abs(n - r_q), Math.abs(c_q - 1));
         int blockUpRight = Math.min(Math.abs(n - r_q), Math.abs(n - c_q));
         int blockDownLeft = Math.min(Math.abs(r_q - 1), Math.abs(c_q - 1));
@@ -48,14 +48,11 @@ public class QueensAttack {
                 if (obstacle[0] == r_q) {
                     if (obstacle[1] > c_q) {
                         // right
-                        if (Math.abs(obstacle[1] - c_q - 1) < rowCanMoveRight) {
-                            rowCanMoveAbove = Math.abs(obstacle[1] - c_q - 1);
-                        }
+                        colCanMoveRight = Math.min( colCanMoveRight, Math.abs(c_q - obstacle[1]) -1);
+
                     } else if (obstacle[1] < c_q) {
                         // left
-                        if (Math.abs(c_q - obstacle[1] - 1) < rowCanMoveLeft) {
-                            rowCanMoveBelow = Math.abs(c_q - obstacle[1] - 1);
-                        }
+                        colCanMoveLeft = Math.min(colCanMoveLeft, Math.abs(c_q - obstacle[1]) -1);
                     }
                 }
 
@@ -63,14 +60,10 @@ public class QueensAttack {
                 if (obstacle[1] == c_q) {
                     if (obstacle[0] > r_q) {
                         // above
-                        if (Math.abs(obstacle[0] - r_q - 1) < rowCanMoveAbove) {
-                            rowCanMoveRight = Math.abs(obstacle[0] - c_q - 1);
-                        }
+                        rowCanMoveAbove = Math.min(rowCanMoveAbove, Math.abs(r_q -obstacle[0]) -1);
                     } else if (obstacle[0] < r_q) {
                         // below
-                        if (Math.abs(r_q - obstacle[0] - 1) < rowCanMoveBelow) {
-                            rowCanMoveLeft = Math.abs(r_q - obstacle[0] - 1);
-                        }
+                        rowCanMoveBelow = Math.min(rowCanMoveBelow, Math.abs(r_q-obstacle[0])-1);
                     }
                 }
 
@@ -95,7 +88,7 @@ public class QueensAttack {
         }
 
 
-        return rowCanMoveAbove + rowCanMoveBelow + rowCanMoveLeft + rowCanMoveRight + blockUpLeft + blockUpRight + blockDownLeft + blockDownRight;
+        return rowCanMoveAbove + rowCanMoveBelow + colCanMoveLeft + colCanMoveRight + blockUpLeft + blockUpRight + blockDownLeft + blockDownRight;
 
     }
 
