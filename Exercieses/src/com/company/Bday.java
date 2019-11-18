@@ -4,29 +4,29 @@ public class Bday {
 
     public static void main(String[] args) {
 
-        System.out.println(taumBday(10,10,1,1,1));
+        System.out.println(taumBday(10,10,1,2,1));
 
     }
 
     public static long taumBday(int b, int w, int bc, int wc, int z) {
         // Write your code here
 
-        int bTotal;
-        int wTotal;
+        long bTotal;
+        long wTotal;
 
         if(wc > bc+z){
-            wTotal = w*(bc+z);
+            wTotal = (long) w*(bc+z);
         } else {
-            wTotal = w*wc;
+            wTotal = (long) w*wc;
         }
 
-        if(bc>wc+z){
-            bTotal = b*(wc+z);
+        if(bc > wc+z ){
+            bTotal = (long) b*(wc+z);
         } else {
-            bTotal = b*bc;
+            bTotal = (long) b*bc;
         }
 
-        return  (long) bTotal + wTotal;
+        return  bTotal + wTotal;
     }
 
 }
