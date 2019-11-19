@@ -12,9 +12,6 @@ public class OrganizeContainer {
         int[] ballsPerType = new int[container.length];
         int[] ballsPerContainer = new int[container.length];
 
-
-
-
         for(int i =0; i<container.length; i++){
             for(int j =0; j<container.length; j++){
                 ballsPerContainer[j] += container[i][j];
@@ -32,7 +29,23 @@ public class OrganizeContainer {
             System.out.println(s);
         }
 
-        return "";
+        for(int i =0; i<container.length; i++){
+            int j =0;
+            for(j=i; j<container.length; j++){
+                if(ballsPerContainer[i] == ballsPerType[j]){
+
+                    int temp = ballsPerType[j];
+                    ballsPerType[j] = ballsPerType[i];
+                    ballsPerType[i] = temp;
+                    break;
+                }
+            }
+            if(j==container.length){
+                return "Impossible";
+            }
+        }
+
+        return "Possible";
 
 //        for(int i=0; i<container.length; i++){
 //            int horizontal = 0;
