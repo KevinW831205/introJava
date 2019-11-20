@@ -57,6 +57,35 @@ public class Main {
             readBuffer.flip();
             System.out.println("int2 = "+readBuffer.getInt());
 
+            byte[] outputString = "Hello, World".getBytes();
+            long str1Pos = 0;
+            long newInt1Pos = outputString.length;
+            long newInt2Pos = newInt1Pos + Integer.BYTES;
+            byte[] outputString2 = "Nice to meet you".getBytes();
+            long str2Pos = newInt2Pos + Integer.BYTES;
+            long newInt3Pos = str2Pos + outputString2.length;
+
+            ByteBuffer intBUffer = ByteBuffer.allocate(Integer.BYTES);
+            intBUffer.putInt(245);
+            intBUffer.flip();
+            binChannel.position(newInt1Pos);
+            binChannel.write(intBUffer);
+
+            intBUffer.flip();
+            intBUffer.putInt(-98765);
+            intBUffer.flip();
+            binChannel.position(newInt2Pos);
+            binChannel.write(intBUffer);
+            intBUffer.flip();
+            intBUffer.putInt(1000);
+            binChannel.position(newInt3Pos);
+            binChannel.write(intBUffer);
+
+            binChannel.position(str1Pos);
+            binChannel.write(ByteBuffer.wrap(outputString));
+            binChannel.position(str2Pos);
+            binChannel.write(ByteBuffer.wrap(outputString2));
+
 
                     // read sequentialy
 //            ByteBuffer readBuffer = ByteBuffer.allocate(100);
