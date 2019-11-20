@@ -2,7 +2,7 @@ package com.company;
 
 public class Encryption {
     public static void main(String[] args) {
-        encryption("haveaniceday");
+        System.out.println(encryption("haveaniceday"));
     }
 
     static String encryption(String s) {
@@ -33,13 +33,21 @@ public class Encryption {
             }
         }
 
+        String eResult = "";
+        for(int j=0; j<cols; j++){
+            for(int i=0; i<rowPos;i++){
+                System.out.println(encrypted[i][j]);
+                eResult += encrypted[i][j];
+            }
+            eResult+=" ";
+        }
 
 
 
 
 
 
-        return "";
+        return eResult;
     }
 
 }
