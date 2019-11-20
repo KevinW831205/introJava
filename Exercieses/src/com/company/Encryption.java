@@ -4,18 +4,25 @@ public class Encryption {
     public static void main(String[] args) {
         System.out.println(encryption("haveaniceday"));
         System.out.println(encryption("feedthedog"));
+        System.out.println(encryption("chillout"));
     }
 
     static String encryption(String s) {
+
+
         int rows = (int) Math.floor(Math.sqrt(s.length()));
         int cols = (int) Math.ceil(Math.sqrt(s.length()));
+        if(rows*cols < s.length()){
+            rows = (int) Math.ceil(Math.sqrt(s.length()));
+        }
+
+        System.out.println("rows "+rows);
+        System.out.println("cols "+cols);
 
         char[][] encrypted = new char[rows][];
 
         int rowPos = 0;
         int colPos = 0;
-
-        System.out.println(rows);
 
         encrypted[rowPos] = new char[cols];
 
