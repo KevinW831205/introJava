@@ -20,6 +20,8 @@ public class Encryption {
             System.out.println("rowpos " + rowPos);
             encrypted[rowPos] = new char[cols];
             encrypted[rowPos][colPos] = s.charAt(i);
+
+            System.out.println("inside "+encrypted[0][0]);
             System.out.println(s.charAt(i));
             colPos++;
 
@@ -29,7 +31,7 @@ public class Encryption {
             }
         }
 
-        System.out.println(encrypted[0][0]);
+        System.out.println("outside "+encrypted[0][0]);
 
         for (int i = 0; i < encrypted.length; i++) {
             for (int j = 0; j < encrypted.length; j++) {
