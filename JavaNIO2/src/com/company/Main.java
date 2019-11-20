@@ -38,18 +38,68 @@ public class Main {
 
             RandomAccessFile ra = new RandomAccessFile("data.dat","rwd");
             FileChannel channel = ra.getChannel();
-            ByteBuffer readBuffer = ByteBuffer.allocate(100);
+            // reading in different order
+            ByteBuffer readBuffer = ByteBuffer.allocate(Integer.BYTES);
+            channel.position(int3Pos);
             channel.read(readBuffer);
             readBuffer.flip();
-            byte[] inputString = new byte[outputBytes.length];
-            readBuffer.get(inputString);
-            System.out.println("input String = "+new String(inputString));
-            System.out.println("int1 = "+readBuffer.getInt());
-            System.out.println("int2 = "+readBuffer.getInt());
-            byte[] inputString2 = new byte[outputBytes2.length];
-            readBuffer.get(inputString2);
-            System.out.println("input String 2 = "+ new String(inputString2));
             System.out.println("int3 = "+readBuffer.getInt());
+
+            readBuffer.flip();
+            channel.position(int1Pos);
+            channel.read(readBuffer);
+            readBuffer.flip();
+            System.out.println("int1 = "+readBuffer.getInt());
+
+            readBuffer.flip();
+            channel.position(int2Pos);
+            channel.read(readBuffer);
+            readBuffer.flip();
+            System.out.println("int2 = "+readBuffer.getInt());
+
+            byte[] outputString = "Hello, World".getBytes();
+            long str1Pos = 0;
+            long newInt1Pos = outputString.length;
+            long newInt2Pos = newInt1Pos + Integer.BYTES;
+            byte[] outputString2 = "Nice to meet you".getBytes();
+            long str2Pos = newInt2Pos + Integer.BYTES;
+            long newInt3Pos = str2Pos + outputString2.length;
+
+            ByteBuffer intBUffer = ByteBuffer.allocate(Integer.BYTES);
+            intBUffer.putInt(245);
+            intBUffer.flip();
+            binChannel.position(newInt1Pos);
+            binChannel.write(intBUffer);
+
+            intBUffer.flip();
+            intBUffer.putInt(-98765);
+            intBUffer.flip();
+            binChannel.position(newInt2Pos);
+            binChannel.write(intBUffer);
+            intBUffer.flip();
+            intBUffer.putInt(1000);
+            binChannel.position(newInt3Pos);
+            binChannel.write(intBUffer);
+
+            binChannel.position(str1Pos);
+            binChannel.write(ByteBuffer.wrap(outputString));
+            binChannel.position(str2Pos);
+            binChannel.write(ByteBuffer.wrap(outputString2));
+
+
+                    // read sequentialy
+//            ByteBuffer readBuffer = ByteBuffer.allocate(100);
+//            channel.read(readBuffer);
+//            readBuffer.flip();
+//            byte[] inputString = new byte[outputBytes.length];
+//            readBuffer.get(inputString);
+//            System.out.println("input String = "+new String(inputString));
+//            System.out.println("int1 = "+readBuffer.getInt());
+//            System.out.println("int2 = "+readBuffer.getInt());
+//            byte[] inputString2 = new byte[outputBytes2.length];
+//            readBuffer.get(inputString2);
+//            System.out.println("input String 2 = "+ new String(inputString2));
+//            System.out.println("int3 = "+readBuffer.getInt());
 
 
 
