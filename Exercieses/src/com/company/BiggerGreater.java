@@ -4,41 +4,49 @@ public class BiggerGreater {
     public static void main(String[] args) {
 
 
-        System.out.println( biggerIsGreater("ab") );
+        System.out.println(biggerIsGreater("ab"));
         System.out.println(biggerIsGreater("bb"));
-//        System.out.println(biggerIsGreater());
-//        System.out.println(biggerIsGreater());
-//        System.out.println(biggerIsGreater());
+        System.out.println(biggerIsGreater("hefg"));
+        System.out.println(biggerIsGreater("dhck"));
+        System.out.println(biggerIsGreater("dkhc"));
+        System.out.println(biggerIsGreater("abcfdda"));
 
     }
 
     static String biggerIsGreater(String w) {
 
-        char[] wArr = new char[w.length()];
+        boolean foundGreater = false;
+        int indexOfNotIncreasing = -1;
+        String result = "";
 
-        for(int i =0 ; i< w.length(); i++){
-            wArr[i] = w.charAt(i);
-        }
+        for (int i = w.length() - 2; i >= 0; i--) {
+            if (w.charAt(i) < w.charAt(i+1)){
+                foundGreater = true;
+                indexOfNotIncreasing = i;
 
-        char lastChar = wArr[wArr.length-1];
-        boolean foundSmaller = false;
-        for(int i=wArr.length-2; i>=0; i--){
-            if(lastChar > wArr[i]){
-                wArr[wArr.length-1] = wArr[i];
-                wArr[i]= lastChar;
-                foundSmaller =true;
+                String left = w.substring(0,indexOfNotIncreasing);
+                String right = w.substring(indexOfNotIncreasing);
+
+
+                if(!left.equals("")){
+                    char pivot = left.charAt(left.length()-1);
+                    System.out.println(pivot);
+
+                } else {
+
+                }
                 break;
             }
         }
 
-        if(!foundSmaller){
+        if (foundGreater) {
+
+
+
+        } else {
             return "no answer";
         }
 
-        String result = "";
-        for(char c : wArr){
-            result += c;
-        }
 
         return result;
 
