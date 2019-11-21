@@ -15,11 +15,21 @@ public class BiggerGreater {
             wArr[i] = w.charAt(i);
         }
 
-        for(char c: wArr){
-            System.out.println(c);
+        char lastChar = wArr[wArr.length-1];
+        for(int i=wArr.length-2; i>=0; i--){
+            if(lastChar > wArr[i]){
+                wArr[wArr.length-1] = wArr[i];
+                wArr[i]= lastChar;
+                break;
+            }
         }
 
-        return "";
+        String result = "";
+        for(char c : wArr){
+            result += c;
+        }
+
+        return result;
 
     }
 
