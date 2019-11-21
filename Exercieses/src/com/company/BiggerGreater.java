@@ -5,6 +5,11 @@ public class BiggerGreater {
 
 
         System.out.println( biggerIsGreater("ab") );
+        System.out.println(biggerIsGreater("bb"));
+//        System.out.println(biggerIsGreater());
+//        System.out.println(biggerIsGreater());
+//        System.out.println(biggerIsGreater());
+
     }
 
     static String biggerIsGreater(String w) {
@@ -16,12 +21,18 @@ public class BiggerGreater {
         }
 
         char lastChar = wArr[wArr.length-1];
+        boolean foundSmaller = false;
         for(int i=wArr.length-2; i>=0; i--){
             if(lastChar > wArr[i]){
                 wArr[wArr.length-1] = wArr[i];
                 wArr[i]= lastChar;
+                foundSmaller =true;
                 break;
             }
+        }
+
+        if(!foundSmaller){
+            return "no answer";
         }
 
         String result = "";
