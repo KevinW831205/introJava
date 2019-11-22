@@ -5,32 +5,37 @@ public class KaprekarNumbers {
     public static void main(String[] args) {
 
 //        kaprekarNumbers(1,100)
-         kaprekarNumbers(1,100);
+        kaprekarNumbers(1, 100);
     }
 
     static void kaprekarNumbers(int p, int q) {
 
         String result = "";
-        for(int i = p; i<=q; i++){
-            int squared = i*i;
-            int digits = (int) Math.log10(i) +1;
+        for (int i = p; i <= q; i++) {
+            int squared = i * i;
+            int digits = (int) Math.log10(i) + 1;
 
             String right = squared + "";
-            right = right.substring(right.length()-digits);
+            right = right.substring(right.length() - digits);
             String left = squared + "";
-            left = left.substring(0,left.length()-digits);
+            left = left.substring(0, left.length() - digits);
 
             int check = Integer.parseInt(right);
-            if(!left.equals("")){
+            if (!left.equals("")) {
                 check += Integer.parseInt(left);
             }
 
-            if(check == i){
-                result += i +" ";
+            if (check == i) {
+                result += i + " ";
             }
         }
 
-        System.out.println(result.trim());
+        if (result.equals("")) {
+            System.out.println("INVALID RANGE");
+        } else {
+            System.out.println(result.trim());
+
+        }
 
     }
 
