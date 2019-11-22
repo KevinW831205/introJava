@@ -11,8 +11,8 @@ public class KaprekarNumbers {
     static void kaprekarNumbers(int p, int q) {
 
         String result = "";
-        for (int i = p; i <= q; i++) {
-            int squared = i * i;
+        for (long i = p; i <= q; i++) {
+            long squared = i * i;
             int digits = (int) Math.log10(i) + 1;
 
             String right = squared + "";
