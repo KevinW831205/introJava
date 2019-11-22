@@ -4,13 +4,13 @@ public class BiggerGreater {
     public static void main(String[] args) {
 
 
-//        System.out.println(biggerIsGreater("ab"));
-//        System.out.println(biggerIsGreater("bb"));
-//        System.out.println(biggerIsGreater("hefg"));
-//        System.out.println(biggerIsGreater("dhck"));
-//        System.out.println(biggerIsGreater("dkhc"));
+        System.out.println(biggerIsGreater("ab"));
+        System.out.println(biggerIsGreater("bb"));
+        System.out.println(biggerIsGreater("hefg"));
+        System.out.println(biggerIsGreater("dhck"));
+        System.out.println(biggerIsGreater("dkhc"));
         System.out.println(biggerIsGreater("abdc"));
-//        System.out.println(biggerIsGreater("abcfdda"));
+        System.out.println(biggerIsGreater("abcfdda"));
 
     }
 
