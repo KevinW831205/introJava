@@ -23,6 +23,15 @@ public class Main {
         Path path2 = FileSystems.getDefault().getPath(".","Files","..","Files","SubDirectory.txt");
         printFile(path2.normalize());
 
+        Path path3 = FileSystems.getDefault().getPath("thisDNE.txt");
+        System.out.println(path3.toAbsolutePath());
+
+        Path path4 = Paths.get("K:\\Volumes\\DNE","something.txt");
+        System.out.println(path4.toAbsolutePath());
+        System.out.println("Path4 exists: "+Files.exists(path4));
+
+        filePath = FileSystems.getDefault().getPath("Files");
+        System.out.println("Exists: "+Files.exists(filePath));
 
     }
 
