@@ -57,8 +57,21 @@ public class Main {
 //            Path destination = FileSystems.getDefault().getPath("Examples","file1moved.txt");
 //            Files.move(fileToMove, destination);
 
-            Path fileToDelete = FileSystems.getDefault().getPath("Examples","Dir1","filecopy.txt");
-            Files.delete(fileToDelete);
+//            Path fileToDelete = FileSystems.getDefault().getPath("Examples","Dir1","filecopy.txt");
+//            Files.delete(fileToDelete);
+
+
+
+//            Path fileToCreate = FileSystems.getDefault().getPath("Examples","file2.txt");
+//            Files.createFile(fileToCreate);
+
+//            Path dirToCreate = FileSystems.getDefault().getPath("Examples","Dir4");
+//            Files.createDirectory(dirToCreate);
+
+            Path dirToCreate = FileSystems.getDefault().getPath("Examples","Dir2\\Dir3\\Dir4\\Dir5\\Dir6");
+            Files.createDirectories(dirToCreate);
+
+
 
         } catch (IOException e){
             System.out.println(e.getMessage());
