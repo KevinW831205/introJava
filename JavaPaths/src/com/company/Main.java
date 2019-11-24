@@ -49,8 +49,12 @@ public class Main {
 //            copyFile = FileSystems.getDefault().getPath("Examples","Dir4");
 //            Files.copy(sourceFile,copyFile,StandardCopyOption.REPLACE_EXISTING);
 
-            Path fileToMove = FileSystems.getDefault().getPath("Examples","filecopy.txt");
-            Path destination = FileSystems.getDefault().getPath("Examples","Dir1","filecopy.txt");
+//            Path fileToMove = FileSystems.getDefault().getPath("Examples","filecopy.txt");
+//            Path destination = FileSystems.getDefault().getPath("Examples","Dir1","filecopy.txt");
+//            Files.move(fileToMove, destination);
+
+            Path fileToMove = FileSystems.getDefault().getPath("Examples","file1.txt");
+            Path destination = FileSystems.getDefault().getPath("Examples","file1moved.txt");
             Files.move(fileToMove, destination);
 
         } catch (IOException e){
