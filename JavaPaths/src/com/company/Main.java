@@ -9,6 +9,7 @@ public class Main {
 
     public static void main(String[] args) {
         // write your code here
+        /*
         Path path = FileSystems.getDefault().getPath("WorkingDirectory.txt");
         printFile(path);
         Path filePath = FileSystems.getDefault().getPath("Files", "SubDirectory.txt");
@@ -32,13 +33,21 @@ public class Main {
 
         filePath = FileSystems.getDefault().getPath("Files");
         System.out.println("Exists: "+Files.exists(filePath));
-
+        */
         /*
         Files.isExecutable();
         Files.isReadable();
         Files.isWritable();
-
          */
+
+        try{
+            Path sourceFile = FileSystems.getDefault().getPath("Examples","file1.txt");
+            Path copyFile = FileSystems.getDefault().getPath("Examples","filecopy.txt");
+            Files.copy(sourceFile,copyFile);
+
+        } catch (IOException e){
+            e.printStackTrace();
+        }
 
 
     }
