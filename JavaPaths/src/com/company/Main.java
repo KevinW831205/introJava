@@ -33,6 +33,14 @@ public class Main {
         filePath = FileSystems.getDefault().getPath("Files");
         System.out.println("Exists: "+Files.exists(filePath));
 
+        /*
+        Files.isExecutable();
+        Files.isReadable();
+        Files.isWritable();
+
+         */
+
+
     }
 
     private static void printFile(Path path) {
