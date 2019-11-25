@@ -16,11 +16,10 @@ public class BeautifulTriplet {
         int numberOfTriplets = 0;
 
         for(int i =0; i<arr.length; i++){
-
             for(int j=i+1; j<arr.length; j++){
                 if(arr[j] -arr[i] == d){
                     for(int k = j+1; k<arr.length; k++){
-                        if(arr[k] - arr[j] == 0){
+                        if(arr[k] - arr[j] == d){
                             numberOfTriplets++;
                         }
                     }
