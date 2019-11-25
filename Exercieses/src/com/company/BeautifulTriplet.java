@@ -1,0 +1,37 @@
+package com.company;
+
+import java.util.Enumeration;
+
+public class BeautifulTriplet {
+
+    public static void main(String[] args) {
+
+        System.out.println( beautifulTriplets(1,new int[]{2,2,3,4,5}) + " expected 3");
+        System.out.println(beautifulTriplets(3,new int[]{1,2,4,5,7,8,10}) + " expected 3");
+
+    }
+
+    static int beautifulTriplets(int d, int[] arr) {
+
+        int numberOfTriplets = 0;
+
+
+        int currentIndex = 0;
+        for(int i=currentIndex+1; i<arr.length; i++){
+           if( arr[i] - arr[currentIndex] == d){
+
+               for(int j = i; j<arr.length; j++){
+                    if( arr[j] - arr[i] == d){
+                        numberOfTriplets++;
+                    }
+               }
+           }
+        }
+
+        return numberOfTriplets;
+    }
+
+
+
+
+}
