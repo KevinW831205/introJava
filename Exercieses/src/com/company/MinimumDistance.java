@@ -15,11 +15,20 @@ public class MinimumDistance {
 
     static int minimumDistances(int[] a) {
 
-        Map<Integer, Integer> distanceMap = new HashMap<Integer, Integer>();
+        Map<Integer, Integer> indexMap = new HashMap<Integer, Integer>();
+
+        int minDistance = -1;
 
         for(int i=0; i<a.length; i++){
-            if()
+            if(indexMap.containsKey(a[i])){
+
+            } else {
+                indexMap.put(a[i],i);
+            }
+
         }
+
+        return minDistance;
     }
 
 }
