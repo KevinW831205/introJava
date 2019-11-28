@@ -43,7 +43,14 @@ public class ReadingExistingDirectoryContents {
 
         Iterable<FileStore> stores = FileSystems.getDefault().getFileStores();
         for(FileStore store: stores){
+            System.out.println(store);
             System.out.println(store.name());
+        }
+
+        System.out.println("***************************");
+        Iterable<Path> rootPaths =FileSystems.getDefault().getRootDirectories();
+        for(Path path: rootPaths){
+            System.out.println(path);
         }
     }
 
