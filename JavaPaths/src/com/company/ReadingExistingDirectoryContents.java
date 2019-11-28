@@ -40,6 +40,11 @@ public class ReadingExistingDirectoryContents {
         }catch (IOException e){
             System.out.println(e.getMessage());
         }
+
+        Iterable<FileStore> stores = FileSystems.getDefault().getFileStores();
+        for(FileStore store: stores){
+            System.out.println(store.name());
+        }
     }
 
 
