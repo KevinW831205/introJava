@@ -16,7 +16,7 @@ public class HalloweenSale {
             s-=p;
             p=Math.max(p-d,m);
         }
-        return count
+        return count;
 
     }
 
