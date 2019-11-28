@@ -10,26 +10,13 @@ public class HalloweenSale {
 
     static int howManyGames(int p, int d, int m, int s) {
 
-        int result = 0;
-        int currentPrice = p;
-        while(s>0){
-
-            if(s> currentPrice){
-                s -= currentPrice;
-                result++;
-                if(currentPrice > m){
-                    if(currentPrice - d <m){
-                        currentPrice = m;
-                    } else {
-                        currentPrice -= d;
-                    }
-                }
-            } else {
-                return result;
-            }
+        int count = 0;
+        while (s>=p){
+            count++;
+            s-=p;
+            p=Math.max(p-d,m);
         }
-
-        return result;
+        return count
 
     }
 
