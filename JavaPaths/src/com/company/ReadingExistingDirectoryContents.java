@@ -33,6 +33,13 @@ public class ReadingExistingDirectoryContents {
         System.out.println(separator);
         separator = FileSystems.getDefault().getSeparator();
         System.out.println(separator);
+
+        try{
+            Path tempFile = Files.createTempFile("myapp",".appext");
+            System.out.println("Temporary file path = "+tempFile.toAbsolutePath());
+        }catch (IOException e){
+            System.out.println(e.getMessage());
+        }
     }
 
 
