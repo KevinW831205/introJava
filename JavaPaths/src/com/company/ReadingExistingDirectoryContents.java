@@ -51,6 +51,16 @@ public class ReadingExistingDirectoryContents {
         for(Path path: rootPaths){
             System.out.println(path);
         }
+
+        System.out.println("---Walking Tree for Dir2---");
+        Path dir2Path = FileSystems.getDefault().getPath("Examples" +File.separator + "Dir2");
+
+        try{
+            Files.walkFileTree(dir2Path,new PrintNames());
+        } catch (IOException e){
+            System.out.println(e.getMessage());
+        }
+
     }
 
 
