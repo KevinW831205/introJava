@@ -4,7 +4,14 @@ public class TimeInWords {
 
     public static void main(String[] args) {
         System.out.println(timeInWords(3, 00) + " expected three o'clock");
-        System.out.println(timeInWords(7, 15) + " expected fifteen past seven");
+        System.out.println(timeInWords(7, 15) + " expected quarter past seven");
+        System.out.println(timeInWords(7,45));
+        System.out.println(timeInWords(7,59));
+        System.out.println(timeInWords(7,1));
+        System.out.println(timeInWords(7,31));
+        System.out.println(timeInWords(7,46));
+
+
 
     }
 
@@ -12,21 +19,26 @@ public class TimeInWords {
 
         String[] numNames = {
                 "", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten",
-                "eleven", "twelve", "thirteen", "fourteen","fifteen","sixteen","seventeen","eighteen","nineteen","twenty",
-                "twenty one","twenty two","twenty three","twenty four","twenty five","twenty six","twenty seven","twenty eight","twenty nine"
+                "eleven", "twelve", "thirteen", "fourteen", "fifteen", "sixteen", "seventeen", "eighteen", "nineteen", "twenty",
+                "twenty one", "twenty two", "twenty three", "twenty four", "twenty five", "twenty six", "twenty seven", "twenty eight", "twenty nine"
         };
 
         if (m == 0) {
-            return
+            return numNames[h] + " o'clock";
+        } else if (m == 1) {
+            return numNames[m] + " minute past " + numNames[h];
+        } else if (m == 15) {
+            return "quarter past " + numNames[h];
         } else if (m < 30) {
-
-            return
+            return numNames[m] + " minutes past " + numNames[h];
         } else if (m == 30) {
-
-            return
-        } else if (m < 60) {
-
-            return
+            return "half past " + numNames[h];
+        } else if (m == 45) {
+            return "quarter to " + numNames[h];
+        } else if (m < 59) {
+            return numNames[60 - m] + " minutes till " + numNames[h];
+        } else if(m == 59){
+            return "one minute till "+numNames[h];
         } else {
             return "Invalid Input";
         }
