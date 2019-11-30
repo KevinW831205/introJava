@@ -34,11 +34,11 @@ public class TimeInWords {
         } else if (m == 30) {
             return "half past " + numNames[h];
         } else if (m == 45) {
-            return "quarter to " + numNames[h];
+            return "quarter to " + numNames[h+1];
         } else if (m < 59) {
-            return numNames[60 - m] + " minutes till " + numNames[h];
+            return numNames[60 - m] + " minutes to " + numNames[h+1];
         } else if(m == 59){
-            return "one minute till "+numNames[h];
+            return "one minute to "+numNames[h+1];
         } else {
             return "Invalid Input";
         }
