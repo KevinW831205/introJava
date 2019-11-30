@@ -24,7 +24,7 @@ public class TimeInWords {
         };
 
         if (m == 0) {
-            return numNames[h] + " o'clock";
+            return numNames[h] + " o' clock";
         } else if (m == 1) {
             return numNames[m] + " minute past " + numNames[h];
         } else if (m == 15) {
