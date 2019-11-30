@@ -9,7 +9,6 @@ public class Main {
         anotherThread.setName("Name: AnotherThread");
         anotherThread.start();
 //        anotherThread.run();  // run from main thread
-
 //        anotherThread.start();    illegalThreadState
 
         new Thread() {
@@ -18,17 +17,23 @@ public class Main {
             }
         }.start();
 
-
-
-        Thread myRunnableThread = new Thread(new MyRunnable(){
+        Thread myRunnableThread = new Thread(new MyRunnable() {
             @Override
             public void run() {
-                System.out.println(ThreadColor.ANSI_RED+"Anonymous implementation of run");;
+                System.out.println(ThreadColor.ANSI_RED + "Anonymous implementation of run");
+                try {
+                    anotherThread.join();
+                    System.out.println(ThreadColor.ANSI_RED + "AnotherThread terminated, Running runnable again");
+                } catch (InterruptedException e) {
+                    System.out.println(ThreadColor.ANSI_RED+"Interrupted");
+                }
             }
         });
 
         myRunnableThread.start();
-        System.out.println(ThreadColor.ANSI_PURPLE+"Mainthread2");
+//        anotherThread.interrupt();
+
+        System.out.println(ThreadColor.ANSI_PURPLE + "Mainthread2");
 
 
     }
