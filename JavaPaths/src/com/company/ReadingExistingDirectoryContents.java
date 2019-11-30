@@ -61,6 +61,17 @@ public class ReadingExistingDirectoryContents {
             System.out.println(e.getMessage());
         }
 
+
+        System.out.println("---copy Dir2 to Dir4/Dir2Copy ---");
+        Path copyPath = FileSystems.getDefault().getPath("Examples"+File.separator+"Dir4"+File.separator+"Dir2Copy");
+
+        try{
+            Files.walkFileTree(dir2Path, new CopyFiles(dir2Path,copyPath));
+        } catch (IOException e){
+            System.out.println(e.getMessage());
+        }
+
+
     }
 
 
