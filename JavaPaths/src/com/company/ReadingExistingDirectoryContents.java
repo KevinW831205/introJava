@@ -72,6 +72,39 @@ public class ReadingExistingDirectoryContents {
         }
 
 
+        // mapping IO to NIO
+        File file = new File("C:\\Examples\\file.txt");
+        Path convertedPath = file.toPath();
+        System.out.println("Convereted Path "+convertedPath);
+
+        File parent = new File("C:\\Examples");
+        File resolvedFile = new File(parent,"dir\\file.txt");
+        System.out.println(resolvedFile.toPath());
+        resolvedFile = new File("C:\\Examples","dir\\file.txt");
+        System.out.println(resolvedFile.toPath());
+
+        Path parentPath = Paths.get("C:\\Examples");
+        Path childRelativePath = Paths.get("dir\\file.txt");
+        System.out.println(parentPath.resolve(childRelativePath));
+
+        File workingDirectory = new File("").getAbsoluteFile();
+        System.out.println("Working directory" + workingDirectory.getAbsolutePath());
+
+
+        System.out.println("--- print Dir2 contents using list() ---");
+        File dir2File = new File(workingDirectory,"\\Examples\\Dir2");
+        String[] dir2Contents = dir2File.list();
+        for(int i =0 ; i<dir2Contents.length; i++){
+            System.out.println("i="+i+" "+dir2Contents[i]);
+        }
+
+        System.out.println("--- print Dir2 contents using listFiles() ---");
+        File[] dir2Files = dir2File.listFiles();
+        for(int i =0 ; i<dir2Files.length; i++){
+            System.out.println("i="+i+" "+dir2Files[i].getName());
+        }
+
+
     }
 
 
