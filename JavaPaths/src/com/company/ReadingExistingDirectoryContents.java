@@ -17,7 +17,7 @@ public class ReadingExistingDirectoryContents {
 
         DirectoryStream.Filter<Path> filter = p -> Files.isRegularFile(p);
 //        Path directory = FileSystems.getDefault().getPath("Examples\\Dir2");
-        Path directory = FileSystems.getDefault().getPath("Examples"+File.separator+ "Dir2");
+        Path directory = FileSystems.getDefault().getPath("Examples" + File.separator + "Dir2");
         try (DirectoryStream<Path> contents = Files.newDirectoryStream(directory, filter)) {
 
             for (Path file : contents) {
@@ -33,41 +33,41 @@ public class ReadingExistingDirectoryContents {
         separator = FileSystems.getDefault().getSeparator();
         System.out.println(separator);
 
-        try{
-            Path tempFile = Files.createTempFile("myapp",".appext");
-            System.out.println("Temporary file path = "+tempFile.toAbsolutePath());
-        }catch (IOException e){
+        try {
+            Path tempFile = Files.createTempFile("myapp", ".appext");
+            System.out.println("Temporary file path = " + tempFile.toAbsolutePath());
+        } catch (IOException e) {
             System.out.println(e.getMessage());
         }
 
         Iterable<FileStore> stores = FileSystems.getDefault().getFileStores();
-        for(FileStore store: stores){
+        for (FileStore store : stores) {
             System.out.println(store);
             System.out.println(store.name());
         }
 
         System.out.println("***************************");
-        Iterable<Path> rootPaths =FileSystems.getDefault().getRootDirectories();
-        for(Path path: rootPaths){
+        Iterable<Path> rootPaths = FileSystems.getDefault().getRootDirectories();
+        for (Path path : rootPaths) {
             System.out.println(path);
         }
 
         System.out.println("---Walking Tree for Dir2---");
-        Path dir2Path = FileSystems.getDefault().getPath("Examples" +File.separator + "Dir2");
+        Path dir2Path = FileSystems.getDefault().getPath("Examples" + File.separator + "Dir2");
 
-        try{
-            Files.walkFileTree(dir2Path,new PrintNames());
-        } catch (IOException e){
+        try {
+            Files.walkFileTree(dir2Path, new PrintNames());
+        } catch (IOException e) {
             System.out.println(e.getMessage());
         }
 
 
         System.out.println("---copy Dir2 to Dir4/Dir2Copy ---");
-        Path copyPath = FileSystems.getDefault().getPath("Examples"+File.separator+"Dir4"+File.separator+"Dir2Copy");
+        Path copyPath = FileSystems.getDefault().getPath("Examples" + File.separator + "Dir4" + File.separator + "Dir2Copy");
 
-        try{
-            Files.walkFileTree(dir2Path, new CopyFiles(dir2Path,copyPath));
-        } catch (IOException e){
+        try {
+            Files.walkFileTree(dir2Path, new CopyFiles(dir2Path, copyPath));
+        } catch (IOException e) {
             System.out.println(e.getMessage());
         }
 

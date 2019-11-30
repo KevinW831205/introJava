@@ -28,7 +28,7 @@ public class CopyFiles extends SimpleFileVisitor<Path> {
 
         Path relativizedPath = sourceRoot.relativize(dir);
         System.out.println("Relativized Path previsit = " + relativizedPath);
-        Path copyDir = targetRoot.relativize(relativizedPath);
+        Path copyDir = targetRoot.resolve(relativizedPath);
         System.out.println("Resolved path for copy = " + copyDir);
 
         try {
@@ -45,7 +45,7 @@ public class CopyFiles extends SimpleFileVisitor<Path> {
     public FileVisitResult visitFile(Path file, BasicFileAttributes attrs) throws IOException {
         Path relativizedPath = sourceRoot.relativize(file);
         System.out.println("RelativizedPath = " + relativizedPath);
-        Path copyDir = targetRoot.relativize(relativizedPath);
+        Path copyDir = targetRoot.resolve(relativizedPath);
         System.out.println("Resolved path for copy = " + copyDir);
 
         try {
