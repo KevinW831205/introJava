@@ -21,8 +21,6 @@ public class Countdown {
             for (i = 10; i > 0; i--) {
                 System.out.println(color + Thread.currentThread().getName() + ": i=" + i);
             }
-
         }
-
     }
 }
