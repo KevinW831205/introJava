@@ -3,7 +3,7 @@ package com.company;
 public class Countdown {
     private int i;
 
-    public void doCountDown() {
+    public synchronized void doCountDown() {
         String color;
         switch (Thread.currentThread().getName()) {
             case "Thread 1":
