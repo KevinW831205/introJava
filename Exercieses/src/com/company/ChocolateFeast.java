@@ -7,7 +7,6 @@ public class ChocolateFeast {
     }
 
     static int chocolateFeast(int n, int c, int m) {
-
         int eaten = n/c;
         int wrappers = n/c;
         while (wrappers>= m){
