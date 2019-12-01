@@ -5,7 +5,7 @@ import java.util.Random;
 public class Writer implements Runnable {
     private Message message;
 
-    private Writer(Message message){
+    public Writer(Message message){
         this.message = message;
     }
 
