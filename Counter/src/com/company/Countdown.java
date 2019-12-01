@@ -1,10 +1,11 @@
 package com.company;
 
 public class Countdown {
-    public void doCountDown(){
-        String color;
+    private int i;
 
-        switch(Thread.currentThread().getName()){
+    public void doCountDown() {
+        String color;
+        switch (Thread.currentThread().getName()) {
             case "Thread 1":
                 color = ThreadColor.ANSI_CYAN;
                 break;
@@ -15,8 +16,8 @@ public class Countdown {
                 color = ThreadColor.ANSI_GREEN;
         }
 
-        for(int i =10; i>0; i--){
-            System.out.println(color + Thread.currentThread().getName() + ": i="+i);
+        for (i = 10; i > 0; i--) {
+            System.out.println(color + Thread.currentThread().getName() + ": i=" + i);
         }
 
     }
