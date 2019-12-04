@@ -15,7 +15,7 @@ public class FlatlandSpaceStation {
 
     static int flatlandSpaceStations(int n, int[] c) {
         Arrays.sort(c);
-        int longestDistance = c[0];
+        int longestDistance = Math.max(c[0], n - c[c.length-1]);
         for (int i = 0; i < c.length - 1; i++) {
             int distanceBetween = c[i+1] - c[i];
             int maxDistanceBetween = distanceBetween/2;
