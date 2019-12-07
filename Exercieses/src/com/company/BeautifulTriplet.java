@@ -11,6 +11,8 @@ public class BeautifulTriplet {
 
     }
 
+
+
     static int beautifulTriplets(int d, int[] arr) {
 
         int numberOfTriplets = 0;
@@ -27,7 +29,6 @@ public class BeautifulTriplet {
             }
 
         }
-
 
         return numberOfTriplets;
     }
