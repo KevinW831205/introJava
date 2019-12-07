@@ -5,7 +5,7 @@ import java.util.List;
 
 public class Main {
 
-    public static final String EOF = "EOF";
+    public static final String EOF = "End of File";
 
 
 
