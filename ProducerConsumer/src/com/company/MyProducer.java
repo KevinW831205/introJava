@@ -20,14 +20,19 @@ public class MyProducer implements Runnable {
         for(String num : nums){
             try {
                 System.out.println(color + "Adding..." + num);
-                buffer.add(num);
-                Thread.sleep(1000);
+                synchronized (buffer){
+                    buffer.add(num);
+                }
+
+                Thread.sleep(random.nextInt(1000));
             }catch (InterruptedException e){
                 System.out.println("Producer interrupted");
             }
         }
 
         System.out.println(color + "Adding EOF and exiting...");
-        buffer.add("End of File");
+        synchronized (buffer){
+            buffer.add("End of File");
+        }
     }
 }
