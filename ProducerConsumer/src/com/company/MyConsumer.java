@@ -2,6 +2,8 @@ package com.company;
 
 import java.util.List;
 
+import static com.company.Main.EOF;
+
 public class MyConsumer implements Runnable{
     private List<String> buffer;
     private String color;
