@@ -34,18 +34,21 @@ public class MyConsumer implements Runnable {
 //            } finally {
 //                bufferLock.unlock();
 //            }
+            synchronized (buffer) {
 
-            try {
-                if (buffer.isEmpty()) {
-                    continue;
+
+                try {
+                    if (buffer.isEmpty()) {
+                        continue;
+                    }
+                    if (buffer.peek().equals(EOF)) {
+                        System.out.println(color + "Exiting");
+                        break;
+                    } else {
+                        System.out.println(color + "Removed " + buffer.take());
+                    }
+                } catch (InterruptedException e) {
                 }
-                if (buffer.peek().equals(EOF)) {
-                    System.out.println(color + "Exiting");
-                    break;
-                } else {
-                    System.out.println(color + "Removed " + buffer.take());
-                }
-            } catch (InterruptedException e){
             }
         }
     }
