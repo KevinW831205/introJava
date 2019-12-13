@@ -1,19 +1,19 @@
 package com.company;
 
 import java.util.List;
+import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.locks.ReentrantLock;
 
 import static com.company.Main.EOF;
 
 public class MyConsumer implements Runnable {
-    private List<String> buffer;
+    private ArrayBlockingQueue<String> buffer;
     private String color;
     private ReentrantLock bufferLock;
 
-    public MyConsumer(List<String> buffer, String color, ReentrantLock bufferLock) {
+    public MyConsumer(ArrayBlockingQueue<String> buffer, String color) {
         this.buffer = buffer;
         this.color = color;
-        this.bufferLock = bufferLock;
     }
 
     @Override
