@@ -1,5 +1,6 @@
 package com.company;
 
+import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.locks.ReentrantLock;
@@ -9,7 +10,6 @@ import static com.company.Main.EOF;
 public class MyConsumer implements Runnable {
     private ArrayBlockingQueue<String> buffer;
     private String color;
-    private ReentrantLock bufferLock;
 
     public MyConsumer(ArrayBlockingQueue<String> buffer, String color) {
         this.buffer = buffer;
@@ -19,7 +19,6 @@ public class MyConsumer implements Runnable {
     @Override
     public void run() {
 
-        int counter = 0;
         while (true) {
 //            bufferLock.lock();
 //            try {
@@ -36,26 +35,18 @@ public class MyConsumer implements Runnable {
 //                bufferLock.unlock();
 //            }
 
-            if (bufferLock.tryLock()) {
-                try {
-                    if (buffer.isEmpty()) {
-                        continue;
-                    }
-                    System.out.println(color+"The counter = "+counter);
-                    counter = 0;
-                    if (buffer.get(0).equals(EOF)) {
-                        System.out.println(color + "Exiting");
-                        break;
-                    } else {
-                        System.out.println(color + "Removed " + buffer.remove(0));
-                    }
-                } finally {
-                    bufferLock.unlock();
+            try {
+                if (buffer.isEmpty()) {
+                    continue;
                 }
-            } else {
-                counter++;
+                if (buffer.peek().equals(EOF)) {
+                    System.out.println(color + "Exiting");
+                    break;
+                } else {
+                    System.out.println(color + "Removed " + buffer.take());
+                }
+            } catch (InterruptedException e){
             }
-
         }
     }
 }
