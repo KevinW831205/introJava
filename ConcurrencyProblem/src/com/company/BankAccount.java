@@ -28,8 +28,11 @@ class BankAccount {
 //        synchronized (this){
 //            balance += amount;
 //        }
+
+        boolean status = false;
         try{
             if(lock.tryLock(1000, TimeUnit.MILLISECONDS)){
+                status = true;
                 try {
                     balance += amount;
                 }finally {
@@ -40,15 +43,20 @@ class BankAccount {
             }
         }catch (InterruptedException e){
         }
+
+        System.out.println("Transaction status = "+status);
     }
 
     public void withdraw(double amount) {
 //        synchronized (this){
 //            balance -= amount;
 //        }
+
+        boolean status= false;
         try{
             if(lock.tryLock(1000, TimeUnit.MILLISECONDS)){
                 try {
+                    status = true;
                     balance -= amount;
                 }finally {
                     lock.unlock();
@@ -57,7 +65,9 @@ class BankAccount {
                 System.out.println("Couldn't get lock");
             }
         }catch (InterruptedException e){
-        }    }
+        }
+        System.out.println("Transaction status = "+status);
+    }
 
     public String getAccountNumber(){
         return accountNumber;
