@@ -1,0 +1,7 @@
+package com.company.PoliteWorker;
+
+public class Main {
+    public static void main(String[] args) {
+
+    }
+}
