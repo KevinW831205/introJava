@@ -6,9 +6,11 @@
 <?import javafx.scene.text.Font?>
 <GridPane fx:controller="sample.Controller"
           xmlns:fx="http://javafx.com/fxml" alignment="center" hgap="10" vgap="10">
-    <Label text="Welcome to JavaFX" textFill="green">
-        <font>
-            <Font name="Times New Roman bold" size="70" />
-        </font>
-    </Label>
+<!--    <Label text="Welcome to JavaFX" textFill="green">-->
+<!--        <font>-->
+<!--            <Font name="Times New Roman bold" size="70" />-->
+<!--        </font>-->
+<!--    </Label>-->
+
+    <Button fx:id="clickMeButton" text="Click Me" GridPane.rowIndex="0" GridPane.columnIndex="0" />
 </GridPane>

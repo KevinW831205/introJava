@@ -50,7 +50,6 @@ public class Main {
 
         Collections.sort(employees, (employee1, employee2) -> employee1.getName().compareTo(employee2.getName()));
 
-
         for(Employee e: employees){
             System.out.println(e.getName());
         }
