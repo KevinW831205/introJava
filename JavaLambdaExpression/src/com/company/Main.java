@@ -53,6 +53,25 @@ public class Main {
         for(Employee e: employees){
             System.out.println(e.getName());
         }
+
+//        String s1 = doStringStuff(new UpperConcat() {
+//            @Override
+//            public String upperAndConcat(String s1, String s2) {
+//                return s1.toUpperCase() + s2.toUpperCase();
+//            }
+//        }, e1.getName() ,e2.getName());
+//
+//        System.out.println(s1);
+
+        UpperConcat uc = (s1, s2) -> s1.toUpperCase() + s2.toUpperCase();
+        String someString = doStringStuff(uc, e1.getName(), e2.getName());
+        System.out.println(someString);
+
+
+    }
+
+    public final static String doStringStuff(UpperConcat uc, String s1, String s2){
+        return uc.upperAndConcat(s1,s2);
     }
 }
 
