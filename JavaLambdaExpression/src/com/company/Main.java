@@ -75,6 +75,8 @@ public class Main {
         System.out.println(s);
         String s2 = anotherClass.doSomething2();
         System.out.println(s2);
+        String s3 = anotherClass.doSomethingNested();
+        String s4 = anotherClass.doSomethingNested2();
 
     }
 
