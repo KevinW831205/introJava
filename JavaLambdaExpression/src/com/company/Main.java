@@ -50,9 +50,9 @@ public class Main {
 
         Collections.sort(employees, (employee1, employee2) -> employee1.getName().compareTo(employee2.getName()));
 
-        for(Employee e: employees){
-            System.out.println(e.getName());
-        }
+//        for(Employee e: employees){
+//            System.out.println(e.getName());
+//        }
 
 //        String s1 = doStringStuff(new UpperConcat() {
 //            @Override
@@ -63,10 +63,18 @@ public class Main {
 //
 //        System.out.println(s1);
 
-        UpperConcat uc = (s1, s2) -> s1.toUpperCase() + s2.toUpperCase();
-        String someString = doStringStuff(uc, e1.getName(), e2.getName());
-        System.out.println(someString);
+//        UpperConcat uc = (s1, s2) ->{
+//            String result = s1.toUpperCase() + s2.toUpperCase();
+//            return result;
+//        };
+//        String someString = doStringStuff(uc, e1.getName(), e2.getName());
+//        System.out.println(someString);
 
+        AnotherClass anotherClass = new AnotherClass();
+        String s = anotherClass.doSomething();
+        System.out.println(s);
+        String s2 = anotherClass.doSomething2();
+        System.out.println(s2);
 
     }
 
@@ -108,3 +116,4 @@ class Employee{
         this.age = age;
     }
 }
+
