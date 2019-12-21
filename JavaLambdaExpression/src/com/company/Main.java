@@ -41,6 +41,26 @@ public class Main {
         employees.add(e3);
         employees.add(e4);
 
+        for(Employee employee: employees){
+            System.out.println(employee.getName());
+            System.out.println(employee.getAge());
+        }
+
+//        for(Employee employee: employees){
+//            System.out.println(employee.getName());
+//            new Thread(()-> System.out.println(employee.getAge())).start();
+//        }
+//
+
+
+//        Employee employee;
+//        for(int i=0; i<employees.size(); i++){
+////            Employee employee = employees.get(i);
+//            employee = employees.get(i);
+//            System.out.println(employee.getName());
+//            new Thread(() -> System.out.println(employee.getAge())).start();
+//        }
+
 //        Collections.sort(employees, new Comparator<Employee>() {
 //            @Override
 //            public int compare(Employee employee1, Employee employee2) {
@@ -48,7 +68,7 @@ public class Main {
 //            }
 //        });
 
-        Collections.sort(employees, (employee1, employee2) -> employee1.getName().compareTo(employee2.getName()));
+//        Collections.sort(employees, (employee1, employee2) -> employee1.getName().compareTo(employee2.getName()));
 
 //        for(Employee e: employees){
 //            System.out.println(e.getName());
@@ -69,16 +89,16 @@ public class Main {
 //        };
 //        String someString = doStringStuff(uc, e1.getName(), e2.getName());
 //        System.out.println(someString);
-
-        AnotherClass anotherClass = new AnotherClass();
-        String s = anotherClass.doSomething();
-        System.out.println(s);
-        String s2 = anotherClass.doSomething2();
-        System.out.println(s2);
-        String s3 = anotherClass.doSomethingNested();
-        String s4 = anotherClass.doSomethingNested2();
-
-        anotherClass.printValue();
+//
+//        AnotherClass anotherClass = new AnotherClass();
+//        String s = anotherClass.doSomething();
+//        System.out.println(s);
+//        String s2 = anotherClass.doSomething2();
+//        System.out.println(s2);
+//        String s3 = anotherClass.doSomethingNested();
+//        String s4 = anotherClass.doSomethingNested2();
+//
+//        anotherClass.printValue();
 
     }
 
