@@ -41,10 +41,17 @@ public class Main {
         employees.add(e3);
         employees.add(e4);
 
-        for(Employee employee: employees){
+//        for(Employee employee: employees){
+//            System.out.println(employee.getName());
+//            System.out.println(employee.getAge());
+//
+//        }
+
+        employees.forEach( employee -> {
             System.out.println(employee.getName());
             System.out.println(employee.getAge());
-        }
+        });
+
 
 //        for(Employee employee: employees){
 //            System.out.println(employee.getName());
