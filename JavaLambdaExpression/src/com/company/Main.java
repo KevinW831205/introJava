@@ -78,6 +78,8 @@ public class Main {
         String s3 = anotherClass.doSomethingNested();
         String s4 = anotherClass.doSomethingNested2();
 
+        anotherClass.printValue();
+
     }
 
     public final static String doStringStuff(UpperConcat uc, String s1, String s2){

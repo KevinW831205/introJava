@@ -44,14 +44,33 @@ public class AnotherClass {
 
     public String doSomethingNested2() {
         int i = 0;
+//        i++;
 
         UpperConcat uc = (s1,s2)->{
+            int k =0;
             System.out.println("Nested upperconcat with lambda " + getClass().getSimpleName());
+            System.out.println("lambda i "+i);
             return s1.toUpperCase() + s2.toUpperCase();
         };
 
+//        s1 = hello;
         System.out.println("Nested upperconcat " + getClass().getSimpleName());
         return Main.doStringStuff(uc, "String1", "String2");
+    }
+
+    public void printValue(){
+        int number =25;
+
+        Runnable r = () -> {
+            try {
+                Thread.sleep(5000);
+            }catch (InterruptedException e){
+                e.printStackTrace();
+            }
+            System.out.println("Value of is "+number);
+        };
+
+        new Thread(r).start();
     }
 
 
