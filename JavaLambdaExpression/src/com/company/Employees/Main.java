@@ -54,6 +54,9 @@ public class Main {
 //            System.out.println(employee.getAge());
 //        });
 
+
+        printEmployeesByAge(employees,"Employees over 23", employee -> employee.getAge()>23);
+        printEmployeesByAge(employees,"Employees 23 and under", employee -> employee.getAge()<=23);
     }
 
     private static void printEmployeesByAge(List<Employee> employees, String ageText, Predicate<Employee> ageCondition) {
