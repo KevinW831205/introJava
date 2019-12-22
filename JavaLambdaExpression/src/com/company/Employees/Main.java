@@ -3,6 +3,7 @@ package com.company.Employees;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
+import java.util.function.Function;
 import java.util.function.IntPredicate;
 import java.util.function.Predicate;
 import java.util.function.Supplier;
@@ -10,12 +11,12 @@ import java.util.function.Supplier;
 public class Main {
 
     public static void main(String[] args) {
-        Employee e1 = new Employee("e1", 21);
-        Employee e2 = new Employee("a2", 22);
-        Employee e3 = new Employee("h3", 23);
-        Employee e4 = new Employee("c4", 24);
-        Employee e5 = new Employee("f5", 25);
-        Employee e6 = new Employee("g6", 26);
+        Employee e1 = new Employee("e1 ee", 21);
+        Employee e2 = new Employee("a2 aa", 22);
+        Employee e3 = new Employee("h3 hh", 23);
+        Employee e4 = new Employee("c4 cc", 24);
+        Employee e5 = new Employee("f5 ff", 25);
+        Employee e6 = new Employee("g6 gg", 26);
 
         List<Employee> employees = new ArrayList<>();
         employees.add(e1);
@@ -57,33 +58,47 @@ public class Main {
 //            System.out.println(employee.getAge());
 //        });
 
+//
+//        printEmployeesByAge(employees,"Employees over 23", employee -> employee.getAge()>23);
+//        printEmployeesByAge(employees,"Employees 23 and under", employee -> employee.getAge()<=23);
+//
+//        printEmployeesByAge(employees, "Employees under 22", new Predicate<Employee>() {
+//            @Override
+//            public boolean test(Employee employee) {
+//                return employee.getAge()<22;
+//            }
+//        });
+//
+//        IntPredicate greaterThan15 = i -> i>15;
+//        IntPredicate lessThan100 = i -> i<100;
+//        System.out.println(greaterThan15.test(10));
+//        int a =20;
+//        System.out.println(greaterThan15.test(a+5));
+//
+//        System.out.println( greaterThan15.and(lessThan100).test(50) );
+//        System.out.println( greaterThan15.and(lessThan100).test(1000) );
+//
+//        Random random = new Random();
+//        Supplier<Integer> randomSupplier = () -> random.nextInt(1000);
+//
+//        for(int i=0; i<10 ;i++){
+////            System.out.println(random.nextInt(1000));
+//            System.out.println(randomSupplier.get());
+//        }
 
-        printEmployeesByAge(employees,"Employees over 23", employee -> employee.getAge()>23);
-        printEmployeesByAge(employees,"Employees 23 and under", employee -> employee.getAge()<=23);
 
-        printEmployeesByAge(employees, "Employees under 22", new Predicate<Employee>() {
-            @Override
-            public boolean test(Employee employee) {
-                return employee.getAge()<22;
-            }
+        employees.forEach(employee -> {
+            String lastName = employee.getName().substring(employee.getName().indexOf(' ')+1);
+            System.out.println("Last Name is: "+lastName);
         });
 
-        IntPredicate greaterThan15 = i -> i>15;
-        IntPredicate lessThan100 = i -> i<100;
-        System.out.println(greaterThan15.test(10));
-        int a =20;
-        System.out.println(greaterThan15.test(a+5));
+        Function<Employee, String> getLastName = (Employee employee) ->{
+            return employee.getName().substring(employee.getName().indexOf(' ')+1);
+        };
 
-        System.out.println( greaterThan15.and(lessThan100).test(50) );
-        System.out.println( greaterThan15.and(lessThan100).test(1000) );
+        String lastName = getLastName.apply(employees.get(1));
+        System.out.println(lastName);
 
-        Random random = new Random();
-        Supplier<Integer> randomSupplier = () -> random.nextInt(1000);
-
-        for(int i=0; i<10 ;i++){
-//            System.out.println(random.nextInt(1000));
-            System.out.println(randomSupplier.get());
-        }
 
 
 
