@@ -99,9 +99,22 @@ public class Main {
         String lastName = getLastName.apply(employees.get(1));
         System.out.println(lastName);
 
+        Function<Employee, String> getFirstName= (employee -> {
+            return employee.getName().substring(0,employee.getName().indexOf(' '));
+        });
 
+        Random random1 = new Random();
+        for(Employee employee: employees){
+            if(random1.nextBoolean()){
+                System.out.println(getAName(getFirstName, employee));
+            } else {
+                System.out.println(getAName(getLastName, employee));
+            }
+        }
+    }
 
-
+    private static String getAName(Function<Employee, String> getName, Employee employee){
+        return getName.apply(employee);
     }
 
     private static void printEmployeesByAge(List<Employee> employees, String ageText, Predicate<Employee> ageCondition) {
