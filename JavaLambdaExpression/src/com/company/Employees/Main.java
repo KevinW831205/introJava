@@ -2,6 +2,7 @@ package com.company.Employees;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.function.IntPredicate;
 import java.util.function.Predicate;
 
 public class Main {
@@ -57,6 +58,23 @@ public class Main {
 
         printEmployeesByAge(employees,"Employees over 23", employee -> employee.getAge()>23);
         printEmployeesByAge(employees,"Employees 23 and under", employee -> employee.getAge()<=23);
+
+        printEmployeesByAge(employees, "Employees under 22", new Predicate<Employee>() {
+            @Override
+            public boolean test(Employee employee) {
+                return employee.getAge()<22;
+            }
+        });
+
+        IntPredicate greaterThan15 = i -> i>15;
+        IntPredicate lessThan100 = i -> i<100;
+        System.out.println(greaterThan15.test(10));
+        int a =20;
+        System.out.println(greaterThan15.test(a+5));
+
+        System.out.println( greaterThan15.and(lessThan100).test(50) );
+        System.out.println( greaterThan15.and(lessThan100).test(1000) );
+
     }
 
     private static void printEmployeesByAge(List<Employee> employees, String ageText, Predicate<Employee> ageCondition) {
@@ -66,6 +84,5 @@ public class Main {
                 System.out.println(employee.getName());
             }
         }
-
     }
 }
