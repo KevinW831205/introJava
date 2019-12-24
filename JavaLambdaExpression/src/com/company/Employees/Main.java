@@ -99,7 +99,7 @@ public class Main {
         String lastName = getLastName.apply(employees.get(1));
         System.out.println(lastName);
 
-        Function<Employee, String> getFirstName= (employee -> {
+        Function<Employee, String> getFirstName = (employee -> {
             return employee.getName().substring(0,employee.getName().indexOf(' '));
         });
 
@@ -111,6 +111,12 @@ public class Main {
                 System.out.println(getAName(getLastName, employee));
             }
         }
+
+        Function<Employee,String> upperCase = employee -> employee.getName().toUpperCase();
+        Function<String, String> firstName = name -> name.substring(0,name.indexOf(' '));
+        Function chainedFunction = upperCase.andThen(firstName);
+
+        System.out.println("Chained Function "+chainedFunction.apply(employees.get(0)));
     }
 
     private static String getAName(Function<Employee, String> getName, Employee employee){
