@@ -122,6 +122,9 @@ public class Main {
 
         String upperName = upperCase.apply(employees.get(0));
         System.out.println("BiFunction "+ concatAge.apply(upperName,employees.get(0)));
+
+        IntUnaryOperator incBy5 = i -> i+5;
+        System.out.println(incBy5.applyAsInt(10));
     }
 
     private static String getAName(Function<Employee, String> getName, Employee employee){
