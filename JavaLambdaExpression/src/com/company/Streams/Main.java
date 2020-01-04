@@ -5,6 +5,7 @@ import org.w3c.dom.ls.LSOutput;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -49,11 +50,11 @@ public class Main {
 //                .peek(System.out::println)
 //                .count());
 
-        Employee e1 = new Employee("e1",26);
-        Employee e2 = new Employee("g1",39);
-        Employee e3 = new Employee("b1",24);
-        Employee e4 = new Employee("s1",53);
-        Employee e5 = new Employee("f1",27);
+        Employee e1 = new Employee("e1", 26);
+        Employee e2 = new Employee("g1", 39);
+        Employee e3 = new Employee("b1", 24);
+        Employee e4 = new Employee("s1", 53);
+        Employee e5 = new Employee("f1", 27);
 
         Department hr = new Department("Human Resource");
         hr.addEmployee(e1);
@@ -64,7 +65,7 @@ public class Main {
         accounting.addEmployee(e4);
         accounting.addEmployee(e5);
 
-        List<Department>departments = new ArrayList<>();
+        List<Department> departments = new ArrayList<>();
         departments.add(hr);
         departments.add(accounting);
 
@@ -85,9 +86,18 @@ public class Main {
                 .collect(ArrayList::new, ArrayList::add, ArrayList::addAll);
 
         System.out.println("--------------------");
-        for(String s : sortedGNumbers){
+        for (String s : sortedGNumbers) {
             System.out.println(s);
         }
+
+//        Map<Integer, List<Employee>> groupByAge = departments.stream()
+//                .flatMap(department -> department.getEmployees().stream())
+//                .collect(Collectors.groupingBy(Employee::getAge));
+
+        departments.stream()
+                .flatMap(department -> department.getEmployees().stream())
+                .reduce((employee1, employee2) -> employee1.getAge() < employee2.getAge() ? employee1 : employee2)
+                .ifPresent(System.out::println);
 
     }
 }
