@@ -71,12 +71,18 @@ public class Main {
         departments.stream().flatMap(department -> department.getEmployees().stream())
                 .forEach(System.out::println);
 
+//        List<String> sortedGNumbers = bingoNumbers
+//                .stream()
+//                .map(String::toUpperCase)
+//                .filter(s -> s.startsWith("G"))
+//                .sorted()
+//                .collect(Collectors.toList());
         List<String> sortedGNumbers = bingoNumbers
                 .stream()
                 .map(String::toUpperCase)
                 .filter(s -> s.startsWith("G"))
                 .sorted()
-                .collect(Collectors.toList());
+                .collect(ArrayList::new, ArrayList::add, ArrayList::addAll);
 
         System.out.println("--------------------");
         for(String s : sortedGNumbers){
