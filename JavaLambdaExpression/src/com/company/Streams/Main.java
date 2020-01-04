@@ -1,5 +1,7 @@
 package com.company.Streams;
 
+import org.w3c.dom.ls.LSOutput;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -46,7 +48,27 @@ public class Main {
 //                .peek(System.out::println)
 //                .count());
 
+        Employee e1 = new Employee("e1",26);
+        Employee e2 = new Employee("g1",39);
+        Employee e3 = new Employee("b1",24);
+        Employee e4 = new Employee("s1",53);
+        Employee e5 = new Employee("f1",27);
 
+        Department hr = new Department("Human Resource");
+        hr.addEmployee(e1);
+        hr.addEmployee(e2);
+        hr.addEmployee(e3);
+
+        Department accounting = new Department("Accounting");
+        accounting.addEmployee(e4);
+        accounting.addEmployee(e5);
+
+        List<Department>departments = new ArrayList<>();
+        departments.add(hr);
+        departments.add(accounting);
+
+        departments.stream().flatMap(department -> department.getEmployees().stream())
+                .forEach(System.out::println);
 
 
     }
