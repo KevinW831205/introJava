@@ -37,5 +37,10 @@ public class TopNames {
                 })
                 .sorted()
                 .forEach(System.out::println);
+
+        System.out.println("-----------------------");
+        topNames2015.stream()
+                .filter(name->name.toUpperCase().startsWith("A"))
+                .forEach(System.out::println);
     }
 }
