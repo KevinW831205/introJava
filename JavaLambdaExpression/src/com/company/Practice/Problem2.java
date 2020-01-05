@@ -1,6 +1,7 @@
 package com.company.Practice;
 
 import java.util.function.Function;
+import java.util.function.Supplier;
 
 public class Problem2 {
 //    public static String everySecondChar(String source) {
