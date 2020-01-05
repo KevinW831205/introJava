@@ -1,5 +1,6 @@
 package com.company.Practice;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -18,6 +19,15 @@ public class TopNames {
                 "Jacob"
         );
 
+        List<String> firstUpperCase = new ArrayList<>();
+        topNames2015.forEach(name->
+                firstUpperCase.add(name.substring(0,1).toUpperCase() + name.substring(1))
+        );
+        firstUpperCase.sort(String::compareTo);
+        firstUpperCase.forEach(System.out::println);
+
+
+        System.out.println("-----------------");
         topNames2015.stream()
                 .map(s->{
                     String res = ""+s.charAt(0);
