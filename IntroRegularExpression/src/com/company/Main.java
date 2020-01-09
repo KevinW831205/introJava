@@ -10,9 +10,19 @@ public class Main {
         System.out.println(s2);
 
 
-        String alphanumeric = "abDeeeF12Ghhiiijkl99z";
+        String alphanumeric = "abcDeeeF12GhhiiijklabcDeee99z";
         System.out.println(alphanumeric);
         System.out.println(alphanumeric.replaceAll(".","Y"));
+        // ^ checks for the beginning of a string.
+        System.out.println(alphanumeric.replaceAll("^abcDeee","YYY"));
+        System.out.println(alphanumeric.replaceAll("eee99z$","end"));
+
+        // matches have to match the entire regex
+        System.out.println(alphanumeric.matches("^Hello"));
+        System.out.println("abcde".matches("^abc"));
+        System.out.println("abcde".matches("^abcde"));
+
+
 
     }
 }
