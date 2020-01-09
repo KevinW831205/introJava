@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/IntroRegularExpressions.iml" filepath="$PROJECT_DIR$/IntroRegularExpressions.iml" />
+      <module fileurl="file://$PROJECT_DIR$/IntroRegularExpression.iml" filepath="$PROJECT_DIR$/IntroRegularExpression.iml" />
     </modules>
   </component>
 </project>
