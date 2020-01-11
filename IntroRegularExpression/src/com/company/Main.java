@@ -22,7 +22,10 @@ public class Main {
         System.out.println("abcde".matches("^abc"));
         System.out.println("abcde".matches("^abcde"));
 
+        System.out.println(alphanumeric.replaceAll("[aei]","!"));
+        System.out.println(alphanumeric.replaceAll("[aei][Fj]","!"));
 
-
+        System.out.println("name is harry".replaceAll("[Hh]arry","Harry"));
+        System.out.println(alphanumeric.replaceAll("[^ej]","!"));
     }
 }
