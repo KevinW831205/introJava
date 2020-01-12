@@ -135,5 +135,18 @@ public class Main {
         System.out.println("Harry".replaceAll("[H|h]arry","Larry"));
 
 
+        //nots
+        String tvTest = "tstvtkt";
+//        String tNotVRegEx = "t[^v]";   //t must follow a character to be found
+        String tNotVRegEx = "t(?!v)";   //negative look ahead
+        Pattern tNotVPattern = Pattern.compile(tNotVRegEx);
+        Matcher tNotVMatcher = tNotVPattern.matcher(tvTest);
+
+        count=0;
+        while (tNotVMatcher.find()){
+            count++;
+            System.out.println("Occurrence "+count+" : "+tNotVMatcher.start()+" to "+tNotVMatcher.end());
+        }
+
     }
 }
