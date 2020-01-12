@@ -129,6 +129,10 @@ public class Main {
             System.out.println("Occurrence: "+h2TextMatcher.group(2));
         }
 
+        // "ab" -> "a" and "b"
+        // Or
+        System.out.println("harry".replaceAll("[H|h]arry","Larry"));
+        System.out.println("Harry".replaceAll("[H|h]arry","Larry"));
 
 
     }
