@@ -95,7 +95,8 @@ public class Main {
         htmlText.append("<h2>Summary</h2>");
         htmlText.append("<p>Some p tag3</p>");
 
-        String h2Pattern = ".*<h2>.*";
+//        String h2Pattern = ".*<h2>.*";
+        String h2Pattern = "<h2>";
         Pattern pattern = Pattern.compile(h2Pattern);
 //        Pattern pattern = Pattern.compile(h2Pattern,Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CASE);
         Matcher matcher = pattern.matcher(htmlText);
