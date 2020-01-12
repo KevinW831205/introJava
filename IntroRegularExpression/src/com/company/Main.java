@@ -24,17 +24,35 @@ public class Main {
 
         // selecting all characters between []
         System.out.println(alphanumeric.replaceAll("[aei]","!"));
+
         //replace aei if followed by F or j
         System.out.println(alphanumeric.replaceAll("[aei][Fj]","!"));
 
         //instance of [h or H]followed by arry
         System.out.println("name is harry".replaceAll("[Hh]arry","Harry"));
+
         //not e or j
         System.out.println(alphanumeric.replaceAll("[^ej]","!"));
+
+        //replacing multiple short hand form
         System.out.println(alphanumeric.replaceAll("[abcdef345678]","!"));
         System.out.println(alphanumeric.replaceAll("[a-f3-8]","!"));
         System.out.println(alphanumeric.replaceAll("[a-fA-f3-8]","!"));
-        //(?i ignores case)
+
+        //(?i)ignores case
         System.out.println(alphanumeric.replaceAll("(?i)[a-f3-8]","!"));
+
+        //replace all numbers
+        System.out.println(alphanumeric.replaceAll("[0-9]","!"));
+        System.out.println(alphanumeric.replaceAll("\\d","!"));
+
+        //replace all non-digits
+        System.out.println(alphanumeric.replaceAll("\\D","!"));
+
+        //replace all white space
+        String whiteSpace = "a   df 3ds tdgs eerer d   g";
+        System.out.println(whiteSpace.replaceAll("\\s",""));
+
+
     }
 }
