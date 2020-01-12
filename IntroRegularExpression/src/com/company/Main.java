@@ -50,9 +50,23 @@ public class Main {
         System.out.println(alphanumeric.replaceAll("\\D","!"));
 
         //replace all white space
-        String whiteSpace = "a   df 3ds tdgs eerer d   g";
+        String whiteSpace = "a   df 3d\t tdgs eerer d   g";
+        System.out.println(whiteSpace);
         System.out.println(whiteSpace.replaceAll("\\s",""));
+        System.out.println(whiteSpace.replaceAll("\t","had tab"));
 
+        //replace all non white space
+        System.out.println(whiteSpace.replaceAll("\\S","!"));
+
+        //replace \\w a-zA-z0-9 and underscore
+        System.out.println(alphanumeric.replaceAll("\\w","!"));
+        System.out.println(whiteSpace.replaceAll("\\w","!"));
+
+        // replace all but \\w
+        System.out.println(whiteSpace.replaceAll("\\W","!"));
+
+        // matches word boundries
+        System.out.println(whiteSpace.replaceAll("\\b","!"));
 
     }
 }
