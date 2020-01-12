@@ -109,5 +109,17 @@ public class Main {
             System.out.println("occurence " + count+ " : "+ matcher.start() + " to "+matcher.end());
         }
 
+        String h2GroupPattern = "(<h2>)";
+        Pattern groupPattern = Pattern.compile(h2GroupPattern);
+        Matcher groupMatcher = groupPattern.matcher(htmlText);
+        System.out.println(groupMatcher.matches());
+
+        groupMatcher.reset();
+        while (groupMatcher.find()){
+            System.out.println("Occurrence "+groupMatcher.group(1));
+        }
+
+
+
     }
 }
