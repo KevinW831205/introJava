@@ -10,7 +10,7 @@ public class Main {
         System.out.println(s2);
 
 
-        String alphanumeric = "abcDeeeF12GhhiiijklabcDeee99z";
+        String alphanumeric = "abcDeeeF1245GhhiiijklabcDeee99z";
         System.out.println(alphanumeric);
         System.out.println(alphanumeric.replaceAll(".","Y"));
         // ^ checks for the beginning of a string.
@@ -22,10 +22,19 @@ public class Main {
         System.out.println("abcde".matches("^abc"));
         System.out.println("abcde".matches("^abcde"));
 
+        // selecting all characters between []
         System.out.println(alphanumeric.replaceAll("[aei]","!"));
+        //replace aei if followed by F or j
         System.out.println(alphanumeric.replaceAll("[aei][Fj]","!"));
 
+        //instance of [h or H]followed by arry
         System.out.println("name is harry".replaceAll("[Hh]arry","Harry"));
+        //not e or j
         System.out.println(alphanumeric.replaceAll("[^ej]","!"));
+        System.out.println(alphanumeric.replaceAll("[abcdef345678]","!"));
+        System.out.println(alphanumeric.replaceAll("[a-f3-8]","!"));
+        System.out.println(alphanumeric.replaceAll("[a-fA-f3-8]","!"));
+        //(?i ignores case)
+        System.out.println(alphanumeric.replaceAll("(?i)[a-f3-8]","!"));
     }
 }
