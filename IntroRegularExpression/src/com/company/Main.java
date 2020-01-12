@@ -109,7 +109,9 @@ public class Main {
             System.out.println("occurence " + count+ " : "+ matcher.start() + " to "+matcher.end());
         }
 
-        String h2GroupPattern = "(<h2>)";
+//        String h2GroupPattern = "(<h2>)";
+        String h2GroupPattern = "(<h2>.*?</h2>)";   //adding the question mark makes the * lazy
+ //       String h2GroupPattern = "(<h2>.+?</h2>)";   //doesn't take empty h2
         Pattern groupPattern = Pattern.compile(h2GroupPattern);
         Matcher groupMatcher = groupPattern.matcher(htmlText);
         System.out.println(groupMatcher.matches());
@@ -117,6 +119,14 @@ public class Main {
         groupMatcher.reset();
         while (groupMatcher.find()){
             System.out.println("Occurrence "+groupMatcher.group(1));
+        }
+
+        String h2TextGroups = "(<h2>)(.+?)(</h2>)";
+        Pattern h2TextPattern = Pattern.compile(h2TextGroups);
+        Matcher h2TextMatcher = h2TextPattern.matcher(htmlText);
+
+        while(h2TextMatcher.find()){
+            System.out.println("Occurrence: "+h2TextMatcher.group(2));
         }
 
 
