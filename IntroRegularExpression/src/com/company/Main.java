@@ -1,5 +1,6 @@
 package com.company;
 
+
 public class Main {
 
     public static void main(String[] args) {
@@ -68,5 +69,17 @@ public class Main {
         // matches word boundries
         System.out.println(whiteSpace.replaceAll("\\b","!"));
 
+        //quantifiers specify number of character b4 the {}
+        System.out.println(alphanumeric.replaceAll("^abcDe{2}","!"));
+        //+ is any amount of the character
+        System.out.println(alphanumeric.replaceAll("^abcDe+","!"));
+        // * replaces whether or not has the
+        String someString = "abcDFFF";
+        System.out.println(alphanumeric.replaceAll("^abcDe*","!"));
+        System.out.println(someString.replaceAll("^abcDe*","!"));
+        //specifying range
+        someString = "abcDeeeeeg";
+        System.out.println(alphanumeric.replaceAll("^abcDe{2,5}","!"));
+        System.out.println(someString.replaceAll("^abcDe{2,5}","!"));
     }
 }
