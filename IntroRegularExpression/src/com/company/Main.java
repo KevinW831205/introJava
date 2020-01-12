@@ -1,6 +1,10 @@
 package com.company;
 
 
+import java.nio.file.Path;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 public class Main {
 
     public static void main(String[] args) {
@@ -77,9 +81,24 @@ public class Main {
         String someString = "abcDFFF";
         System.out.println(alphanumeric.replaceAll("^abcDe*","!"));
         System.out.println(someString.replaceAll("^abcDe*","!"));
-        //specifying range
+        //specifying range of number of a character
         someString = "abcDeeeeeg";
         System.out.println(alphanumeric.replaceAll("^abcDe{2,5}","!"));
         System.out.println(someString.replaceAll("^abcDe{2,5}","!"));
+        //combinations
+        System.out.println(alphanumeric.replaceAll("h+i*j","!"));
+
+        StringBuilder htmlText= new StringBuilder("<h1>My Heading</h1>");
+        htmlText.append("<h2>sub-heading</h2>");
+        htmlText.append("<p>Some p tag</p>");
+        htmlText.append("<p>Some p tag2</p>");
+        htmlText.append("<h2>Summary</h2>");
+        htmlText.append("<p>Some p tag3</p>");
+
+        String h2Pattern = ".*<h2>.*";
+        Pattern pattern = Pattern.compile(h2Pattern);
+//        Pattern pattern = Pattern.compile(h2Pattern,Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CASE);
+        Matcher matcher = pattern.matcher(htmlText);
+        System.out.println(matcher.matches());
     }
 }
