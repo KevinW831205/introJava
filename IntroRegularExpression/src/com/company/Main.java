@@ -100,5 +100,13 @@ public class Main {
 //        Pattern pattern = Pattern.compile(h2Pattern,Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CASE);
         Matcher matcher = pattern.matcher(htmlText);
         System.out.println(matcher.matches());
+
+        matcher.reset();
+        int count = 0;
+        while(matcher.find()){
+            count++;
+            System.out.println("occurence " + count+ " : "+ matcher.start() + " to "+matcher.end());
+        }
+
     }
 }
