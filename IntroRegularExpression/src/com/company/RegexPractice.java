@@ -27,6 +27,9 @@ public class RegexPractice {
         String regex5 = "[a-g]+";
         System.out.println(p5.matches(regex5));
 
+        String regex6 = "^a{3}b{1}c{8}d{3}ef{3}g$";
+        System.out.println(p5.matches(regex6));
+
     }
 
 }
