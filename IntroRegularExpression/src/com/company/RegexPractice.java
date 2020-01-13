@@ -23,6 +23,10 @@ public class RegexPractice {
         String p4 = "Replace all blanks with underscores.";
         System.out.println(p4.replaceAll("\\s","_"));
 
+        String p5 = "aaabccccccccdddefffg";
+        String regex5 = "[a-g]+";
+        System.out.println(p5.matches(regex5));
+
     }
 
 }
