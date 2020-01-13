@@ -20,6 +20,9 @@ public class RegexPractice {
         matcher = pattern.matcher(p1);
         System.out.println(matcher.matches());
 
+        String p4 = "Replace all blanks with underscores.";
+        System.out.println(p4.replaceAll("\\s","_"));
+
     }
 
 }
