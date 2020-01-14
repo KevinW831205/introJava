@@ -30,6 +30,9 @@ public class RegexPractice {
         String regex6 = "^a{3}b{1}c{8}d{3}ef{3}g$";
         System.out.println(p5.matches(regex6));
 
+        String p7 = "abcd.135";
+        String regex7 = "^[A-Za-z]+\\.\\d+$";
+        System.out.println(p7.matches(regex7));
     }
 
 }
