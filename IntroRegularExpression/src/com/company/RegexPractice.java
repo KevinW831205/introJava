@@ -42,6 +42,16 @@ public class RegexPractice {
         while (matcher8.find()){
             System.out.println(matcher8.group(1));
         }
+
+        System.out.println("problem 9 ------------");
+        String p9 = "abcd.135\tuvqz.7\ttzik.999\n";
+        String regex9 = "[A-Za-z]+\\.(\\d+)\\s";
+        Pattern pattern9 = Pattern.compile(regex9);
+        Matcher matcher9 = pattern9.matcher(p9);
+        while (matcher9.find()){
+            System.out.println(matcher9.group(1));
+        }
+
     }
 
 }
