@@ -60,8 +60,16 @@ public class RegexPractice {
             System.out.println("Start index = "+matcher10.start(1)+" End Index = "+(matcher10.end(1)-1));
         }
 
-        String p11 = "{0, 2},{0, 5},{1, 3},{2, 4}";
-        String regex11 = "\\{(.+?)\\}";
+//        String p11 = "{0, 2},{0, 5},{1, 3},{2, 4}";
+//        String regex11 = "\\{(.+?)\\}";
+//        Pattern patter11 = Pattern.compile(regex11);
+//        Matcher mather11 = patter11.matcher(p11);
+//        while (mather11.find()){
+//            System.out.println("Occurrence: "+mather11.group(1));
+//        }
+
+        String p11 = "{0, 2},{0, 5},{1, 3},{2, 4},{x, y},{2, 4}";
+        String regex11 = "\\{(\\d+, \\d+?)\\}";
         Pattern patter11 = Pattern.compile(regex11);
         Matcher mather11 = patter11.matcher(p11);
         while (mather11.find()){
