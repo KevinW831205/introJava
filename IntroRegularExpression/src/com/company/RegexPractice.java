@@ -2,6 +2,7 @@ package com.company;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import java.util.regex.PatternSyntaxException;
 
 public class RegexPractice {
     public static void main(String[] args) {
@@ -33,6 +34,14 @@ public class RegexPractice {
         String p7 = "abcd.135";
         String regex7 = "^[A-Za-z]+\\.\\d+$";
         System.out.println(p7.matches(regex7));
+
+        String p8 = "abcd.135uvqz.7tzik.999";
+        String regex8 = "[A-Za-z]+\\.(\\d+)";
+        Pattern pattern8 = Pattern.compile(regex8);
+        Matcher matcher8 = pattern8.matcher(p8);
+        while (matcher8.find()){
+            System.out.println(matcher8.group(1));
+        }
     }
 
 }
