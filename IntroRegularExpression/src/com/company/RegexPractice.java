@@ -52,6 +52,14 @@ public class RegexPractice {
             System.out.println(matcher9.group(1));
         }
 
+        String p10 = "abcd.135\tuvqz.7\ttzik.999\n";
+        String regex10 = "[A-Za-z]+\\.(\\d+)\\s";
+        Pattern pattern10 = Pattern.compile(regex10);
+        Matcher matcher10 = pattern10.matcher(p10);
+        while (matcher10.find()){
+            System.out.println("Start index = "+matcher10.start(1)+" End Index = "+(matcher10.end(1)-1));
+        }
+
     }
 
 }
