@@ -79,8 +79,12 @@ public class RegexPractice {
         String p12a = "11111";
         String p12b = "112111";
         String p12c = "1131";
-        String regex12 = "[0-9]{5}";
+        String regex12 = "^[0-9]{5}$";
         System.out.println("P12 "+p12a.matches(regex12)+p12b.matches(regex12)+p12c.matches(regex12));
+
+        String p13 = "11111-1111";
+        String regex13 = "^\\d{5}\\-\\d{4}$";
+        System.out.println("p13 "+p13.matches(regex13));
 
 
     }
