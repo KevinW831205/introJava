@@ -86,6 +86,14 @@ public class RegexPractice {
         String regex13 = "^\\d{5}\\-\\d{4}$";
         System.out.println("p13 "+p13.matches(regex13));
 
+        String p14a = "11111-1111";
+        String p14b = "11111";
+        String p14c = "112111";
+        String p14d = "11311-3";
+
+        String regex14 = "^\\d{5}(\\-\\d{4})?$";
+        System.out.println("p14 "+p14a.matches(regex14)+p14b.matches(regex14)+p14c.matches(regex14)+p14d.matches(regex14));
+
 
     }
 
